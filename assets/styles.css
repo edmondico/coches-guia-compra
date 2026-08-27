@@ -95,12 +95,13 @@ h2 {
   font-stretch: condensed;
   letter-spacing: -0.025em;
   text-transform: uppercase;
+  overflow-wrap: break-word;
 }
 
 h1 {
   margin-bottom: var(--space-5);
   max-width: 12ch;
-  font-size: clamp(3.2rem, 15vw, 7.5rem);
+  font-size: clamp(2.3rem, 13vw, 7.5rem);
 }
 
 h1 span {
@@ -109,7 +110,7 @@ h1 span {
 
 h2 {
   margin-bottom: var(--space-4);
-  font-size: clamp(2.2rem, 8vw, 4.8rem);
+  font-size: clamp(1.65rem, 7.5vw, 4.8rem);
 }
 
 h3 {
@@ -372,6 +373,44 @@ h3 {
 .section--ink {
   color: white;
   background: var(--color-ink);
+}
+
+.section--bcn {
+  background: var(--color-paper-deep);
+  border-block: 1px solid var(--color-rule);
+}
+
+.bcn-grid {
+  display: grid;
+  gap: var(--space-4);
+}
+
+.bcn-card {
+  padding: var(--space-5);
+  background: var(--color-surface);
+  border: 1px solid var(--color-rule);
+  border-top: 0.25rem solid var(--color-petrol);
+}
+
+.bcn-card__badge {
+  display: inline-block;
+  margin-bottom: var(--space-3);
+  font-size: 0.72rem;
+  font-weight: 850;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-accent-dark);
+}
+
+.bcn-card h3 {
+  margin-bottom: var(--space-2);
+  font-size: 1.25rem;
+}
+
+.bcn-card p {
+  margin-bottom: 0;
+  font-size: 0.9rem;
+  color: var(--color-ink-soft);
 }
 
 .section-heading--light > p:last-child {
@@ -807,10 +846,14 @@ h3 {
 
 .aid-formula li {
   display: grid;
-  grid-template-columns: 3rem 1fr;
-  gap: var(--space-4);
+  grid-template-columns: 2.5rem minmax(0, 1fr);
+  gap: var(--space-3);
   padding-block: var(--space-4);
   border-bottom: 1px solid var(--color-rule);
+}
+
+.aid-formula li > div {
+  min-width: 0;
 }
 
 .aid-formula li > span {
@@ -863,25 +906,37 @@ h3 {
 
 .cost-row {
   display: grid;
-  grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr) auto;
-  gap: var(--space-3);
+  grid-template-columns: minmax(0, 1.3fr) minmax(0, 0.9fr) auto;
+  gap: var(--space-2);
   align-items: center;
-  padding-block: var(--space-4);
+  padding-block: var(--space-3);
   border-bottom: 1px solid var(--color-rule);
 }
 
 .cost-row span {
   color: var(--color-muted);
-  font-size: 0.8rem;
+  font-size: 0.78rem;
+}
+
+.cost-row span:last-child {
+  display: none;
 }
 
 .cost-row b {
   color: var(--color-success);
-  font-size: 1.15rem;
+  font-size: 1.1rem;
 }
 
 .cost-row--head {
   display: none;
+}
+
+.cost-row--solar {
+  background: rgba(212, 164, 70, 0.08);
+}
+
+.cost-row--solar strong {
+  color: #8c5b08;
 }
 
 .cost-row--petrol b {
@@ -916,10 +971,14 @@ h3 {
 
 .steps li {
   display: grid;
-  grid-template-columns: 3rem 1fr;
-  gap: var(--space-4);
+  grid-template-columns: 2.2rem minmax(0, 1fr);
+  gap: var(--space-3);
   padding-block: var(--space-4);
   border-top: 1px solid rgba(255, 255, 255, 0.22);
+}
+
+.steps li > div {
+  min-width: 0;
 }
 
 .steps li > span {
@@ -1038,6 +1097,10 @@ h3 {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
+  .bcn-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
   .winner-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -1121,6 +1184,15 @@ h3 {
 
   .rule-grid {
     grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .cost-row {
+    grid-template-columns: minmax(0, 1.4fr) minmax(0, 1.1fr) auto auto;
+    gap: var(--space-3);
+  }
+
+  .cost-row span:last-child {
+    display: block;
   }
 
   .cost-row--head {
