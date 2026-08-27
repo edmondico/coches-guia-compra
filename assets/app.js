@@ -42,9 +42,9 @@
       .sort((a, b) => (a.rank ?? 99) - (b.rank ?? 99));
 
     const tags = {
-      global: { num: '01', tag: 'La compra familiar maestra (5 plazas & confort)' },
-      quality: { num: '02', tag: 'El más fácil de manejar (Modular · 4 plazas)' },
-      used: { num: '03', tag: 'El capricho de diseño & estreno (5 plazas)' },
+      global: { num: '01', tag: 'El rey de la fiabilidad a 15 años (Toyota Relax)' },
+      quality: { num: '02', tag: 'El BEV nº1 por fiabilidad real (7 años gª)' },
+      used: { num: '03', tag: 'La alternativa eléctrica contrastada (64 kWh)' },
     };
 
     verdictContainer.innerHTML = verdictCards.map((car) => {
