@@ -159,24 +159,51 @@
         </div>
 
         <div class="budget-tool-card">
-          <div class="budget-slider-block">
-            <div class="budget-slider-header">
-              <label for="budget-range" class="budget-slider-label">Mueve el selector a tu presupuesto:</label>
-              <output id="budget-output" class="budget-output-value">18.000 €</output>
+          <div class="budget-input-container">
+            <div class="budget-input-row">
+              <div class="budget-input-field">
+                <label for="budget-input-number" class="budget-field-label">Introduce tu presupuesto (€):</label>
+                <div class="input-currency-wrapper">
+                  <input type="number" id="budget-input-number" min="8000" max="40000" step="500" value="18000" placeholder="18000" aria-label="Escribe tu presupuesto en euros">
+                  <span class="currency-suffix">€</span>
+                </div>
+              </div>
+
+              <div class="budget-presets-wrapper" aria-label="Presupuestos frecuentes">
+                <span class="preset-label">Accesos rápidos:</span>
+                <div class="preset-buttons">
+                  <button type="button" class="preset-pill" data-set-budget="13000">13k</button>
+                  <button type="button" class="preset-pill" data-set-budget="15000">15k</button>
+                  <button type="button" class="preset-pill" data-set-budget="17000">17k</button>
+                  <button type="button" class="preset-pill is-active" data-set-budget="18000">💎 18k</button>
+                  <button type="button" class="preset-pill" data-set-budget="20000">20k</button>
+                  <button type="button" class="preset-pill" data-set-budget="22000">22k</button>
+                  <button type="button" class="preset-pill" data-set-budget="24000">🚀 24k</button>
+                  <button type="button" class="preset-pill" data-set-budget="26000">🏆 26k</button>
+                  <button type="button" class="preset-pill" data-set-budget="27000">27k</button>
+                </div>
+              </div>
             </div>
-            <input type="range" id="budget-range" min="13000" max="27000" step="1000" value="18000" aria-label="Presupuesto de compra en euros">
-            <div class="budget-range-ticks" aria-hidden="true">
-              <span>13k</span>
-              <span>15k</span>
-              <span>18k</span>
-              <span>21k</span>
-              <span>24k</span>
-              <span>26k</span>
-              <span>27k</span>
+
+            <div class="budget-slider-block">
+              <div class="budget-slider-header">
+                <label for="budget-range" class="budget-slider-label">O explora deslizando:</label>
+                <output id="budget-output" class="budget-output-value">18.000 €</output>
+              </div>
+              <input type="range" id="budget-range" min="13000" max="27000" step="500" value="18000" aria-label="Presupuesto de compra en euros">
+              <div class="budget-range-ticks" aria-hidden="true">
+                <span>13k</span>
+                <span>15k</span>
+                <span>18k</span>
+                <span>21k</span>
+                <span>24k</span>
+                <span>26k</span>
+                <span>27k</span>
+              </div>
             </div>
           </div>
 
-          <div id="budget-result-card" class="budget-result-card"></div>
+          <div id="budget-result-card" class="budget-result-card" aria-live="polite"></div>
         </div>
       </div>
     </section>

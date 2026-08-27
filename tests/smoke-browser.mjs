@@ -183,6 +183,19 @@ try {
   assert.match(budgetOutput26k, /26\.000\s*€/);
   assert.match(budgetResult26k, /Toyota Yaris Cross/i);
 
+  // Test typing directly into numeric input (24000 €)
+  await evaluate(`
+    const numInput = document.getElementById("budget-input-number");
+    numInput.value = "24000";
+    numInput.dispatchEvent(new Event("input"));
+  `);
+  await new Promise((r) => setTimeout(r, 50));
+  const budgetOutput24k = await evaluate('document.getElementById("budget-output").textContent');
+  const budgetResult24k = await evaluate('document.getElementById("budget-result-card").textContent');
+  console.log('Budget tool at 24k (typed):', budgetOutput24k);
+  assert.match(budgetOutput24k, /24\.000\s*€/);
+  assert.match(budgetResult24k, /Kona Hybrid Tecno/i);
+
   // Check initial comparison count
   const initialCars = await evaluate('document.querySelectorAll("#comparison-list .car-card").length');
   console.log('Initial cars in comparison:', initialCars);

@@ -290,18 +290,87 @@
   function renderBudgetTool() {
     const budgetGuides = window.CarData.budgetGuides || [];
     const budgetRange = document.getElementById('budget-range');
+    const budgetInputNumber = document.getElementById('budget-input-number');
     const budgetOutput = document.getElementById('budget-output');
     const budgetResultCard = document.getElementById('budget-result-card');
     const sweetSpotBtns = document.querySelectorAll('[data-set-budget]');
 
     if (!budgetRange || !budgetOutput || !budgetResultCard || budgetGuides.length === 0) return;
 
+    function getAdviceForAmount(amount) {
+      if (amount <= 13500) return { guide: budgetGuides[0], bracket: '13k' };
+      if (amount <= 14500) return { guide: budgetGuides[1], bracket: '14k' };
+      if (amount <= 15500) return { guide: budgetGuides[2], bracket: '15k' };
+      if (amount <= 16500) return { guide: budgetGuides[3], bracket: '16k' };
+      if (amount <= 17500) return { guide: budgetGuides[4], bracket: '17k' };
+      if (amount <= 18500) return { guide: budgetGuides[5], bracket: '18k' };
+      if (amount <= 19500) return { guide: budgetGuides[6], bracket: '19k' };
+      if (amount <= 20500) return { guide: budgetGuides[7], bracket: '20k' };
+      if (amount <= 21500) return { guide: budgetGuides[8], bracket: '21k' };
+      if (amount <= 22500) return { guide: budgetGuides[9], bracket: '22k' };
+      if (amount <= 23500) return { guide: budgetGuides[10], bracket: '23k' };
+      if (amount <= 24500) return { guide: budgetGuides[11], bracket: '24k' };
+      if (amount <= 25500) return { guide: budgetGuides[12], bracket: '25k' };
+      if (amount <= 26500) return { guide: budgetGuides[13], bracket: '26k' };
+      return { guide: budgetGuides[14] || budgetGuides[budgetGuides.length - 1], bracket: '27k+' };
+    }
+
+    function getActionSteps(amount, guide) {
+      if (amount <= 14000) {
+        return [
+          'Filtra en Coches.net: Toyota Yaris Hybrid 100H acabado Active Tech o Feel (2017–2019).',
+          'Comprueba que tenga libro de revisiones oficial Toyota para verificar el estado de la batería híbrida.',
+          'Consejo inteligente: Si puedes juntar 1.500 € más (15.000 €), accederás a la 4ª generación 120H con chasis TNGA moderno.'
+        ];
+      }
+      if (amount <= 17000) {
+        return [
+          'Filtra: Toyota Yaris 120H Style / Active (años 2020–2022) en concesionarios de Barcelona.',
+          'Pide activación del programa Toyota Relax para extender la cobertura oficial hasta los 15 años.',
+          'Si la prioridad es la entrada/salida fácil para tus padres, tu siguiente gran objetivo son los 17.900 € del Kona SUV.'
+        ];
+      }
+      if (amount < 21500) {
+        const saved = Math.max(0, amount - 17900);
+        return [
+          'Localiza la unidad activa en Barcelona: Hyundai Kona HEV Maxx 2021 con 21.835 km por 17.900 € al contado.',
+          `¡AHORRA ${formatEuro(saved)}! No pagues 19k–21k por coches con +100.000 km. Esta unidad con 21k km y 98,7% de fiabilidad es imbatible.`,
+          'Solicita informe DGT/Carfax para confirmar kilometraje y prueba dinámica en cuestas y tráfico urbano.'
+        ];
+      }
+      if (amount < 24000) {
+        return [
+          'Filtra en la red oficial Toyota Ocasión de Barcelona: Yaris Cross 120H Style con menos de 55.000 km (~22.700 €).',
+          'Verifica la garantía oficial Toyota Relax hasta 15 años o 250.000 km.',
+          'Alternativa tecnológica: Por 23.900 € pasas al Kona 2024 con doble pantalla panorámica de 12,3" y 466 l de maletero.'
+        ];
+      }
+      if (amount < 25800) {
+        const saved = Math.max(0, amount - 23900);
+        return [
+          'Compra el Hyundai Kona Hybrid Tecno 2024 (25.000 km por 23.900 € al contado en Barcelona).',
+          'Disfruta de la doble pantalla de 12,3", 466 l de maletero y 5 años de garantía oficial sin límite de km.',
+          saved > 0 ? `Te sobran ${formatEuro(saved)} de tu presupuesto para seguro, garaje y mantenimiento.` : 'Precio cerrado al contado sin sorpresas.'
+        ];
+      }
+      return [
+        'Compra el Toyota Yaris Cross 130H Style 2024 (27.000 km por 25.990 € certificado en Barcelona).',
+        'Disfrutas del motor 130H más ágil, cuadro digital de 12,3", central de 10,5" y Toyota Relax hasta 15 años.',
+        'Techo óptimo alcanzado: No gastes más dinero; para vuestro uso de 3–5k km/año es la compra familiar definitiva.'
+      ];
+    }
+
     function updateBudget(val) {
-      const budgetNum = Number(val);
-      const guide = budgetGuides.find((b) => b.budget === budgetNum) || budgetGuides[0];
+      const budgetNum = Math.max(8000, Math.min(40000, Number(val) || 18000));
+      const { guide } = getAdviceForAmount(budgetNum);
 
       budgetOutput.textContent = formatEuro(budgetNum);
-      budgetRange.value = String(budgetNum);
+      if (budgetInputNumber && document.activeElement !== budgetInputNumber) {
+        budgetInputNumber.value = budgetNum;
+      }
+      if (budgetRange && document.activeElement !== budgetRange) {
+        budgetRange.value = Math.min(27000, Math.max(13000, budgetNum));
+      }
 
       const decisionLabels = {
         stop: '🛑 NO SUBIR DE PRESUPUESTO',
@@ -309,10 +378,12 @@
         consider: '⚖️ DEPENDE DEL KILOMETRAJE',
       };
 
+      const steps = getActionSteps(budgetNum, guide);
+
       budgetResultCard.innerHTML = `
         <div class="budget-card-header">
           <div class="budget-card-title-group">
-            <span class="budget-badge-winner">🏆 Recomendación con ${formatEuro(budgetNum)}</span>
+            <span class="budget-badge-winner">🏆 Recomendación para ${formatEuro(budgetNum)}</span>
             ${guide.spotlight ? `<span class="budget-spotlight-badge">${escapeHtml(guide.spotlight)}</span>` : ''}
             <h3>${escapeHtml(guide.winnerName)}</h3>
             <p class="budget-variant-sub">${escapeHtml(guide.winnerVariant)} · <strong>${escapeHtml(guide.market)}</strong></p>
@@ -321,7 +392,7 @@
 
         <div class="budget-card-body">
           <div class="budget-why-section">
-            <strong>💎 Por qué esta compra:</strong>
+            <strong>💎 Por qué esta compra con ${formatEuro(budgetNum)}:</strong>
             <p>${escapeHtml(guide.why)}</p>
           </div>
 
@@ -332,12 +403,19 @@
             </div>
             <p>${escapeHtml(guide.nextStepAdvice)}</p>
           </div>
+
+          <div class="budget-action-steps">
+            <strong>📋 Qué hacer exactamente paso a paso:</strong>
+            <ol class="action-steps-list">
+              ${steps.map(step => `<li>${escapeHtml(step)}</li>`).join('')}
+            </ol>
+          </div>
         </div>
       `;
 
       sweetSpotBtns.forEach((btn) => {
         const btnBudget = Number(btn.dataset.setBudget);
-        if (btnBudget === budgetNum) {
+        if (Math.abs(btnBudget - budgetNum) < 500) {
           btn.classList.add('is-active');
         } else {
           btn.classList.remove('is-active');
@@ -345,9 +423,20 @@
       });
     }
 
-    budgetRange.addEventListener('input', (e) => {
-      updateBudget(e.target.value);
-    });
+    if (budgetRange) {
+      budgetRange.addEventListener('input', (e) => {
+        updateBudget(e.target.value);
+      });
+    }
+
+    if (budgetInputNumber) {
+      budgetInputNumber.addEventListener('input', (e) => {
+        updateBudget(e.target.value);
+      });
+      budgetInputNumber.addEventListener('change', (e) => {
+        updateBudget(e.target.value);
+      });
+    }
 
     sweetSpotBtns.forEach((btn) => {
       btn.addEventListener('click', () => {
@@ -355,7 +444,7 @@
       });
     });
 
-    updateBudget(budgetRange.value || 18000);
+    updateBudget(18000);
   }
 
   function renderCars(items) {
