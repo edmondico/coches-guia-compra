@@ -938,8 +938,8 @@
       market: 'VO Barcelona (23.900 € al contado)',
       targetPrice: '23.900 €',
       spendLimit: 'Sí: CHOLLO MODERNO',
-      why: '⭐ EL CHOLLO MODERNO ABSOLUTO: Doble pantalla panorámica de 12,3", 466 l de maletero, 5 años de garantía oficial sin límite de km, interior de 2026 y máximo confort para toda la familia.',
-      nextStepAdvice: 'COMPRA AQUÍ: Por 23.900 € es una barbaridad de producto. El mejor salto tecnológico.',
+      why: '⭐ EL CHOLLO MODERNO: Doble pantalla panorámica de 12,3", 466 l de maletero, 5 años de garantía oficial sin límite de km, interior de 2026 y máximo confort para toda la familia.',
+      nextStepAdvice: 'COMPRA AQUÍ: Por 23.900 € es una de las mejores compras actuales mientras siga disponible. El mejor salto tecnológico.',
       upgradeDecision: 'stop',
       spotlight: '⭐ El Chollo Moderno (23.900 €)'
     },
