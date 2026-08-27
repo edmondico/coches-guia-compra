@@ -42,9 +42,9 @@
       .sort((a, b) => (a.rank ?? 99) - (b.rank ?? 99));
 
     const tags = {
-      global: { num: '01', tag: 'La compra de cabeza (10 años & fiabilidad)' },
-      quality: { num: '02', tag: 'Diseño icónico & Estreno nuevo' },
-      used: { num: '03', tag: 'Dinamismo & Pasión (Corazón)' },
+      global: { num: '01', tag: 'El favorito absoluto (27 años & estreno)' },
+      quality: { num: '02', tag: 'La compra de cabeza (Habitabilidad & V2L)' },
+      used: { num: '03', tag: 'El sweet spot económico (Nuevo ~19k)' },
     };
 
     verdictContainer.innerHTML = verdictCards.map((car) => {
