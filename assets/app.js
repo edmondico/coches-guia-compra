@@ -42,9 +42,9 @@
       .sort((a, b) => (a.rank ?? 99) - (b.rank ?? 99));
 
     const tags = {
-      global: { num: '01', tag: 'La compra maestra (Ocasión deportiva)' },
+      global: { num: '01', tag: 'La compra de cabeza (10 años & fiabilidad)' },
       quality: { num: '02', tag: 'Diseño icónico & Estreno nuevo' },
-      used: { num: '03', tag: 'Máximo ahorro & 7 años garantía' },
+      used: { num: '03', tag: 'Dinamismo & Pasión (Corazón)' },
     };
 
     verdictContainer.innerHTML = verdictCards.map((car) => {
