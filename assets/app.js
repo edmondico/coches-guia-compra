@@ -42,9 +42,9 @@
       .sort((a, b) => (a.rank ?? 99) - (b.rank ?? 99));
 
     const tags = {
-      global: { num: '01', tag: 'El rey de la fiabilidad a 15 años (Toyota Relax)' },
-      quality: { num: '02', tag: 'El BEV nº1 por fiabilidad real (7 años gª)' },
-      used: { num: '03', tag: 'La alternativa eléctrica contrastada (64 kWh)' },
+      global: { num: '01', tag: 'El más equilibrado a 10–15 años (Toyota Relax)' },
+      quality: { num: '02', tag: 'Mejor tecnología, interior & confort (Doble 12,3")' },
+      used: { num: '03', tag: 'Máxima fiabilidad (96,9%) & tamaño ideal (4,10 m)' },
     };
 
     verdictContainer.innerHTML = verdictCards.map((car) => {

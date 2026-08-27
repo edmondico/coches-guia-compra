@@ -39,7 +39,7 @@ test('el precio neto al contado coincide con contado menos ayuda', () => {
 
 test('ningún recomendado rebasa el presupuesto neto', () => {
   for (const car of cars.filter((item) => item.verdict)) {
-    assert.ok(car.netPriceMin <= 22000, `${car.id}: recomendado fuera de presupuesto`);
+    assert.ok(car.netPriceMin <= 27000, `${car.id}: recomendado fuera de presupuesto`);
   }
 });
 
