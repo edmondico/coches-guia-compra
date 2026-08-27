@@ -52,14 +52,17 @@
       const b = car.breakdown;
       return `
         <article class="verdict-card" id="verdict-${car.id}">
-          <span class="verdict-card__number" aria-hidden="true">${meta.num}</span>
-          <p class="verdict-card__tag">${meta.tag}</p>
+          <div class="verdict-card__header">
+            <span class="verdict-card__tag">${meta.tag}</span>
+            <span class="score-badge" aria-label="Nota baremo">${car.score ? car.score.toFixed(2).replace('.', ',') : '—'} / 10</span>
+          </div>
           <h3>${escapeHtml(car.name)}</h3>
           <p class="verdict-card__variant">${escapeHtml(car.variant)}</p>
           <ul class="spec-strip" aria-label="Especificaciones clave">
-            <li><strong>WLTP:</strong> ${car.wltpKm ? car.wltpKm + ' km' : '—'}</li>
-            <li><strong>Batería:</strong> ${car.batteryKwh ? car.batteryKwh + ' kWh' : '—'}</li>
-            <li><strong>Potencia:</strong> ${car.powerCv ? car.powerCv + ' CV' : '—'}</li>
+            ${car.lengthM ? `<li>📏 ${escapeHtml(car.lengthM)}</li>` : ''}
+            ${car.powerCv ? `<li>⚡ ${car.powerCv} CV</li>` : ''}
+            ${car.trunkL ? `<li>🧳 ${escapeHtml(car.trunkL)}</li>` : ''}
+            ${car.seats ? `<li>👥 ${car.seats} pl</li>` : ''}
           </ul>
           ${b ? `
           <div class="verdict-breakdown" aria-label="Desglose de precios y ayudas">
@@ -93,7 +96,7 @@
           </div>
           `}
           <p class="verdict-card__summary">${escapeHtml(car.summary)}</p>
-          <a class="button button--quiet" href="#${car.id}">Ver ficha y fuentes ↓</a>
+          <a class="button button--quiet button--sm" href="#${car.id}">Ver ficha técnica completa ↓</a>
         </article>
       `;
     }).join('');
