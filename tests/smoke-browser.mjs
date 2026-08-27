@@ -146,7 +146,7 @@ try {
   // Check Tier List and Table
   const tierCardsCount = await evaluate('document.querySelectorAll("#tier-cards-view .tier-card").length');
   console.log('Tier cards rendered:', tierCardsCount);
-  assert.equal(tierCardsCount, 16);
+  assert.equal(tierCardsCount, 18);
 
   await evaluate('document.getElementById("btn-view-table").click()');
   await new Promise((r) => setTimeout(r, 50));
@@ -154,7 +154,7 @@ try {
   const tableVisible = await evaluate('!document.getElementById("tier-table-view").hidden');
   const cardsHidden = await evaluate('document.getElementById("tier-cards-view").hidden');
   console.log('Tier table visible:', tableVisible, 'Rows count:', tableRowsCount, 'Cards hidden:', cardsHidden);
-  assert.equal(tableRowsCount, 16);
+  assert.equal(tableRowsCount, 18);
   assert.equal(tableVisible, true);
   assert.equal(cardsHidden, true);
 
@@ -163,10 +163,30 @@ try {
   const cardsVisible = await evaluate('!document.getElementById("tier-cards-view").hidden');
   assert.equal(cardsVisible, true);
 
+  // Check Budget Tool
+  const budgetOutput = await evaluate('document.getElementById("budget-output").textContent');
+  const budgetResultText = await evaluate('document.getElementById("budget-result-card").textContent');
+  console.log('Budget tool initial output:', budgetOutput);
+  assert.match(budgetOutput, /18\.000\s*€/);
+  assert.match(budgetResultText, /Hyundai Kona Hybrid/i);
+
+  // Test moving budget slider to 26000 €
+  await evaluate(`
+    const slider = document.getElementById("budget-range");
+    slider.value = "26000";
+    slider.dispatchEvent(new Event("input"));
+  `);
+  await new Promise((r) => setTimeout(r, 50));
+  const budgetOutput26k = await evaluate('document.getElementById("budget-output").textContent');
+  const budgetResult26k = await evaluate('document.getElementById("budget-result-card").textContent');
+  console.log('Budget tool at 26k:', budgetOutput26k);
+  assert.match(budgetOutput26k, /26\.000\s*€/);
+  assert.match(budgetResult26k, /Toyota Yaris Cross/i);
+
   // Check initial comparison count
   const initialCars = await evaluate('document.querySelectorAll("#comparison-list .car-card").length');
   console.log('Initial cars in comparison:', initialCars);
-  assert.ok(initialCars >= 15);
+  assert.equal(initialCars, 18);
 
   const initialCountText = await evaluate('document.getElementById("result-count").textContent');
   console.log('Result count text:', initialCountText);

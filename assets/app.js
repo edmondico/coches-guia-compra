@@ -287,6 +287,77 @@
     }
   }
 
+  function renderBudgetTool() {
+    const budgetGuides = window.CarData.budgetGuides || [];
+    const budgetRange = document.getElementById('budget-range');
+    const budgetOutput = document.getElementById('budget-output');
+    const budgetResultCard = document.getElementById('budget-result-card');
+    const sweetSpotBtns = document.querySelectorAll('[data-set-budget]');
+
+    if (!budgetRange || !budgetOutput || !budgetResultCard || budgetGuides.length === 0) return;
+
+    function updateBudget(val) {
+      const budgetNum = Number(val);
+      const guide = budgetGuides.find((b) => b.budget === budgetNum) || budgetGuides[0];
+
+      budgetOutput.textContent = formatEuro(budgetNum);
+      budgetRange.value = String(budgetNum);
+
+      const decisionLabels = {
+        stop: '🛑 NO SUBIR DE PRESUPUESTO',
+        upgrade: '⬆️ MERECE LA PENA SUBIR 1.000 €',
+        consider: '⚖️ DEPENDE DEL KILOMETRAJE',
+      };
+
+      budgetResultCard.innerHTML = `
+        <div class="budget-card-header">
+          <div class="budget-card-title-group">
+            <span class="budget-badge-winner">🏆 Recomendación con ${formatEuro(budgetNum)}</span>
+            ${guide.spotlight ? `<span class="budget-spotlight-badge">${escapeHtml(guide.spotlight)}</span>` : ''}
+            <h3>${escapeHtml(guide.winnerName)}</h3>
+            <p class="budget-variant-sub">${escapeHtml(guide.winnerVariant)} · <strong>${escapeHtml(guide.market)}</strong></p>
+          </div>
+        </div>
+
+        <div class="budget-card-body">
+          <div class="budget-why-section">
+            <strong>💎 Por qué esta compra:</strong>
+            <p>${escapeHtml(guide.why)}</p>
+          </div>
+
+          <div class="budget-upgrade-box budget-upgrade--${guide.upgradeDecision}">
+            <div class="upgrade-decision-header">
+              <span class="upgrade-tag">${decisionLabels[guide.upgradeDecision] || 'CONSEJO'}</span>
+              <strong>¿Merece la pena pagar más?</strong>
+            </div>
+            <p>${escapeHtml(guide.nextStepAdvice)}</p>
+          </div>
+        </div>
+      `;
+
+      sweetSpotBtns.forEach((btn) => {
+        const btnBudget = Number(btn.dataset.setBudget);
+        if (btnBudget === budgetNum) {
+          btn.classList.add('is-active');
+        } else {
+          btn.classList.remove('is-active');
+        }
+      });
+    }
+
+    budgetRange.addEventListener('input', (e) => {
+      updateBudget(e.target.value);
+    });
+
+    sweetSpotBtns.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        updateBudget(btn.dataset.setBudget);
+      });
+    });
+
+    updateBudget(budgetRange.value || 18000);
+  }
+
   function renderCars(items) {
     if (!listContainer || !resultCount || !emptyState) return;
 
@@ -403,6 +474,7 @@
   function init() {
     renderVerdicts();
     renderTierList();
+    renderBudgetTool();
     renderWinners();
 
     const initialFilters = parseFilters(new URLSearchParams(window.location.search));

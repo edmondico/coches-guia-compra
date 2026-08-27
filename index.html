@@ -20,6 +20,7 @@
       <nav class="nav" aria-label="Secciones principales">
         <a href="#veredicto">Veredicto</a>
         <a href="#tier-list">Tier List & Tabla</a>
+        <a href="#presupuestos">Por Presupuesto</a>
         <a href="#barcelona">Barcelona & Solar</a>
         <a href="#comparador">Comparador</a>
         <a href="#ayudas">Auto+</a>
@@ -37,7 +38,7 @@
           <p class="hero__lede">Coche familiar compartido (tú + padres) con 3.000–5.000 km/año en Vallirana/Barcelona. Evaluado con un baremo de propiedad a 10–15 años: fiabilidad mecánica demostrada, calidad de construcción, facilidad de acceso para tus padres y tecnología moderna.</p>
           <div class="hero__actions">
             <a class="button button--primary" href="#tier-list">Ver Tier List & Ranking</a>
-            <a class="button button--quiet" href="#comparador">Comparador técnico</a>
+            <a class="button button--quiet" href="#presupuestos">💰 Mejor por Presupuesto</a>
           </div>
         </div>
 
@@ -79,7 +80,7 @@
         <header class="section-heading section-heading--split">
           <div>
             <p class="kicker">Clasificación global a 10–15 años</p>
-            <h2 id="tier-title">Tier List & Tabla Completa (1 al 16)</h2>
+            <h2 id="tier-title">Tier List & Tabla Completa (1 al 18)</h2>
           </div>
           <p>Ordenados rigurosamente de mejor a peor con pros, contras, notas sobre 10 y ficha técnica.</p>
         </header>
@@ -103,7 +104,7 @@
             <span class="highlight-icon">🛡️</span>
             <div>
               <strong>Mejor fiabilidad pura (8,95/10)</strong>
-              <span>Honda HR-V / Jazz Crosstar</span>
+              <span>Honda HR-V / Kona 2021 (98,7%)</span>
             </div>
           </div>
         </div>
@@ -121,6 +122,62 @@
 
         <div id="tier-cards-view" role="tabpanel" aria-labelledby="btn-view-cards" class="tier-cards-container"></div>
         <div id="tier-table-view" role="tabpanel" aria-labelledby="btn-view-table" class="tier-table-container" hidden></div>
+      </div>
+    </section>
+
+    <section class="section budget-section" id="presupuestos" aria-labelledby="budget-title">
+      <div class="shell">
+        <header class="section-heading section-heading--split">
+          <div>
+            <p class="kicker">Guía de compra por precio real en Barcelona</p>
+            <h2 id="budget-title">💰 Mejor coche por cada presupuesto (13k → 27k)</h2>
+          </div>
+          <p>¿Tengo X presupuesto máximo, cuál compraría y merece la pena estirar 1.000 € más? Selecciona tu techo económico.</p>
+        </header>
+
+        <div class="sweet-spots-grid" aria-label="Los 4 puntos dulces del mercado">
+          <button type="button" class="sweet-spot-card sweet-spot--15k" data-set-budget="15000">
+            <span class="sweet-spot__tag">🟢 ~15.000 € · Utilitario</span>
+            <h3>Toyota Yaris Hybrid</h3>
+            <p>120H Style/Active (TNGA · e-CVT · 3,8 l/100km)</p>
+          </button>
+          <button type="button" class="sweet-spot-card sweet-spot--18k" data-set-budget="18000">
+            <span class="sweet-spot__tag">💎 ~18.000 € · Sweet Spot</span>
+            <h3>Hyundai Kona HEV 2021</h3>
+            <p>Maxx 141 CV (98,7% fiabilidad · 21k km · 17.900 €)</p>
+          </button>
+          <button type="button" class="sweet-spot-card sweet-spot--24k" data-set-budget="24000">
+            <span class="sweet-spot__tag">🚀 ~24.000 € · Chollo Moderno</span>
+            <h3>Kona Hybrid Tecno 2024</h3>
+            <p>Doble 12,3" (466 l · 5 años gª · 23.900 €)</p>
+          </button>
+          <button type="button" class="sweet-spot-card sweet-spot--26k" data-set-budget="26000">
+            <span class="sweet-spot__tag">🏆 ~26.000 € · Ganador General</span>
+            <h3>Yaris Cross 130H Style</h3>
+            <p>130 CV 2024 (Toyota Relax 15 años · 25.990 €)</p>
+          </button>
+        </div>
+
+        <div class="budget-tool-card">
+          <div class="budget-slider-block">
+            <div class="budget-slider-header">
+              <label for="budget-range" class="budget-slider-label">Mueve el selector a tu presupuesto:</label>
+              <output id="budget-output" class="budget-output-value">18.000 €</output>
+            </div>
+            <input type="range" id="budget-range" min="13000" max="27000" step="1000" value="18000" aria-label="Presupuesto de compra en euros">
+            <div class="budget-range-ticks" aria-hidden="true">
+              <span>13k</span>
+              <span>15k</span>
+              <span>18k</span>
+              <span>21k</span>
+              <span>24k</span>
+              <span>26k</span>
+              <span>27k</span>
+            </div>
+          </div>
+
+          <div id="budget-result-card" class="budget-result-card"></div>
+        </div>
       </div>
     </section>
 
