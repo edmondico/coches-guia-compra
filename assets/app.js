@@ -172,31 +172,38 @@
                   ${car.trunkL ? `<span class="tier-pill">🧳 ${escapeHtml(car.trunkL)}</span>` : ''}
                 </div>
 
-                <div class="tier-card__pro-con">
-                  <div class="tier-card__pros">
-                    <strong class="pro-heading">🟢 Lo Mejor</strong>
-                    <ul>
-                      ${(car.pros || []).map((p) => `<li>${escapeHtml(p)}</li>`).join('')}
-                    </ul>
-                  </div>
-                  <div class="tier-card__cons">
-                    <strong class="con-heading">🔴 A Considerar</strong>
-                    <ul>
-                      ${(car.cons || []).map((c) => `<li>${escapeHtml(c)}</li>`).join('')}
-                    </ul>
-                  </div>
-                </div>
+                <button type="button" class="tier-card__expand-btn" aria-expanded="false" aria-controls="tier-details-${car.id}">
+                  <span class="expand-text">Ver análisis, pros y contras</span>
+                  <span class="expand-arrow" aria-hidden="true">▾</span>
+                </button>
 
-                <div class="tier-card__verdict">
-                  <p><strong>🎯 Veredicto:</strong> ${escapeHtml(car.bestFor || car.summary)}</p>
-                  ${car.warranty ? `<p class="tier-card__warranty"><strong>🛡️ Garantía:</strong> ${escapeHtml(car.warranty)}</p>` : ''}
-                </div>
+                <div class="tier-card__expandable" id="tier-details-${car.id}">
+                  <div class="tier-card__pro-con">
+                    <div class="tier-card__pros">
+                      <strong class="pro-heading">🟢 Lo Mejor</strong>
+                      <ul>
+                        ${(car.pros || []).map((p) => `<li>${escapeHtml(p)}</li>`).join('')}
+                      </ul>
+                    </div>
+                    <div class="tier-card__cons">
+                      <strong class="con-heading">🔴 A Considerar</strong>
+                      <ul>
+                        ${(car.cons || []).map((c) => `<li>${escapeHtml(c)}</li>`).join('')}
+                      </ul>
+                    </div>
+                  </div>
 
-                <div class="tier-card__footer">
-                  <a href="${car.sourceUrl}" target="_blank" rel="noopener noreferrer" class="tier-link">
-                    ${escapeHtml(car.sourceLabel)} ↗
-                  </a>
-                  <a href="#${car.id}" class="tier-link-more">Ver ficha completa ↓</a>
+                  <div class="tier-card__verdict">
+                    <p><strong>🎯 Veredicto:</strong> ${escapeHtml(car.bestFor || car.summary)}</p>
+                    ${car.warranty ? `<p class="tier-card__warranty"><strong>🛡️ Garantía:</strong> ${escapeHtml(car.warranty)}</p>` : ''}
+                  </div>
+
+                  <div class="tier-card__footer">
+                    <a href="${car.sourceUrl}" target="_blank" rel="noopener noreferrer" class="tier-link">
+                      ${escapeHtml(car.sourceLabel)} ↗
+                    </a>
+                    <a href="#${car.id}" class="tier-link-more">Ver ficha completa ↓</a>
+                  </div>
                 </div>
               </article>
             `).join('')}
@@ -248,16 +255,16 @@
                 </td>
                 <td class="table-pro">
                   <ul>
-                    ${(car.pros || []).slice(0, 2).map((p) => `<li>${escapeHtml(p)}</li>`).join('')}
+                    ${(car.pros || []).map((p) => `<li>${escapeHtml(p)}</li>`).join('')}
                   </ul>
                 </td>
                 <td class="table-con">
                   <ul>
-                    ${(car.cons || []).slice(0, 2).map((c) => `<li>${escapeHtml(c)}</li>`).join('')}
+                    ${(car.cons || []).map((c) => `<li>${escapeHtml(c)}</li>`).join('')}
                   </ul>
                 </td>
                 <td>
-                  <small>${escapeHtml(car.warranty || 'Garantía legal')}</small>
+                  <small>${escapeHtml(car.warranty || '—')}</small>
                 </td>
               </tr>
             `).join('')}
@@ -288,54 +295,51 @@
   }
 
   function renderBudgetTool() {
-    const budgetGuides = window.CarData.budgetGuides || [];
     const budgetRange = document.getElementById('budget-range');
-    const budgetInputNumber = document.getElementById('budget-input-number');
     const budgetOutput = document.getElementById('budget-output');
+    const budgetInputNumber = document.getElementById('budget-input-number');
     const budgetResultCard = document.getElementById('budget-result-card');
     const sweetSpotBtns = document.querySelectorAll('[data-set-budget]');
+    const tldrPills = document.querySelectorAll('.tldr-pill[data-set-budget]');
 
-    if (!budgetRange || !budgetOutput || !budgetResultCard || budgetGuides.length === 0) return;
+    if (!budgetOutput || !budgetResultCard) return;
+
+    const guides = CarData.budgetGuides || [];
 
     function getAdviceForAmount(amount) {
-      if (amount <= 13500) return { guide: budgetGuides[0], bracket: '13k' };
-      if (amount <= 14500) return { guide: budgetGuides[1], bracket: '14k' };
-      if (amount <= 15500) return { guide: budgetGuides[2], bracket: '15k' };
-      if (amount <= 16500) return { guide: budgetGuides[3], bracket: '16k' };
-      if (amount <= 17500) return { guide: budgetGuides[4], bracket: '17k' };
-      if (amount <= 18500) return { guide: budgetGuides[5], bracket: '18k' };
-      if (amount <= 19500) return { guide: budgetGuides[6], bracket: '19k' };
-      if (amount <= 20500) return { guide: budgetGuides[7], bracket: '20k' };
-      if (amount <= 21500) return { guide: budgetGuides[8], bracket: '21k' };
-      if (amount <= 22500) return { guide: budgetGuides[9], bracket: '22k' };
-      if (amount <= 23500) return { guide: budgetGuides[10], bracket: '23k' };
-      if (amount <= 24500) return { guide: budgetGuides[11], bracket: '24k' };
-      if (amount <= 25500) return { guide: budgetGuides[12], bracket: '25k' };
-      if (amount <= 26500) return { guide: budgetGuides[13], bracket: '26k' };
-      return { guide: budgetGuides[14] || budgetGuides[budgetGuides.length - 1], bracket: '27k+' };
+      if (!guides.length) return null;
+      let matched = guides[0];
+      for (const item of guides) {
+        if (amount >= item.budget) {
+          matched = item;
+        } else {
+          break;
+        }
+      }
+      return { guide: matched };
     }
 
     function getActionSteps(amount, guide) {
-      if (amount <= 14000) {
+      if (amount < 15000) {
         return [
-          'Filtra en Coches.net: Toyota Yaris Hybrid 100H acabado Active Tech o Feel (2017–2019).',
-          'Comprueba que tenga libro de revisiones oficial Toyota para verificar el estado de la batería híbrida.',
-          'Consejo inteligente: Si puedes juntar 1.500 € más (15.000 €), accederás a la 4ª generación 120H con chasis TNGA moderno.'
+          'Busca unidades Toyota Yaris 100H Hybrid (2017–2020) con libro sellado en taller oficial.',
+          'Revisa que la batería híbrida mantenga chequeo de salud oficial para activar Toyota Relax.',
+          'Precio objetivo en Barcelona: 11.850 € a 13.990 € al contado.'
         ];
       }
-      if (amount <= 17000) {
+      if (amount < 17900) {
         return [
-          'Filtra: Toyota Yaris 120H Style / Active (años 2020–2022) en concesionarios de Barcelona.',
-          'Pide activación del programa Toyota Relax para extender la cobertura oficial hasta los 15 años.',
-          'Si la prioridad es la entrada/salida fácil para tus padres, tu siguiente gran objetivo son los 17.900 € del Kona SUV.'
+          'Filtra en portales por Toyota Yaris 120H (2021–2022) acabado Style o Active Tech con <60.000 km.',
+          'Comprueba que disponga del sello anual Toyota para mantener garantía Relax hasta 15 años.',
+          'Alternativa SUV: Si puedes estirar ~800–1.000 €, compra el Hyundai Kona HEV 2021 (17.900 €).'
         ];
       }
-      if (amount < 21500) {
+      if (amount < 22000) {
         const saved = Math.max(0, amount - 17900);
         return [
-          'Localiza la unidad activa en Barcelona: Hyundai Kona HEV Maxx 2021 con 21.835 km por 17.900 € al contado.',
-          `¡AHORRA ${formatEuro(saved)}! No pagues 19k–21k por coches con +100.000 km. Esta unidad con 21k km y 98,7% de fiabilidad es imbatible.`,
-          'Solicita informe DGT/Carfax para confirmar kilometraje y prueba dinámica en cuestas y tráfico urbano.'
+          'Ve a ver el Hyundai Kona Hybrid Maxx 2021 (21.835 km por 17.900 € al contado en Barcelona).',
+          'Comprueba la garantía de 12 meses del vendedor y el estado de neumáticos/frenos.',
+          saved > 0 ? `Ahorras ${formatEuro(saved)} de tu presupuesto para seguro y combustible durante años.` : 'Operación al contado cerrada en el sweet spot.'
         ];
       }
       if (amount < 24000) {
@@ -399,7 +403,7 @@
           <div class="budget-upgrade-box budget-upgrade--${guide.upgradeDecision}">
             <div class="upgrade-decision-header">
               <span class="upgrade-tag">${decisionLabels[guide.upgradeDecision] || 'CONSEJO'}</span>
-              <strong>¿Merece la pena pagar más?</strong>
+              <strong class="upgrade-decision-title">¿Merece la pena pagar más?</strong>
             </div>
             <p>${escapeHtml(guide.nextStepAdvice)}</p>
           </div>
@@ -421,7 +425,6 @@
           btn.classList.remove('is-active');
         }
       });
-
       const tableRows = document.querySelectorAll('.budget-row[data-table-budget]');
       tableRows.forEach((row) => {
         const rowBudget = Number(row.dataset.tableBudget);
@@ -434,23 +437,22 @@
     }
 
     if (budgetRange) {
-      budgetRange.addEventListener('input', (e) => {
-        updateBudget(e.target.value);
-      });
+      budgetRange.addEventListener('input', (e) => updateBudget(e.target.value));
     }
 
     if (budgetInputNumber) {
-      budgetInputNumber.addEventListener('input', (e) => {
-        updateBudget(e.target.value);
-      });
-      budgetInputNumber.addEventListener('change', (e) => {
-        updateBudget(e.target.value);
-      });
+      budgetInputNumber.addEventListener('input', (e) => updateBudget(e.target.value));
     }
 
     sweetSpotBtns.forEach((btn) => {
       btn.addEventListener('click', () => {
         updateBudget(btn.dataset.setBudget);
+      });
+    });
+
+    tldrPills.forEach((pill) => {
+      pill.addEventListener('click', () => {
+        updateBudget(pill.dataset.setBudget);
       });
     });
 
@@ -613,6 +615,21 @@
     if (emptyResetBtn) {
       emptyResetBtn.addEventListener('click', resetAll);
     }
+
+    document.addEventListener('click', (e) => {
+      const expandBtn = e.target.closest('.tier-card__expand-btn');
+      if (expandBtn) {
+        const card = expandBtn.closest('.tier-card');
+        if (card) {
+          const isExpanded = card.classList.toggle('is-expanded');
+          expandBtn.setAttribute('aria-expanded', String(isExpanded));
+          const textSpan = expandBtn.querySelector('.expand-text');
+          if (textSpan) {
+            textSpan.textContent = isExpanded ? 'Ocultar análisis y contras' : 'Ver análisis, pros y contras';
+          }
+        }
+      }
+    });
   }
 
   if (document.readyState === 'loading') {

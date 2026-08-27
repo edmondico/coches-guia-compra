@@ -213,6 +213,26 @@ try {
   console.log('Budget tool at 14k (pill):', budgetResult14k.slice(0, 80));
   assert.match(budgetResult14k, /Yaris 100H Feel/i);
 
+  // Test clicking sticky TL;DR pill (26k)
+  await evaluate(`
+    const tldr26k = document.querySelector('.tldr-pill[data-set-budget="26000"]');
+    tldr26k.click();
+  `);
+  await new Promise((r) => setTimeout(r, 50));
+  const budgetResult26kTldr = await evaluate('document.getElementById("budget-result-card").textContent');
+  console.log('Budget tool from TL;DR (26k):', budgetResult26kTldr.slice(0, 80));
+  assert.match(budgetResult26kTldr, /Toyota Yaris Cross/i);
+
+  // Test mobile tier-card expansion toggle
+  await evaluate(`
+    const firstTierBtn = document.querySelector('.tier-card .tier-card__expand-btn');
+    if (firstTierBtn) firstTierBtn.click();
+  `);
+  await new Promise((r) => setTimeout(r, 50));
+  const isFirstCardExpanded = await evaluate('document.querySelector(".tier-card").classList.contains("is-expanded")');
+  console.log('First tier card expanded:', isFirstCardExpanded);
+  assert.equal(isFirstCardExpanded, true);
+
   // Check initial comparison count
   const initialCars = await evaluate('document.querySelectorAll("#comparison-list .car-card").length');
   console.log('Initial cars in comparison:', initialCars);

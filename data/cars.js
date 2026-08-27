@@ -848,7 +848,7 @@
       targetPrice: '~16.850 – 17.090 €',
       spendLimit: 'Sí',
       why: 'Generación moderna TNGA: chasis superior, 116 CV mucho más elásticos, 3,8 l/100 km y cobertura Toyota Relax hasta 15 años. Hay unidades 2022 con 57k km por 17.090 €.',
-      nextStepAdvice: 'Sí: 17k es una compra magnífica, pero por solo +810 € (17.900 €) das el salto a SUV con el Kona HEV 2021.',
+      nextStepAdvice: 'Sí: 17k es una compra magnífica. Si puedes añadir ~800–1.000 €, el Kona HEV 2021 supone un salto importante en acceso, comodidad y practicidad.',
       upgradeDecision: 'upgrade',
       spotlight: null
     },
@@ -886,7 +886,7 @@
       market: 'VO Barcelona (17.900 € al contado)',
       targetPrice: '17.900 €',
       spendLimit: 'No (guardar 2.100 €)',
-      why: 'A 20k solo aparecen Yaris Cross con +100.000 km. El Kona con 21.835 km a 17.900 € es infinitamente mejor compra. Ahorra 2.100 €.',
+      why: 'A 20k solo aparecen Yaris Cross con +100.000 km. Con esa unidad disponible, el Kona con 21.835 km a 17.900 € ofrece una relación km/precio claramente superior. Ahorra 2.100 €.',
       nextStepAdvice: '💰 AHORRA 2.100 €: No compres algo con más kilometraje solo para agotar los 20.000 €.',
       upgradeDecision: 'stop',
       spotlight: null
