@@ -196,6 +196,23 @@ try {
   assert.match(budgetOutput24k, /24\.000\s*€/);
   assert.match(budgetResult24k, /Kona Hybrid Tecno/i);
 
+  // Check 15 master table rows and 15 preset pills
+  const masterTableRows = await evaluate('document.querySelectorAll(".budget-row").length');
+  const presetPillsCount = await evaluate('document.querySelectorAll(".preset-pill").length');
+  console.log('Master table rows:', masterTableRows, 'Preset pills:', presetPillsCount);
+  assert.equal(masterTableRows, 15);
+  assert.equal(presetPillsCount, 15);
+
+  // Test clicking a preset pill (14k)
+  await evaluate(`
+    const pill14k = document.querySelector('.preset-pill[data-set-budget="14000"]');
+    pill14k.click();
+  `);
+  await new Promise((r) => setTimeout(r, 50));
+  const budgetResult14k = await evaluate('document.getElementById("budget-result-card").textContent');
+  console.log('Budget tool at 14k (pill):', budgetResult14k.slice(0, 80));
+  assert.match(budgetResult14k, /Yaris 100H Feel/i);
+
   // Check initial comparison count
   const initialCars = await evaluate('document.querySelectorAll("#comparison-list .car-card").length');
   console.log('Initial cars in comparison:', initialCars);

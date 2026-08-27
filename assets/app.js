@@ -421,6 +421,16 @@
           btn.classList.remove('is-active');
         }
       });
+
+      const tableRows = document.querySelectorAll('.budget-row[data-table-budget]');
+      tableRows.forEach((row) => {
+        const rowBudget = Number(row.dataset.tableBudget);
+        if (Math.abs(rowBudget - budgetNum) < 500) {
+          row.classList.add('is-selected');
+        } else {
+          row.classList.remove('is-selected');
+        }
+      });
     }
 
     if (budgetRange) {
@@ -494,7 +504,7 @@
           <div class="price-block">
             <span class="price-block__label">${conditionLabel(car)}</span>
             <strong class="price-block__value">${priceDisplay(car)}</strong>
-            ${car.aidEstimate > 0 ? `<span class="price-block__aid">Auto+ estimado: −${formatEuro(car.aidEstimate)} (Neto: ${formatEuro(car.netPriceMin)})</span>` : ''}
+            ${car.aidEligible ? `<span class="price-block__aid">Elegible Línea 2 Autónomos (hasta 6.000 € subvención)</span>` : ''}
           </div>
           <p class="car-card__note">${escapeHtml(car.priceNote)}</p>
           ${car.caution ? `<p class="car-card__caution"><strong>Atención:</strong> ${escapeHtml(car.caution)}</p>` : ''}
