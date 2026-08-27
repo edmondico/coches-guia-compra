@@ -2036,6 +2036,21 @@ h4 {
   margin: 0;
 }
 
+.aid-examples {
+  margin-top: var(--space-3);
+  padding: var(--space-2) var(--space-3);
+  background: #f8fafc;
+  border-radius: var(--radius-sm);
+  border-left: 3px solid var(--color-accent);
+  font-size: 0.82rem;
+  color: var(--color-ink);
+}
+
+.aid-examples p {
+  margin: 0;
+  line-height: 1.4;
+}
+
 .rule-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);

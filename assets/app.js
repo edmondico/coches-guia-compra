@@ -504,7 +504,7 @@
           <div class="price-block">
             <span class="price-block__label">${conditionLabel(car)}</span>
             <strong class="price-block__value">${priceDisplay(car)}</strong>
-            ${car.aidEligible ? `<span class="price-block__aid">Elegible Línea 2 Autónomos (hasta 6.000 € subvención)</span>` : ''}
+            ${car.aidEligible ? `<span class="price-block__aid">Línea 2 Autónomos: potencialmente hasta 6.000 € (RD 609/2026 · pendiente convocatoria)</span>` : ''}
           </div>
           <p class="car-card__note">${escapeHtml(car.priceNote)}</p>
           ${car.caution ? `<p class="car-card__caution"><strong>Atención:</strong> ${escapeHtml(car.caution)}</p>` : ''}
