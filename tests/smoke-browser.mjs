@@ -143,6 +143,26 @@ try {
   console.log('Winners rendered:', winners);
   assert.ok(winners >= 8);
 
+  // Check Tier List and Table
+  const tierCardsCount = await evaluate('document.querySelectorAll("#tier-cards-view .tier-card").length');
+  console.log('Tier cards rendered:', tierCardsCount);
+  assert.equal(tierCardsCount, 16);
+
+  await evaluate('document.getElementById("btn-view-table").click()');
+  await new Promise((r) => setTimeout(r, 50));
+  const tableRowsCount = await evaluate('document.querySelectorAll("#tier-table-view .tier-row").length');
+  const tableVisible = await evaluate('!document.getElementById("tier-table-view").hidden');
+  const cardsHidden = await evaluate('document.getElementById("tier-cards-view").hidden');
+  console.log('Tier table visible:', tableVisible, 'Rows count:', tableRowsCount, 'Cards hidden:', cardsHidden);
+  assert.equal(tableRowsCount, 16);
+  assert.equal(tableVisible, true);
+  assert.equal(cardsHidden, true);
+
+  await evaluate('document.getElementById("btn-view-cards").click()');
+  await new Promise((r) => setTimeout(r, 50));
+  const cardsVisible = await evaluate('!document.getElementById("tier-cards-view").hidden');
+  assert.equal(cardsVisible, true);
+
   // Check initial comparison count
   const initialCars = await evaluate('document.querySelectorAll("#comparison-list .car-card").length');
   console.log('Initial cars in comparison:', initialCars);

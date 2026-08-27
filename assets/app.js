@@ -113,6 +113,177 @@
     `).join('');
   }
 
+  function renderTierList() {
+    const tierCardsContainer = document.getElementById('tier-cards-view');
+    const tierTableContainer = document.getElementById('tier-table-view');
+    const btnViewCards = document.getElementById('btn-view-cards');
+    const btnViewTable = document.getElementById('btn-view-table');
+
+    if (!tierCardsContainer || !tierTableContainer) return;
+
+    const sortedCars = [...cars].sort((a, b) => (a.rank ?? 999) - (b.rank ?? 999));
+
+    const tierMeta = {
+      S: { title: 'Tier S · Los Imprescindibles (Candidatos Top)', desc: 'Máximo equilibrio en fiabilidad, confort familiar a 10-15 años y tecnología.', class: 'tier-group--s' },
+      A: { title: 'Tier A · Sobresalientes con Matiz', desc: 'Gran calidad y prestaciones, con algún compromiso menor en tamaño, plazas o juventud.', class: 'tier-group--a' },
+      B: { title: 'Tier B · Alternativas Buenas y Probadas', desc: 'Opciones sólidas de ocasión o de concepto más clásico y utilitario.', class: 'tier-group--b' },
+      C: { title: 'Tier C · Opciones Secundarias / Específicas', desc: 'Recomendables solo si buscas un atributo muy concreto (deportividad, autonomía o bajo coste).', class: 'tier-group--c' },
+      D: { title: 'Tier D · Compromisos Severos', desc: 'Vehículos con limitaciones acusadas en vías rápidas, plazas o calidades básicas.', class: 'tier-group--d' },
+    };
+
+    const tiers = ['S', 'A', 'B', 'C', 'D'];
+    tierCardsContainer.innerHTML = tiers.map((t) => {
+      const groupCars = sortedCars.filter((c) => (c.tier || 'C') === t);
+      if (groupCars.length === 0) return '';
+      const meta = tierMeta[t];
+
+      return `
+        <div class="tier-group ${meta.class}">
+          <div class="tier-group__header">
+            <span class="tier-badge tier-badge--${t}">TIER ${t}</span>
+            <div>
+              <h3>${escapeHtml(meta.title)}</h3>
+              <p>${escapeHtml(meta.desc)}</p>
+            </div>
+          </div>
+          <div class="tier-cards-grid">
+            ${groupCars.map((car) => `
+              <article class="tier-card" id="tier-card-${car.id}">
+                <div class="tier-card__head">
+                  <div class="tier-card__rank-badge">#${car.rank}</div>
+                  <div class="tier-card__titles">
+                    <h4>${escapeHtml(car.name)}</h4>
+                    <p class="tier-card__variant">${escapeHtml(car.variant)}</p>
+                  </div>
+                  <div class="tier-card__score" aria-label="Puntuación baremo">
+                    <strong>${car.score ? car.score.toFixed(1).replace('.', ',') : '—'}</strong>
+                    <span>/ 10</span>
+                  </div>
+                </div>
+
+                <div class="tier-card__meta-bar">
+                  <span class="tier-pill tier-pill--price">${priceDisplay(car)}</span>
+                  <span class="tier-pill tier-pill--tech">${techLabel(car.technology)} · ${marketLabel(car.market)}</span>
+                  ${car.lengthM ? `<span class="tier-pill">📏 ${escapeHtml(car.lengthM)}</span>` : ''}
+                  ${car.seats ? `<span class="tier-pill">👥 ${car.seats} plazas</span>` : ''}
+                  ${car.trunkL ? `<span class="tier-pill">🧳 ${escapeHtml(car.trunkL)}</span>` : ''}
+                </div>
+
+                <div class="tier-card__pro-con">
+                  <div class="tier-card__pros">
+                    <strong class="pro-heading">🟢 Lo Mejor</strong>
+                    <ul>
+                      ${(car.pros || []).map((p) => `<li>${escapeHtml(p)}</li>`).join('')}
+                    </ul>
+                  </div>
+                  <div class="tier-card__cons">
+                    <strong class="con-heading">🔴 A Considerar</strong>
+                    <ul>
+                      ${(car.cons || []).map((c) => `<li>${escapeHtml(c)}</li>`).join('')}
+                    </ul>
+                  </div>
+                </div>
+
+                <div class="tier-card__verdict">
+                  <p><strong>🎯 Veredicto:</strong> ${escapeHtml(car.bestFor || car.summary)}</p>
+                  ${car.warranty ? `<p class="tier-card__warranty"><strong>🛡️ Garantía:</strong> ${escapeHtml(car.warranty)}</p>` : ''}
+                </div>
+
+                <div class="tier-card__footer">
+                  <a href="${car.sourceUrl}" target="_blank" rel="noopener noreferrer" class="tier-link">
+                    ${escapeHtml(car.sourceLabel)} ↗
+                  </a>
+                  <a href="#${car.id}" class="tier-link-more">Ver ficha completa ↓</a>
+                </div>
+              </article>
+            `).join('')}
+          </div>
+        </div>
+      `;
+    }).join('');
+
+    tierTableContainer.innerHTML = `
+      <div class="tier-table-wrapper" tabindex="0" role="region" aria-label="Tabla de clasificación de coches ordenados de mejor a peor">
+        <table class="tier-table">
+          <thead>
+            <tr>
+              <th scope="col"># / Tier</th>
+              <th scope="col">Modelo & Versión</th>
+              <th scope="col">Nota</th>
+              <th scope="col">Propulsión</th>
+              <th scope="col">Medidas & Plazas</th>
+              <th scope="col">Precio Estimado</th>
+              <th scope="col">Lo Mejor (Pros)</th>
+              <th scope="col">A Considerar (Contras)</th>
+              <th scope="col">Garantía Oficial</th>
+            </tr>
+          </thead>
+          <tbody>
+            ${sortedCars.map((car) => `
+              <tr class="tier-row tier-row--${car.tier || 'C'}">
+                <td>
+                  <span class="table-rank">#${car.rank}</span>
+                  <span class="tier-badge tier-badge--sm tier-badge--${car.tier || 'C'}">${car.tier || 'C'}</span>
+                </td>
+                <td>
+                  <strong>${escapeHtml(car.name)}</strong>
+                  <small>${escapeHtml(car.variant)}</small>
+                </td>
+                <td>
+                  <strong class="table-score">${car.score ? car.score.toFixed(1).replace('.', ',') : '—'}</strong>
+                </td>
+                <td>
+                  <span class="table-tech">${techLabel(car.technology)}</span>
+                  <small>${car.powerCv ? car.powerCv + ' CV' : ''} ${car.batteryKwh ? '· ' + car.batteryKwh + ' kWh' : ''}</small>
+                </td>
+                <td>
+                  <span>${car.lengthM || '—'}</span>
+                  <small>${car.seats ? car.seats + ' plazas' : ''} · ${car.trunkL || ''}</small>
+                </td>
+                <td>
+                  <strong class="table-price">${priceDisplay(car)}</strong>
+                </td>
+                <td class="table-pro">
+                  <ul>
+                    ${(car.pros || []).slice(0, 2).map((p) => `<li>${escapeHtml(p)}</li>`).join('')}
+                  </ul>
+                </td>
+                <td class="table-con">
+                  <ul>
+                    ${(car.cons || []).slice(0, 2).map((c) => `<li>${escapeHtml(c)}</li>`).join('')}
+                  </ul>
+                </td>
+                <td>
+                  <small>${escapeHtml(car.warranty || 'Garantía legal')}</small>
+                </td>
+              </tr>
+            `).join('')}
+          </tbody>
+        </table>
+      </div>
+    `;
+
+    if (btnViewCards && btnViewTable) {
+      btnViewCards.onclick = () => {
+        btnViewCards.classList.add('is-active');
+        btnViewCards.setAttribute('aria-selected', 'true');
+        btnViewTable.classList.remove('is-active');
+        btnViewTable.setAttribute('aria-selected', 'false');
+        tierCardsContainer.hidden = false;
+        tierTableContainer.hidden = true;
+      };
+
+      btnViewTable.onclick = () => {
+        btnViewTable.classList.add('is-active');
+        btnViewTable.setAttribute('aria-selected', 'true');
+        btnViewCards.classList.remove('is-active');
+        btnViewCards.setAttribute('aria-selected', 'false');
+        tierTableContainer.hidden = false;
+        tierCardsContainer.hidden = true;
+      };
+    }
+  }
+
   function renderCars(items) {
     if (!listContainer || !resultCount || !emptyState) return;
 
@@ -228,6 +399,7 @@
 
   function init() {
     renderVerdicts();
+    renderTierList();
     renderWinners();
 
     const initialFilters = parseFilters(new URLSearchParams(window.location.search));

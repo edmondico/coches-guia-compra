@@ -41,11 +41,28 @@
       },
       summary: 'El coche más equilibrado para vuestra familia a 10–15 años: 4,17 m, 130 CV con respuesta mejorada, e-CVT sin embragues ni turbos, pantallas grandes (10,5" y 12,3"), posición elevada fácil para tus padres y llave digital compartida.',
       bestFor: 'Máxima tranquilidad mecánica a 15 años, facilidad de acceso para padres y tecnología actualizada 2024',
-      caution: 'Incidencias menores reportadas en batería auxiliar de 12 V si se deja parado meses enteros.',
+      caution: 'Incidencias menores reportadas en batería auxiliar de 12 V si se deja parado meses.',
       availability: 'Stock certificado en concesionarios Toyota Barcelona',
       winner: 'El más equilibrado a 10–15 años (Toyota Relax)',
       verdict: 'global',
       rank: 1,
+      tier: 'S',
+      score: 9.1,
+      lengthM: '4,17 m',
+      trunkL: '397 l',
+      seats: 5,
+      warranty: 'Hasta 15 años / 250.000 km (Toyota Relax)',
+      pros: [
+        'Motor 130 CV con respuesta más ágil y solvente',
+        'Transmisión e-CVT indestructible sin embrague tradicional ni turbo',
+        'Garantía Toyota Relax extensible hasta los 15 años o 250.000 km',
+        'Pantalla central de 10,5" y cuadro digital de 12,3" (Style 2024)',
+        'Posición de conducción crossover elevada: acceso muy cómodo para tus padres'
+      ],
+      cons: [
+        'Incidencias menores reportadas en batería auxiliar de 12 V si pasa semanas parado',
+        'Insonorización algo ruidosa en aceleraciones a fondo por el cambio e-CVT'
+      ]
     },
     {
       id: 'hyundai-kona-hev-tecno-used',
@@ -83,6 +100,22 @@
       winner: 'Mejor tecnología, interior & confort (Doble 12,3")',
       verdict: 'quality',
       rank: 2,
+      tier: 'S',
+      score: 9.0,
+      lengthM: '4,35 m',
+      trunkL: '466 l',
+      seats: 5,
+      warranty: '5 años sin límite km (extensible a 10 años)',
+      pros: [
+        'Doble pantalla panorámica integrada de 12,3" con sensación interior de 2026',
+        'Maletero enorme de 466 l y gran amplitud en las 5 plazas',
+        'Extraordinaria relación calidad/equipamiento/precio (~23.900 € en BCN)',
+        '5 años de garantía oficial Hyundai sin límite de kilometraje'
+      ],
+      cons: [
+        'Mide 4,35 m (el tamaño límite para calles estrechas y garaje en Vallirana)',
+        'Caja de cambios de doble embrague DCT con mayor complejidad mecánica'
+      ]
     },
     {
       id: 'honda-jazz-crosstar-new',
@@ -120,6 +153,23 @@
       winner: 'Máxima fiabilidad (96,9%) & tamaño ideal (4,10 m)',
       verdict: 'used',
       rank: 3,
+      tier: 'S',
+      score: 8.9,
+      lengthM: '4,10 m',
+      trunkL: '304 – 1.205 l',
+      seats: 5,
+      warranty: 'Hasta 8 años de garantía oficial Honda',
+      pros: [
+        '96,9% de fiabilidad What Car? (Honda premiada como marca nº1 con 96,6%)',
+        'Asientos Magic Seats con modularidad vertical y abatible inigualable',
+        'Visibilidad panorámica delantera excepcional gracias a los pilares A finos',
+        'Mandos físicos convencionales y sencillez absoluta de uso para tus padres',
+        'Estrenar coche nuevo por 26.750 € con hasta 8 años de garantía oficial'
+      ],
+      cons: [
+        'Estética exterior monovolumen crossover muy sobria y discreta',
+        'Pantalla multimedia central de 9" más modesta que la del Kona'
+      ]
     },
     {
       id: 'honda-hrv-ehev-used',
@@ -145,6 +195,21 @@
       availability: 'Stock en compraventas y concesionarios BCN',
       winner: 'El SUV híbrido más refinado y cómodo',
       rank: 4,
+      tier: 'A',
+      score: 8.8,
+      lengthM: '4,36 m',
+      trunkL: '319 l',
+      seats: 5,
+      warranty: 'Hasta 5–8 años de garantía oficial Honda',
+      pros: [
+        '97,5% de fiabilidad en encuestas independientes y rodadura señorial',
+        'Sistema híbrido e:HEV muy refinado, suave y silencioso',
+        'Asientos y volante calefactables + Magic Seats traseros'
+      ],
+      cons: [
+        'Maletero de 319 l algo ajustado para un SUV de 4,36 m',
+        'Infoentretenimiento de 9" con gráficos tradicionales'
+      ]
     },
     {
       id: 'renault-5-techno-new',
@@ -174,6 +239,21 @@
       availability: 'Pedidos oficiales 2026',
       winner: 'El más bonito y tecnológico (Google nativo)',
       rank: 5,
+      tier: 'A',
+      score: 8.7,
+      lengthM: '3,92 m',
+      trunkL: '326 l',
+      seats: 5,
+      warranty: '3 años general / 8 años (160.000 km) batería',
+      pros: [
+        'El diseño más icónico, atractivo y juvenil de todo el mercado',
+        'Pantalla OpenR Link 10,1" con Google Automotive nativo y Maps integrado',
+        '5 plazas en solo 3,92 m con tacto de conducción ágil (AmpR Small) y One Pedal'
+      ],
+      cons: [
+        'PVP oficial de 27.954 € (exige ayudas para situarse en ~23.500 €)',
+        'Modelo recién llegado sin historial estadístico de longevidad a 10 años'
+      ]
     },
     {
       id: 'hyundai-inster-new',
@@ -203,6 +283,21 @@
       availability: 'Disponible en concesionarios Hyundai',
       winner: 'El más fácil de manejar (Modular · 4 plazas)',
       rank: 6,
+      tier: 'A',
+      score: 8.6,
+      lengthM: '3,83 m',
+      trunkL: '238 – 351 l',
+      seats: 4,
+      warranty: '5 años sin límite km / 8 años (160.000 km) batería',
+      pros: [
+        '3,83 m con suelo plano y postura alta: visibilidad y acceso inmejorables para padres',
+        'Asientos traseros deslizantes 16 cm para pasar de 238 a 351 l de maletero',
+        'Función V2L bidireccional y 5 años de garantía total sin límite de km'
+      ],
+      cons: [
+        '⚠️ Homologado para 4 plazas (no 5)',
+        'Estética exterior crossover peculiar que conviene ver en persona'
+      ]
     },
     {
       id: 'kia-niro-hev-used',
@@ -228,6 +323,20 @@
       availability: 'Oferta frecuente en Barcelona',
       winner: 'Gran habitabilidad y 7 años de garantía',
       rank: 7,
+      tier: 'A',
+      score: 8.5,
+      lengthM: '4,42 m',
+      trunkL: '451 l',
+      seats: 5,
+      warranty: '7 años / 150.000 km de fábrica',
+      pros: [
+        'Doble pantalla de 10,25" y gran calidad de rodadura en carretera',
+        '7 años de garantía oficial Kia transferible',
+        'Amplitud de maletero (451 l) y confort de asientos'
+      ],
+      cons: [
+        'Mide 4,42 m (el más voluminoso para calles estrechas y garajes justos)'
+      ]
     },
     {
       id: 'toyota-yaris-hybrid-new',
@@ -253,6 +362,21 @@
       availability: 'Concesionarios Toyota',
       winner: 'El utilitario híbrido más fiable',
       rank: 8,
+      tier: 'B',
+      score: 8.5,
+      lengthM: '3,94 m',
+      trunkL: '286 l',
+      seats: 5,
+      warranty: 'Hasta 15 años / 250.000 km (Toyota Relax)',
+      pros: [
+        'Estrenar coche nuevo por 21.500 € con Toyota Relax hasta 15 años',
+        'Consumo real bajísimo de ~3,8–4,2 l/100 km en ciudad',
+        'Mecánica e-CVT sin embrague ni turbo'
+      ],
+      cons: [
+        'Carrocería baja (acceso menos cómodo para padres que el Yaris Cross)',
+        'Pantallas e infoentretenimiento más sencillos'
+      ]
     },
     {
       id: 'kia-eniro-64-used',
@@ -278,6 +402,19 @@
       availability: 'Stock en concesionarios VO',
       winner: 'Mejor BEV en fiabilidad demostrada',
       rank: 9,
+      tier: 'B',
+      score: 8.4,
+      lengthM: '4,38 m',
+      trunkL: '451 l',
+      seats: 5,
+      warranty: '7 años / 150.000 km oficial Kia',
+      pros: [
+        '94,4% de fiabilidad en encuestas What Car? (Top 5 entre 25 eléctricos)',
+        '455 km WLTP y 451 l de maletero sin mantenimiento térmico'
+      ],
+      cons: [
+        'Mide 4,38 m y batería de 64 kWh sobredimensionada para 3.000 km/año'
+      ]
     },
     {
       id: 'hyundai-kona-64-used',
@@ -303,6 +440,21 @@
       availability: 'Stock abundante en ocasión',
       winner: 'Autonomía para viajar (64 kWh)',
       rank: 10,
+      tier: 'B',
+      score: 8.3,
+      lengthM: '4,18 m',
+      trunkL: '332 l',
+      seats: 5,
+      warranty: '5 años sin límite km / 8 años batería',
+      pros: [
+        'Plataforma probada desde 2018 con 91,1% de fiabilidad',
+        'Batería grande de 64 kWh con ~390 km reales combinados',
+        'Precio ajustado entre 17.500 € y 19.500 €'
+      ],
+      cons: [
+        'Diseño e infoentretenimiento de anterior generación frente al Kona 2024',
+        'Batería sobredimensionada para hacer recados locales'
+      ]
     },
     {
       id: 'citroen-ec3-44-new',
@@ -332,6 +484,20 @@
       availability: 'Ofertas oficiales activas',
       winner: 'Compra económica de confort',
       rank: 11,
+      tier: 'B',
+      score: 8.2,
+      lengthM: '4,01 m',
+      trunkL: '310 l',
+      seats: 5,
+      warranty: '3 años general / 8 años (160.000 km) batería',
+      pros: [
+        'Suspensión y asientos Advanced Comfort muy mullidos para baches y badenes',
+        '5 plazas reales y precio final de derribo de ~16.000–16.800 €'
+      ],
+      cons: [
+        'Materiales interiores y ajustes deliberadamente low-cost',
+        'Menor sensación de solidez a largo plazo frente a japoneses'
+      ]
     },
     {
       id: 'renault-twingo-techno-new',
@@ -361,6 +527,20 @@
       availability: 'Gama oficial activa',
       winner: 'El más compacto para recados (4 plazas)',
       rank: 12,
+      tier: 'C',
+      score: 8.0,
+      lengthM: '3,79 m',
+      trunkL: '219 l',
+      seats: 4,
+      warranty: '3 años general / 8 años batería',
+      pros: [
+        '3,79 m con radio de giro récord: maniobrabilidad insuperable',
+        'Google integrado, cámara trasera, Stop&Go y One Pedal por <19k'
+      ],
+      cons: [
+        '⚠️ Homologado para 4 plazas (no 5)',
+        'Batería de 27,5 kWh enfocada a uso estrictamente local'
+      ]
     },
     {
       id: 'cupra-born-58-used',
@@ -386,6 +566,20 @@
       availability: 'Mercado de ocasión activo',
       winner: 'Prestaciones deportivas (conductor único)',
       rank: 13,
+      tier: 'C',
+      score: 7.8,
+      lengthM: '4,32 m',
+      trunkL: '385 l',
+      seats: 5,
+      warranty: '3 años general / 8 años batería',
+      pros: [
+        'Propulsión trasera (204/231 CV), chasis firme y estética prémium',
+        'Gran dinamismo y tacto en curva'
+      ],
+      cons: [
+        'Acceso bajo y suspensión firme poco adecuada para tus padres',
+        'Software de pantalla MEB requiere verificar versión 3.0+'
+      ]
     },
     {
       id: 'byd-dolphin-surf-new',
@@ -411,6 +605,20 @@
       availability: 'Concesionarios oficiales BYD',
       winner: 'Garantía 8 años / 250.000 km',
       rank: 14,
+      tier: 'C',
+      score: 7.7,
+      lengthM: '3,99 m',
+      trunkL: '308 l',
+      seats: 5,
+      warranty: '8 años / 250.000 km de batería',
+      pros: [
+        'Batería Blade LFP estructural con garantía de 8 años o 250.000 km',
+        '156 CV de potencia y buen equipamiento de serie'
+      ],
+      cons: [
+        'Red de posventa y valor de reventa a 10 años menos contrastados',
+        'Diseño interior con pantalla giratoria peculiar'
+      ]
     },
     {
       id: 'mg4-51-used',
@@ -436,6 +644,20 @@
       availability: 'Stock abundante en Km0 y VO',
       winner: 'Mejor relación precio / 7 años de garantía',
       rank: 15,
+      tier: 'C',
+      score: 7.6,
+      lengthM: '4,29 m',
+      trunkL: '363 l',
+      seats: 5,
+      warranty: '7 años / 150.000 km de fábrica',
+      pros: [
+        'Propulsión trasera de 170 CV y 7 años de garantía oficial',
+        'Precio de compraventa muy asequible en ocasión'
+      ],
+      cons: [
+        'Ajustes interiores y tacto de pedal de freno mejorables',
+        'Servicio posventa un escalón por debajo de marcas consolidadas'
+      ]
     },
     {
       id: 'dacia-spring-new',
@@ -465,6 +687,20 @@
       availability: 'Oferta oficial activa',
       winner: 'Menor desembolso nuevo',
       rank: 16,
+      tier: 'D',
+      score: 6.8,
+      lengthM: '3,70 m',
+      trunkL: '308 l',
+      seats: 4,
+      warranty: '3 años general / 8 años batería',
+      pros: [
+        'El eléctrico nuevo más barato del mercado (~13.670 € con Auto+)',
+        'Dimensiones diminutas y peso pluma para maniobras urbanas'
+      ],
+      cons: [
+        'Aislamiento acústico y estabilidad justos para vías rápidas',
+        '⚠️ 4 plazas y calidades de acabado muy básicas'
+      ]
     },
   ];
 

@@ -19,6 +19,7 @@
       </a>
       <nav class="nav" aria-label="Secciones principales">
         <a href="#veredicto">Veredicto</a>
+        <a href="#tier-list">Tier List & Tabla</a>
         <a href="#barcelona">Barcelona & Solar</a>
         <a href="#comparador">Comparador</a>
         <a href="#ayudas">Auto+</a>
@@ -35,8 +36,8 @@
           <h1 id="page-title">Qué coche comprar con <span>≤26.000&nbsp;€</span></h1>
           <p class="hero__lede">Coche compartido familiar (tú + padres) con poquísimos kilómetros al año en Vallirana/Barcelona. Evaluado con un baremo de propiedad a 10–15 años: fiabilidad mecánica demostrada, calidad de construcción, facilidad de acceso y tecnología moderna.</p>
           <div class="hero__actions">
-            <a class="button button--primary" href="#comparador">Comparar candidatos</a>
-            <a class="button button--quiet" href="#barcelona">Ventajas Barcelona & Solar</a>
+            <a class="button button--primary" href="#tier-list">Ver Tier List & Ranking</a>
+            <a class="button button--quiet" href="#comparador">Comparador técnico</a>
           </div>
         </div>
 
@@ -70,6 +71,30 @@
         <div class="verdict-grid" id="verdict-list" aria-live="polite">
           <p class="loading-copy">Preparando recomendaciones…</p>
         </div>
+      </div>
+    </section>
+
+    <section class="section tier-section" id="tier-list" aria-labelledby="tier-title">
+      <div class="shell">
+        <header class="section-heading section-heading--split">
+          <div>
+            <p class="kicker">Clasificación global a 10–15 años</p>
+            <h2 id="tier-title">Tier List & Tabla Completa (1 al 16)</h2>
+          </div>
+          <p>Ordenados rigurosamente de mejor a peor con pros, contras, notas sobre 10 y ficha técnica.</p>
+        </header>
+
+        <div class="tier-controls" role="tablist" aria-label="Modo de visualización de la clasificación">
+          <button class="tier-tab-btn is-active" id="btn-view-cards" role="tab" aria-selected="true" aria-controls="tier-cards-view" type="button">
+            🎴 Vista Tier List (Tarjetas Pros/Contras)
+          </button>
+          <button class="tier-tab-btn" id="btn-view-table" role="tab" aria-selected="false" aria-controls="tier-table-view" type="button">
+            📊 Vista Tabla Resumen
+          </button>
+        </div>
+
+        <div id="tier-cards-view" role="tabpanel" aria-labelledby="btn-view-cards" class="tier-cards-container"></div>
+        <div id="tier-table-view" role="tabpanel" aria-labelledby="btn-view-table" class="tier-table-container" hidden></div>
       </div>
     </section>
 
