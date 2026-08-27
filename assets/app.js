@@ -42,9 +42,9 @@
       .sort((a, b) => (a.rank ?? 99) - (b.rank ?? 99));
 
     const tags = {
-      global: { num: '01', tag: 'El favorito absoluto (27 años & estreno)' },
-      quality: { num: '02', tag: 'La compra de cabeza (Habitabilidad & V2L)' },
-      used: { num: '03', tag: 'El sweet spot económico (Nuevo ~19k)' },
+      global: { num: '01', tag: 'La compra familiar maestra (5 plazas & confort)' },
+      quality: { num: '02', tag: 'El más fácil de manejar (Modular · 4 plazas)' },
+      used: { num: '03', tag: 'El capricho de diseño & estreno (5 plazas)' },
     };
 
     verdictContainer.innerHTML = verdictCards.map((car) => {
