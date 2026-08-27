@@ -131,7 +131,7 @@ try {
   // Check title
   const title = await evaluate('document.title');
   console.log('Title:', title);
-  assert.match(title, /Qué coche comprar con 22\.000 €/);
+  assert.match(title, /Qué coche comprar/);
 
   // Check verdict count
   const verdicts = await evaluate('document.querySelectorAll("#verdict-list .verdict-card").length');

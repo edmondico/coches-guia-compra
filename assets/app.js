@@ -42,9 +42,9 @@
       .sort((a, b) => (a.rank ?? 99) - (b.rank ?? 99));
 
     const tags = {
-      global: { num: '01', tag: 'El más equilibrado a 10–15 años (Toyota Relax)' },
-      quality: { num: '02', tag: 'Mejor tecnología, interior & confort (Doble 12,3")' },
-      used: { num: '03', tag: 'Máxima fiabilidad (96,9%) & tamaño ideal (4,10 m)' },
+      global: { num: '01', tag: '🏆 1.º · El mejor equilibrio global (Toyota Relax 15 años)' },
+      quality: { num: '02', tag: '💻 2.º · Mejor tecnología, interior & confort (Doble 12,3")' },
+      used: { num: '03', tag: '🛡️ 3.º · El SUV híbrido más refinado y sólido (97,5% fiabilidad)' },
     };
 
     verdictContainer.innerHTML = verdictCards.map((car) => {
@@ -156,7 +156,7 @@
                     <p class="tier-card__variant">${escapeHtml(car.variant)}</p>
                   </div>
                   <div class="tier-card__score" aria-label="Puntuación baremo">
-                    <strong>${car.score ? car.score.toFixed(1).replace('.', ',') : '—'}</strong>
+                    <strong>${car.score ? car.score.toFixed(2).replace('.', ',') : '—'}</strong>
                     <span>/ 10</span>
                   </div>
                 </div>
@@ -230,7 +230,7 @@
                   <small>${escapeHtml(car.variant)}</small>
                 </td>
                 <td>
-                  <strong class="table-score">${car.score ? car.score.toFixed(1).replace('.', ',') : '—'}</strong>
+                  <strong class="table-score">${car.score ? car.score.toFixed(2).replace('.', ',') : '—'}</strong>
                 </td>
                 <td>
                   <span class="table-tech">${techLabel(car.technology)}</span>
