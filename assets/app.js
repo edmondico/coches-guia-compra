@@ -42,9 +42,9 @@
       .sort((a, b) => (a.rank ?? 99) - (b.rank ?? 99));
 
     const tags = {
-      global: { num: '01', tag: 'La compra recomendada' },
-      quality: { num: '02', tag: 'Diseño y calidad' },
-      used: { num: '03', tag: 'Máximo ahorro de ocasión' },
+      global: { num: '01', tag: 'La compra maestra (Ocasión deportiva)' },
+      quality: { num: '02', tag: 'Diseño icónico & Estreno nuevo' },
+      used: { num: '03', tag: 'Máximo ahorro & 7 años garantía' },
     };
 
     verdictContainer.innerHTML = verdictCards.map((car) => {
