@@ -49,6 +49,7 @@
 
     verdictContainer.innerHTML = verdictCards.map((car) => {
       const meta = tags[car.verdict] || { num: '★', tag: 'Recomendado' };
+      const b = car.breakdown;
       return `
         <article class="verdict-card" id="verdict-${car.id}">
           <span class="verdict-card__number" aria-hidden="true">${meta.num}</span>
@@ -60,10 +61,37 @@
             <li><strong>Batería:</strong> ${car.batteryKwh ? car.batteryKwh + ' kWh' : '—'}</li>
             <li><strong>Potencia:</strong> ${car.powerCv ? car.powerCv + ' CV' : '—'}</li>
           </ul>
+          ${b ? `
+          <div class="verdict-breakdown" aria-label="Desglose de precios y ayudas">
+            <div class="breakdown-row">
+              <span>${escapeHtml(b.initialLabel)}</span>
+              <strong>${escapeHtml(b.initialValue)}</strong>
+            </div>
+            <div class="breakdown-row breakdown-row--discount">
+              <span>${escapeHtml(b.aidLabel)}</span>
+              <b>${escapeHtml(b.aidValue)}</b>
+            </div>
+            ${b.extraLabel ? `
+            <div class="breakdown-row breakdown-row--extra">
+              <span>${escapeHtml(b.extraLabel)}</span>
+              <em>${escapeHtml(b.extraValue)}</em>
+            </div>` : ''}
+            <div class="breakdown-row breakdown-row--final">
+              <span>${escapeHtml(b.finalLabel)}</span>
+              <strong class="price-highlight">${escapeHtml(b.finalValue)}</strong>
+            </div>
+            ${b.financeNote ? `
+            <div class="breakdown-row breakdown-row--finance">
+              <span>Alternativa:</span>
+              <small>${escapeHtml(b.financeNote)}</small>
+            </div>` : ''}
+          </div>
+          ` : `
           <div class="verdict-card__price">
             <span>Precio neto estimado</span>
             <strong>${formatEuro(car.netPriceMin)}</strong>
           </div>
+          `}
           <p class="verdict-card__summary">${escapeHtml(car.summary)}</p>
           <a class="button button--quiet" href="#${car.id}">Ver ficha y fuentes ↓</a>
         </article>
@@ -163,16 +191,21 @@
 
   function updateUrl(filters) {
     if (typeof window === 'undefined' || !window.history || !window.history.replaceState) return;
+    if (window.location.protocol === 'file:') return;
 
-    const params = new URLSearchParams();
-    if (filters.market && filters.market !== 'all') params.set('market', filters.market);
-    if (filters.technology && filters.technology !== 'all') params.set('technology', filters.technology);
-    if (filters.sort && filters.sort !== 'recommended') params.set('sort', filters.sort);
-    if (filters.query && filters.query.trim()) params.set('q', filters.query.trim());
+    try {
+      const params = new URLSearchParams();
+      if (filters.market && filters.market !== 'all') params.set('market', filters.market);
+      if (filters.technology && filters.technology !== 'all') params.set('technology', filters.technology);
+      if (filters.sort && filters.sort !== 'recommended') params.set('sort', filters.sort);
+      if (filters.query && filters.query.trim()) params.set('q', filters.query.trim());
 
-    const queryString = params.toString();
-    const newUrl = queryString ? `${window.location.pathname}?${queryString}${window.location.hash}` : `${window.location.pathname}${window.location.hash}`;
-    window.history.replaceState(null, '', newUrl);
+      const queryString = params.toString();
+      const newUrl = queryString ? `${window.location.pathname}?${queryString}${window.location.hash}` : `${window.location.pathname}${window.location.hash}`;
+      window.history.replaceState(null, '', newUrl);
+    } catch {
+      // Ignorar restricciones en protocolos locales o sandboxes
+    }
   }
 
   function applyFilters() {
