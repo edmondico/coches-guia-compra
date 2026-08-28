@@ -327,6 +327,21 @@ try {
   assert.equal(isFirstCardExpanded, true);
   assert.equal(expandedTierDetailDisplay, 'flex');
 
+  // Verify car images in verdict, tier and gallery interactions
+  const verdictImgsCount = await evaluate('document.querySelectorAll(".verdict-card__img").length');
+  assert.equal(verdictImgsCount, 3);
+
+  const galleryThumbCount = await evaluate('document.querySelectorAll(".tier-card .car-gallery__thumb-btn").length');
+  assert.ok(galleryThumbCount > 1, 'Must have multiple gallery thumbnails');
+
+  const initialFeaturedSrc = await evaluate('document.querySelector(".tier-card .car-gallery__featured").src');
+  await evaluate('document.querySelectorAll(".tier-card .car-gallery__thumb-btn")[1].click()');
+  await new Promise((r) => setTimeout(r, 50));
+  const newFeaturedSrc = await evaluate('document.querySelector(".tier-card .car-gallery__featured").src');
+  const secondThumbActive = await evaluate('document.querySelectorAll(".tier-card .car-gallery__thumb-btn")[1].classList.contains("is-active")');
+  assert.notEqual(initialFeaturedSrc, newFeaturedSrc);
+  assert.equal(secondThumbActive, true);
+
   // Check initial comparison count
   const initialCars = await evaluate('document.querySelectorAll("#comparison-list .car-card").length');
   console.log('Initial cars in comparison:', initialCars);

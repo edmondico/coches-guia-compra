@@ -65,7 +65,15 @@
     "cons": [
       "Incidencias menores reportadas en batería auxiliar de 12 V si pasa semanas parado",
       "Insonorización algo ruidosa en aceleraciones a fondo por el cambio e-CVT"
-    ]
+    ],
+    "images": {
+      "main": "assets/images/cars/toyota-yaris-cross-130-used-main.jpg",
+      "gallery": [
+        "assets/images/cars/toyota-yaris-cross-130-used-main.jpg",
+        "assets/images/cars/toyota-yaris-cross-130-used-gallery-1.jpg",
+        "assets/images/cars/toyota-yaris-cross-130-used-gallery-2.jpg"
+      ]
+    }
   },
   {
     "id": "hyundai-kona-hev-tecno-used",
@@ -121,7 +129,15 @@
     "cons": [
       "Mide 4,35 m (+18 cm que el Yaris Cross, límite para maniobrar en garajes justos)",
       "Caja automática DCT con doble embrague tradicional (más compleja que e-CVT)"
-    ]
+    ],
+    "images": {
+      "main": "assets/images/cars/hyundai-kona-hev-tecno-used-main.jpg",
+      "gallery": [
+        "assets/images/cars/hyundai-kona-hev-tecno-used-main.jpg",
+        "assets/images/cars/hyundai-kona-hev-tecno-used-gallery-1.jpg",
+        "assets/images/cars/hyundai-kona-hev-tecno-used-gallery-2.jpg"
+      ]
+    }
   },
   {
     "id": "honda-hrv-ehev-used",
@@ -177,7 +193,15 @@
     "cons": [
       "Maletero de 319 l (el más modesto entre los crossover medianos)",
       "Pantalla multimedia de 9\" correcta pero menos vistosa que la de Hyundai"
-    ]
+    ],
+    "images": {
+      "main": "assets/images/cars/honda-hrv-ehev-used-main.jpg",
+      "gallery": [
+        "assets/images/cars/honda-hrv-ehev-used-main.jpg",
+        "assets/images/cars/honda-hrv-ehev-used-gallery-1.jpg",
+        "assets/images/cars/honda-hrv-ehev-used-gallery-2.jpg"
+      ]
+    }
   },
   {
     "id": "hyundai-kona-hev-2021-used",
@@ -231,7 +255,15 @@
       "12 meses de garantía comercial del vendedor (no conserva la cobertura de fábrica de 5 años)",
       "Pantalla central táctil de 8\" de generación anterior (con CarPlay/Android Auto por cable)",
       "Caja automática DCT de doble embrague (requiere mantenimiento periódico)"
-    ]
+    ],
+    "images": {
+      "main": "assets/images/cars/hyundai-kona-hev-2021-used-main.jpg",
+      "gallery": [
+        "assets/images/cars/hyundai-kona-hev-2021-used-main.jpg",
+        "assets/images/cars/hyundai-kona-hev-2021-used-gallery-1.jpg",
+        "assets/images/cars/hyundai-kona-hev-2021-used-gallery-2.jpg"
+      ]
+    }
   },
   {
     "id": "honda-jazz-crosstar-new",
@@ -273,7 +305,14 @@
     "cons": [
       "Estética exterior monovolumen crossover muy sobria y discreta",
       "Pantalla multimedia central de 9\" más modesta que la del Kona"
-    ]
+    ],
+    "images": {
+      "main": "assets/images/cars/honda-jazz-crosstar-new-main.jpg",
+      "gallery": [
+        "assets/images/cars/honda-jazz-crosstar-new-main.jpg",
+        "assets/images/cars/honda-jazz-crosstar-new-gallery-1.jpg"
+      ]
+    }
   },
   {
     "id": "renault-4-etech-new",
@@ -317,7 +356,15 @@
     "cons": [
       "PVP oficial de partida al contado (27.954 € Evolution) rozando el límite de presupuesto",
       "El acabado Techno con 52 kWh y Google se va a 32.729 € sin ayudas"
-    ]
+    ],
+    "images": {
+      "main": "assets/images/cars/renault-4-etech-new-main.jpg",
+      "gallery": [
+        "assets/images/cars/renault-4-etech-new-main.jpg",
+        "assets/images/cars/renault-4-etech-new-gallery-1.jpg",
+        "assets/images/cars/renault-4-etech-new-gallery-2.jpg"
+      ]
+    }
   },
   {
     "id": "nissan-micra-ev-new",
@@ -361,7 +408,15 @@
     "cons": [
       "Altura y acceso más bajo que en Yaris Cross o Kona (menos cómodo para padres mayores)",
       "Nissan+ exige uso particular (confirmar compatibilidad si se tramita con actividad de autónomo)"
-    ]
+    ],
+    "images": {
+      "main": "assets/images/cars/nissan-micra-ev-new-main.jpg",
+      "gallery": [
+        "assets/images/cars/nissan-micra-ev-new-main.jpg",
+        "assets/images/cars/nissan-micra-ev-new-gallery-1.jpg",
+        "assets/images/cars/nissan-micra-ev-new-gallery-2.jpg"
+      ]
+    }
   },
   {
     "id": "renault-5-techno-new",
@@ -405,7 +460,15 @@
     "cons": [
       "PVP oficial de 27.954 € al contado (Línea 2 requiere solicitud de autónomo)",
       "Modelo recién llegado sin historial estadístico de longevidad a 10 años"
-    ]
+    ],
+    "images": {
+      "main": "assets/images/cars/renault-5-techno-new-main.jpg",
+      "gallery": [
+        "assets/images/cars/renault-5-techno-new-main.jpg",
+        "assets/images/cars/renault-5-techno-new-gallery-1.jpg",
+        "assets/images/cars/renault-5-techno-new-gallery-2.jpg"
+      ]
+    }
   },
   {
     "id": "mg4-urban-2026-new",
@@ -449,7 +512,15 @@
     "cons": [
       "Longitud de 4,40 m (+22 cm que Yaris Cross, límite superior de maniobra en garaje)",
       "Red de servicio en consolidación comparada con marcas tradicionales japonesas"
-    ]
+    ],
+    "images": {
+      "main": "assets/images/cars/mg4-urban-2026-new-main.jpg",
+      "gallery": [
+        "assets/images/cars/mg4-urban-2026-new-main.jpg",
+        "assets/images/cars/mg4-urban-2026-new-gallery-1.jpg",
+        "assets/images/cars/mg4-urban-2026-new-gallery-2.jpg"
+      ]
+    }
   },
   {
     "id": "toyota-yaris-120h-used",
@@ -493,7 +564,14 @@
     "cons": [
       "Carrocería baja: tus padres entrarán menos cómodos que en un SUV",
       "Maletero de 286 l suficiente pero no amplio"
-    ]
+    ],
+    "images": {
+      "main": "assets/images/cars/toyota-yaris-120h-used-main.jpg",
+      "gallery": [
+        "assets/images/cars/toyota-yaris-120h-used-main.jpg",
+        "assets/images/cars/toyota-yaris-120h-used-gallery-1.jpg"
+      ]
+    }
   },
   {
     "id": "hyundai-inster-new",
@@ -537,7 +615,15 @@
     "cons": [
       "⚠️ Homologado para 4 plazas (no 5)",
       "Estética exterior crossover peculiar que conviene ver en persona"
-    ]
+    ],
+    "images": {
+      "main": "assets/images/cars/hyundai-inster-new-main.jpg",
+      "gallery": [
+        "assets/images/cars/hyundai-inster-new-main.jpg",
+        "assets/images/cars/hyundai-inster-new-gallery-1.jpg",
+        "assets/images/cars/hyundai-inster-new-gallery-2.jpg"
+      ]
+    }
   },
   {
     "id": "toyota-yaris-hybrid-new",
@@ -577,7 +663,15 @@
     "cons": [
       "Carrocería baja (acceso menos cómodo para padres que el Yaris Cross)",
       "Pantallas e infoentretenimiento más sencillos"
-    ]
+    ],
+    "images": {
+      "main": "assets/images/cars/toyota-yaris-hybrid-new-main.jpg",
+      "gallery": [
+        "assets/images/cars/toyota-yaris-hybrid-new-main.jpg",
+        "assets/images/cars/toyota-yaris-hybrid-new-gallery-1.jpg",
+        "assets/images/cars/toyota-yaris-hybrid-new-gallery-2.jpg"
+      ]
+    }
   },
   {
     "id": "kia-niro-hev-used",
@@ -619,7 +713,15 @@
     ],
     "cons": [
       "Mide 4,42 m (el más voluminoso para calles estrechas y garajes justos)"
-    ]
+    ],
+    "images": {
+      "main": "assets/images/cars/kia-niro-hev-used-main.jpg",
+      "gallery": [
+        "assets/images/cars/kia-niro-hev-used-main.jpg",
+        "assets/images/cars/kia-niro-hev-used-gallery-1.jpg",
+        "assets/images/cars/kia-niro-hev-used-gallery-2.jpg"
+      ]
+    }
   },
   {
     "id": "kia-eniro-64-used",
@@ -660,7 +762,15 @@
     ],
     "cons": [
       "Mide 4,38 m y batería de 64 kWh sobredimensionada para 3.000 km/año"
-    ]
+    ],
+    "images": {
+      "main": "assets/images/cars/kia-eniro-64-used-main.jpg",
+      "gallery": [
+        "assets/images/cars/kia-eniro-64-used-main.jpg",
+        "assets/images/cars/kia-eniro-64-used-gallery-1.jpg",
+        "assets/images/cars/kia-eniro-64-used-gallery-2.jpg"
+      ]
+    }
   },
   {
     "id": "hyundai-kona-64-used",
@@ -703,7 +813,15 @@
     "cons": [
       "Diseño e infoentretenimiento de anterior generación frente al Kona 2024",
       "Batería sobredimensionada para hacer recados locales"
-    ]
+    ],
+    "images": {
+      "main": "assets/images/cars/hyundai-kona-64-used-main.jpg",
+      "gallery": [
+        "assets/images/cars/hyundai-kona-64-used-main.jpg",
+        "assets/images/cars/hyundai-kona-64-used-gallery-1.jpg",
+        "assets/images/cars/hyundai-kona-64-used-gallery-2.jpg"
+      ]
+    }
   },
   {
     "id": "citroen-ec3-44-new",
@@ -746,7 +864,15 @@
     "cons": [
       "Materiales interiores y ajustes deliberadamente low-cost",
       "Menor sensación de solidez a largo plazo frente a japoneses"
-    ]
+    ],
+    "images": {
+      "main": "assets/images/cars/citroen-ec3-44-new-main.jpg",
+      "gallery": [
+        "assets/images/cars/citroen-ec3-44-new-main.jpg",
+        "assets/images/cars/citroen-ec3-44-new-gallery-1.jpg",
+        "assets/images/cars/citroen-ec3-44-new-gallery-2.jpg"
+      ]
+    }
   },
   {
     "id": "renault-twingo-techno-new",
@@ -789,7 +915,15 @@
     "cons": [
       "⚠️ Homologado para 4 plazas (no 5)",
       "Batería de 27,5 kWh enfocada a uso estrictamente local"
-    ]
+    ],
+    "images": {
+      "main": "assets/images/cars/renault-twingo-techno-new-main.jpg",
+      "gallery": [
+        "assets/images/cars/renault-twingo-techno-new-main.jpg",
+        "assets/images/cars/renault-twingo-techno-new-gallery-1.jpg",
+        "assets/images/cars/renault-twingo-techno-new-gallery-2.jpg"
+      ]
+    }
   },
   {
     "id": "cupra-born-58-used",
@@ -831,7 +965,15 @@
     "cons": [
       "Acceso bajo y suspensión firme poco adecuada para tus padres",
       "Software de pantalla MEB requiere verificar versión 3.0+"
-    ]
+    ],
+    "images": {
+      "main": "assets/images/cars/cupra-born-58-used-main.jpg",
+      "gallery": [
+        "assets/images/cars/cupra-born-58-used-main.jpg",
+        "assets/images/cars/cupra-born-58-used-gallery-1.jpg",
+        "assets/images/cars/cupra-born-58-used-gallery-2.jpg"
+      ]
+    }
   },
   {
     "id": "byd-dolphin-surf-new",
@@ -870,7 +1012,15 @@
     "cons": [
       "Red de posventa y valor de reventa a 10 años menos contrastados",
       "Diseño interior con pantalla giratoria peculiar"
-    ]
+    ],
+    "images": {
+      "main": "assets/images/cars/byd-dolphin-surf-new-main.jpg",
+      "gallery": [
+        "assets/images/cars/byd-dolphin-surf-new-main.jpg",
+        "assets/images/cars/byd-dolphin-surf-new-gallery-1.jpg",
+        "assets/images/cars/byd-dolphin-surf-new-gallery-2.jpg"
+      ]
+    }
   },
   {
     "id": "mg4-51-used",
@@ -912,7 +1062,15 @@
     "cons": [
       "Ajustes interiores y tacto de pedal de freno mejorables",
       "Superado claramente por el nuevo MG4 Urban 2026"
-    ]
+    ],
+    "images": {
+      "main": "assets/images/cars/mg4-51-used-main.jpg",
+      "gallery": [
+        "assets/images/cars/mg4-51-used-main.jpg",
+        "assets/images/cars/mg4-51-used-gallery-1.jpg",
+        "assets/images/cars/mg4-51-used-gallery-2.jpg"
+      ]
+    }
   },
   {
     "id": "dacia-spring-new",
@@ -956,7 +1114,15 @@
       "⚠️ 4 plazas homologadas y calidades básicas",
       "Potencia y estabilidad justas para la B-24 y vías rápidas",
       "Carga rápida opcional (no de serie)"
-    ]
+    ],
+    "images": {
+      "main": "assets/images/cars/dacia-spring-new-main.jpg",
+      "gallery": [
+        "assets/images/cars/dacia-spring-new-main.jpg",
+        "assets/images/cars/dacia-spring-new-gallery-1.jpg",
+        "assets/images/cars/dacia-spring-new-gallery-2.jpg"
+      ]
+    }
   }
 ];
 
@@ -980,7 +1146,15 @@
     "summary": "Arquitectura eléctrica E-GMP de Kia con hasta 605 km WLTP (batería grande), 4,30 m, 460 l de maletero y 7 años de garantía total.",
     "status": "Si aparece en stock/campaña real al contado por ≤27.000 €: entraría directamente en Tier A alto y sería candidato Top 6–8.",
     "sourceUrl": "https://www.kia.com/es/modelos/ev3/descubrelo/",
-    "sourceLabel": "Kia Iberia · Gama Oficial Kia EV3"
+    "sourceLabel": "Kia Iberia · Gama Oficial Kia EV3",
+    "images": {
+      "main": "assets/images/cars/kia-ev3-watchlist-main.jpg",
+      "gallery": [
+        "assets/images/cars/kia-ev3-watchlist-main.jpg",
+        "assets/images/cars/kia-ev3-watchlist-gallery-1.jpg",
+        "assets/images/cars/kia-ev3-watchlist-gallery-2.jpg"
+      ]
+    }
   },
   {
     "id": "leapmotor-b10-watchlist",
@@ -1001,7 +1175,15 @@
     "summary": "SUV tecnológico del segmento C con 218 CV, pantalla 14,6\" 2.5K, carga rápida 168 kW y red Stellantis (506 uds matriculadas en julio 2026).",
     "status": "En Radar porque sus 29.900 € y 4,52 m exceden el presupuesto objetivo y el tamaño dulce. Si aparece oferta al contado ≤26–27k, entra a valorar si el tamaño es admisible.",
     "sourceUrl": "https://www.media.stellantis.com/es-es/leapmotor/press/el-leapmotor-b10-turismo-100-electrico-mas-matriculado-en-espana-en-julio",
-    "sourceLabel": "Stellantis Media · Leapmotor B10 Oficial"
+    "sourceLabel": "Stellantis Media · Leapmotor B10 Oficial",
+    "images": {
+      "main": "assets/images/cars/leapmotor-b10-watchlist-main.jpg",
+      "gallery": [
+        "assets/images/cars/leapmotor-b10-watchlist-main.jpg",
+        "assets/images/cars/leapmotor-b10-watchlist-gallery-1.jpg",
+        "assets/images/cars/leapmotor-b10-watchlist-gallery-2.jpg"
+      ]
+    }
   },
   {
     "id": "jaecoo-5-ev-watchlist",
@@ -1022,7 +1204,15 @@
     "summary": "211 CV, batería LFP de 60,9 kWh, 480 l de maletero, pantalla central de 13,2\" y cámaras 540°.",
     "status": "Tarifa oficial en 35.500 € (los anuncios de 20k mezclan financiación, achatarramiento y CAE). Solo a considerar si aparecen campañas reales al contado ≤26k €.",
     "sourceUrl": "https://www.omodajaecoo.es/modelos/jaecoo-5/ev-ficha-tecnica",
-    "sourceLabel": "JAECOO España · Ficha Técnica JAECOO 5 EV"
+    "sourceLabel": "JAECOO España · Ficha Técnica JAECOO 5 EV",
+    "images": {
+      "main": "assets/images/cars/jaecoo-5-ev-watchlist-main.jpg",
+      "gallery": [
+        "assets/images/cars/jaecoo-5-ev-watchlist-main.jpg",
+        "assets/images/cars/jaecoo-5-ev-watchlist-gallery-1.jpg",
+        "assets/images/cars/jaecoo-5-ev-watchlist-gallery-2.jpg"
+      ]
+    }
   }
 ];
 

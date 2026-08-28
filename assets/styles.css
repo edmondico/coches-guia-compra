@@ -3656,6 +3656,145 @@ select {
   background: #071f1d;
 }
 
+/* ==========================================================================
+   Car Images & Interactive Gallery
+   ========================================================================== */
+
+.verdict-card__image-wrap {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius-md);
+  margin-block: 0.85rem 0.5rem;
+  aspect-ratio: 16 / 9;
+  background: var(--color-paper-deep);
+  border: 1px solid rgba(11, 47, 45, 0.08);
+}
+
+.verdict-card__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.35s ease;
+}
+
+.verdict-card:hover .verdict-card__img {
+  transform: scale(1.03);
+}
+
+.tier-card__media {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius-sm);
+  margin-block: 0.65rem 0.4rem;
+  aspect-ratio: 16 / 9;
+  background: var(--color-paper-deep);
+  border: 1px solid rgba(11, 47, 45, 0.08);
+}
+
+.tier-card__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.car-card__visual {
+  display: block;
+  overflow: hidden;
+  border-radius: var(--radius-sm);
+  aspect-ratio: 16 / 10;
+  margin-bottom: 0.75rem;
+  background: var(--color-paper-deep);
+  border: 1px solid rgba(11, 47, 45, 0.08);
+}
+
+.car-card__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.watchlist-card__media {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius-sm);
+  margin-bottom: 0.85rem;
+  aspect-ratio: 16 / 9;
+  background: var(--color-paper-deep);
+  border: 1px solid rgba(11, 47, 45, 0.08);
+}
+
+.watchlist-card__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.car-gallery {
+  margin-block: 0.85rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.car-gallery__main {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius-sm);
+  aspect-ratio: 16 / 9;
+  background: #0f1c1a;
+  border: 1px solid rgba(11, 47, 45, 0.12);
+}
+
+.car-gallery__featured {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.car-gallery__thumbs {
+  display: flex;
+  gap: 0.45rem;
+  overflow-x: auto;
+  padding-bottom: 0.35rem;
+  scrollbar-width: thin;
+}
+
+.car-gallery__thumb-btn {
+  padding: 0;
+  border: 2px solid transparent;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  width: 4.5rem;
+  height: 2.85rem;
+  flex-shrink: 0;
+  cursor: pointer;
+  background: transparent;
+  transition: border-color 0.15s ease, opacity 0.15s ease, transform 0.15s ease;
+  opacity: 0.65;
+}
+
+.car-gallery__thumb-btn:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+.car-gallery__thumb-btn.is-active {
+  border-color: var(--color-accent);
+  opacity: 1;
+}
+
+.car-gallery__thumb-btn img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
 @media (max-width: 47.99rem) {
   .alert-details > summary {
     grid-template-columns: auto minmax(0, 1fr);

@@ -1,0 +1,192 @@
+{
+  "toyota-yaris-cross-130-used": {
+    "main": "assets/images/cars/toyota-yaris-cross-130-used-main.jpg",
+    "gallery": [
+      "assets/images/cars/toyota-yaris-cross-130-used-main.jpg",
+      "assets/images/cars/toyota-yaris-cross-130-used-gallery-1.jpg",
+      "assets/images/cars/toyota-yaris-cross-130-used-gallery-2.jpg"
+    ]
+  },
+  "hyundai-kona-hev-tecno-used": {
+    "main": "assets/images/cars/hyundai-kona-hev-tecno-used-main.jpg",
+    "gallery": [
+      "assets/images/cars/hyundai-kona-hev-tecno-used-main.jpg",
+      "assets/images/cars/hyundai-kona-hev-tecno-used-gallery-1.jpg",
+      "assets/images/cars/hyundai-kona-hev-tecno-used-gallery-2.jpg"
+    ]
+  },
+  "honda-hrv-ehev-used": {
+    "main": "assets/images/cars/honda-hrv-ehev-used-main.jpg",
+    "gallery": [
+      "assets/images/cars/honda-hrv-ehev-used-main.jpg",
+      "assets/images/cars/honda-hrv-ehev-used-gallery-1.jpg",
+      "assets/images/cars/honda-hrv-ehev-used-gallery-2.jpg"
+    ]
+  },
+  "hyundai-kona-hev-2021-used": {
+    "main": "assets/images/cars/hyundai-kona-hev-2021-used-main.jpg",
+    "gallery": [
+      "assets/images/cars/hyundai-kona-hev-2021-used-main.jpg",
+      "assets/images/cars/hyundai-kona-hev-2021-used-gallery-1.jpg",
+      "assets/images/cars/hyundai-kona-hev-2021-used-gallery-2.jpg"
+    ]
+  },
+  "honda-jazz-crosstar-new": {
+    "main": "assets/images/cars/honda-jazz-crosstar-new-main.jpg",
+    "gallery": [
+      "assets/images/cars/honda-jazz-crosstar-new-main.jpg",
+      "assets/images/cars/honda-jazz-crosstar-new-gallery-1.jpg"
+    ]
+  },
+  "renault-4-etech-new": {
+    "main": "assets/images/cars/renault-4-etech-new-main.jpg",
+    "gallery": [
+      "assets/images/cars/renault-4-etech-new-main.jpg",
+      "assets/images/cars/renault-4-etech-new-gallery-1.jpg",
+      "assets/images/cars/renault-4-etech-new-gallery-2.jpg"
+    ]
+  },
+  "nissan-micra-ev-new": {
+    "main": "assets/images/cars/nissan-micra-ev-new-main.jpg",
+    "gallery": [
+      "assets/images/cars/nissan-micra-ev-new-main.jpg",
+      "assets/images/cars/nissan-micra-ev-new-gallery-1.jpg",
+      "assets/images/cars/nissan-micra-ev-new-gallery-2.jpg"
+    ]
+  },
+  "renault-5-techno-new": {
+    "main": "assets/images/cars/renault-5-techno-new-main.jpg",
+    "gallery": [
+      "assets/images/cars/renault-5-techno-new-main.jpg",
+      "assets/images/cars/renault-5-techno-new-gallery-1.jpg",
+      "assets/images/cars/renault-5-techno-new-gallery-2.jpg"
+    ]
+  },
+  "mg4-urban-2026-new": {
+    "main": "assets/images/cars/mg4-urban-2026-new-main.jpg",
+    "gallery": [
+      "assets/images/cars/mg4-urban-2026-new-main.jpg",
+      "assets/images/cars/mg4-urban-2026-new-gallery-1.jpg",
+      "assets/images/cars/mg4-urban-2026-new-gallery-2.jpg"
+    ]
+  },
+  "toyota-yaris-120h-used": {
+    "main": "assets/images/cars/toyota-yaris-120h-used-main.jpg",
+    "gallery": [
+      "assets/images/cars/toyota-yaris-120h-used-main.jpg",
+      "assets/images/cars/toyota-yaris-120h-used-gallery-1.jpg"
+    ]
+  },
+  "hyundai-inster-new": {
+    "main": "assets/images/cars/hyundai-inster-new-main.jpg",
+    "gallery": [
+      "assets/images/cars/hyundai-inster-new-main.jpg",
+      "assets/images/cars/hyundai-inster-new-gallery-1.jpg",
+      "assets/images/cars/hyundai-inster-new-gallery-2.jpg"
+    ]
+  },
+  "toyota-yaris-hybrid-new": {
+    "main": "assets/images/cars/toyota-yaris-hybrid-new-main.jpg",
+    "gallery": [
+      "assets/images/cars/toyota-yaris-hybrid-new-main.jpg",
+      "assets/images/cars/toyota-yaris-hybrid-new-gallery-1.jpg",
+      "assets/images/cars/toyota-yaris-hybrid-new-gallery-2.jpg"
+    ]
+  },
+  "kia-niro-hev-used": {
+    "main": "assets/images/cars/kia-niro-hev-used-main.jpg",
+    "gallery": [
+      "assets/images/cars/kia-niro-hev-used-main.jpg",
+      "assets/images/cars/kia-niro-hev-used-gallery-1.jpg",
+      "assets/images/cars/kia-niro-hev-used-gallery-2.jpg"
+    ]
+  },
+  "kia-eniro-64-used": {
+    "main": "assets/images/cars/kia-eniro-64-used-main.jpg",
+    "gallery": [
+      "assets/images/cars/kia-eniro-64-used-main.jpg",
+      "assets/images/cars/kia-eniro-64-used-gallery-1.jpg",
+      "assets/images/cars/kia-eniro-64-used-gallery-2.jpg"
+    ]
+  },
+  "hyundai-kona-64-used": {
+    "main": "assets/images/cars/hyundai-kona-64-used-main.jpg",
+    "gallery": [
+      "assets/images/cars/hyundai-kona-64-used-main.jpg",
+      "assets/images/cars/hyundai-kona-64-used-gallery-1.jpg",
+      "assets/images/cars/hyundai-kona-64-used-gallery-2.jpg"
+    ]
+  },
+  "citroen-ec3-44-new": {
+    "main": "assets/images/cars/citroen-ec3-44-new-main.jpg",
+    "gallery": [
+      "assets/images/cars/citroen-ec3-44-new-main.jpg",
+      "assets/images/cars/citroen-ec3-44-new-gallery-1.jpg",
+      "assets/images/cars/citroen-ec3-44-new-gallery-2.jpg"
+    ]
+  },
+  "renault-twingo-techno-new": {
+    "main": "assets/images/cars/renault-twingo-techno-new-main.jpg",
+    "gallery": [
+      "assets/images/cars/renault-twingo-techno-new-main.jpg",
+      "assets/images/cars/renault-twingo-techno-new-gallery-1.jpg",
+      "assets/images/cars/renault-twingo-techno-new-gallery-2.jpg"
+    ]
+  },
+  "cupra-born-58-used": {
+    "main": "assets/images/cars/cupra-born-58-used-main.jpg",
+    "gallery": [
+      "assets/images/cars/cupra-born-58-used-main.jpg",
+      "assets/images/cars/cupra-born-58-used-gallery-1.jpg",
+      "assets/images/cars/cupra-born-58-used-gallery-2.jpg"
+    ]
+  },
+  "byd-dolphin-surf-new": {
+    "main": "assets/images/cars/byd-dolphin-surf-new-main.jpg",
+    "gallery": [
+      "assets/images/cars/byd-dolphin-surf-new-main.jpg",
+      "assets/images/cars/byd-dolphin-surf-new-gallery-1.jpg",
+      "assets/images/cars/byd-dolphin-surf-new-gallery-2.jpg"
+    ]
+  },
+  "mg4-51-used": {
+    "main": "assets/images/cars/mg4-51-used-main.jpg",
+    "gallery": [
+      "assets/images/cars/mg4-51-used-main.jpg",
+      "assets/images/cars/mg4-51-used-gallery-1.jpg",
+      "assets/images/cars/mg4-51-used-gallery-2.jpg"
+    ]
+  },
+  "dacia-spring-new": {
+    "main": "assets/images/cars/dacia-spring-new-main.jpg",
+    "gallery": [
+      "assets/images/cars/dacia-spring-new-main.jpg",
+      "assets/images/cars/dacia-spring-new-gallery-1.jpg",
+      "assets/images/cars/dacia-spring-new-gallery-2.jpg"
+    ]
+  },
+  "kia-ev3-watchlist": {
+    "main": "assets/images/cars/kia-ev3-watchlist-main.jpg",
+    "gallery": [
+      "assets/images/cars/kia-ev3-watchlist-main.jpg",
+      "assets/images/cars/kia-ev3-watchlist-gallery-1.jpg",
+      "assets/images/cars/kia-ev3-watchlist-gallery-2.jpg"
+    ]
+  },
+  "leapmotor-b10-watchlist": {
+    "main": "assets/images/cars/leapmotor-b10-watchlist-main.jpg",
+    "gallery": [
+      "assets/images/cars/leapmotor-b10-watchlist-main.jpg",
+      "assets/images/cars/leapmotor-b10-watchlist-gallery-1.jpg",
+      "assets/images/cars/leapmotor-b10-watchlist-gallery-2.jpg"
+    ]
+  },
+  "jaecoo-5-ev-watchlist": {
+    "main": "assets/images/cars/jaecoo-5-ev-watchlist-main.jpg",
+    "gallery": [
+      "assets/images/cars/jaecoo-5-ev-watchlist-main.jpg",
+      "assets/images/cars/jaecoo-5-ev-watchlist-gallery-1.jpg",
+      "assets/images/cars/jaecoo-5-ev-watchlist-gallery-2.jpg"
+    ]
+  }
+}

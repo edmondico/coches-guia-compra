@@ -107,3 +107,15 @@ test('el tema editorial premium define una paleta cálida y navegación táctil'
   assert.match(css, /min-height:\s*2\.75rem/);
   assert.match(css, /@media\s*\(min-width:\s*64rem\)/);
 });
+
+test('la hoja visual y scripts soportan imágenes de coches y galería interactiva', () => {
+  const css = read('assets/styles.css');
+  const js = read('assets/app.js');
+  assert.match(css, /\.verdict-card__img/);
+  assert.match(css, /\.tier-card__img/);
+  assert.match(css, /\.car-gallery/);
+  assert.match(css, /\.car-gallery__thumb-btn/);
+  assert.match(js, /car-gallery__thumb-btn/);
+  assert.match(js, /loading="lazy"/);
+  assert.match(js, /decoding="async"/);
+});

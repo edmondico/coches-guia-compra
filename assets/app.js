@@ -61,6 +61,11 @@
             <span class="verdict-card__tag">${escapeHtml(tagInfo.tag)}</span>
             <span class="score-badge">${car.score ? car.score.toFixed(2).replace('.', ',') : '—'}/10</span>
           </div>
+          ${car.images && car.images.main ? `
+          <div class="verdict-card__image-wrap">
+            <img src="${escapeHtml(car.images.main)}" alt="${escapeHtml(car.name)}" class="verdict-card__img" loading="lazy" decoding="async" width="640" height="360">
+          </div>
+          ` : ''}
           <h3>${escapeHtml(car.name)}</h3>
           <p class="verdict-card__variant">${escapeHtml(car.variant)}</p>
           <ul class="spec-strip" aria-label="Especificaciones clave">
@@ -110,6 +115,11 @@
 
     watchlistContainer.innerHTML = watchlist.map((item) => `
       <article class="watchlist-card" id="${item.id}">
+        ${item.images && item.images.main ? `
+        <div class="watchlist-card__media">
+          <img src="${escapeHtml(item.images.main)}" alt="${escapeHtml(item.name)}" class="watchlist-card__img" loading="lazy" decoding="async" width="640" height="360">
+        </div>
+        ` : ''}
         <div class="watchlist-card__head">
           <div>
             <span class="watchlist-tag">📡 Radar 2026</span>
@@ -187,6 +197,12 @@
                   </div>
                 </div>
 
+                ${car.images && car.images.main ? `
+                <div class="tier-card__media">
+                  <img src="${escapeHtml(car.images.main)}" alt="${escapeHtml(car.name)}" class="tier-card__img" loading="lazy" decoding="async" width="640" height="360">
+                </div>
+                ` : ''}
+
                 <div class="tier-card__meta-bar">
                   <span class="tier-pill tier-pill--price">${priceDisplay(car)}</span>
                   <span class="tier-pill tier-pill--tech">${techLabel(car.technology)} · ${marketLabel(car.market)}</span>
@@ -201,6 +217,20 @@
                 </button>
 
                 <div class="tier-card__expandable" id="tier-details-${car.id}">
+                  ${car.images && car.images.gallery && car.images.gallery.length > 1 ? `
+                  <div class="car-gallery" aria-label="Galería de fotos de ${escapeHtml(car.name)}">
+                    <div class="car-gallery__main">
+                      <img src="${escapeHtml(car.images.gallery[0])}" alt="${escapeHtml(car.name)} - Vista exterior" class="car-gallery__featured" loading="lazy" decoding="async" id="gallery-tier-${car.id}">
+                    </div>
+                    <div class="car-gallery__thumbs" role="tablist" aria-label="Seleccionar vista">
+                      ${car.images.gallery.map((img, idx) => `
+                        <button type="button" class="car-gallery__thumb-btn ${idx === 0 ? 'is-active' : ''}" data-target-img="gallery-tier-${car.id}" data-src="${escapeHtml(img)}" aria-label="Ver foto ${idx + 1}">
+                          <img src="${escapeHtml(img)}" alt="" loading="lazy" decoding="async">
+                        </button>
+                      `).join('')}
+                    </div>
+                  </div>
+                  ` : ''}
                   <div class="tier-card__pro-con">
                     <div class="tier-card__pros">
                       <strong class="pro-heading">🟢 Lo Mejor</strong>
@@ -533,7 +563,11 @@
     listContainer.innerHTML = visibleItems.map((car) => `
       <article class="car-card" id="${car.id}" data-market="${car.market}" data-technology="${car.technology}" data-evidence="${car.evidence}">
         <div class="car-card__visual" aria-hidden="true">
-          <span class="car-card__initials">${initials(car.name)}</span>
+          ${car.images && car.images.main ? `
+            <img src="${escapeHtml(car.images.main)}" alt="${escapeHtml(car.name)}" class="car-card__img" loading="lazy" decoding="async" width="640" height="360">
+          ` : `
+            <span class="car-card__initials">${initials(car.name)}</span>
+          `}
         </div>
         <div class="car-card__body">
           <div class="car-card__topline">
@@ -551,6 +585,20 @@
           <details class="car-card__details">
             <summary>Ver datos, análisis y fuente <span aria-hidden="true">▾</span></summary>
             <div class="car-card__details-body">
+              ${car.images && car.images.gallery && car.images.gallery.length > 1 ? `
+              <div class="car-gallery" aria-label="Galería de fotos de ${escapeHtml(car.name)}">
+                <div class="car-gallery__main">
+                  <img src="${escapeHtml(car.images.gallery[0])}" alt="${escapeHtml(car.name)} - Vista exterior" class="car-gallery__featured" loading="lazy" decoding="async" id="gallery-card-${car.id}">
+                </div>
+                <div class="car-gallery__thumbs" role="tablist" aria-label="Seleccionar vista">
+                  ${car.images.gallery.map((img, idx) => `
+                    <button type="button" class="car-gallery__thumb-btn ${idx === 0 ? 'is-active' : ''}" data-target-img="gallery-card-${car.id}" data-src="${escapeHtml(img)}" aria-label="Ver foto ${idx + 1}">
+                      <img src="${escapeHtml(img)}" alt="" loading="lazy" decoding="async">
+                    </button>
+                  `).join('')}
+                </div>
+              </div>
+              ` : ''}
               <p class="car-card__summary">${escapeHtml(car.summary)}</p>
               <dl class="car-card__specs">
                 <div>
@@ -703,6 +751,21 @@
           const textSpan = expandBtn.querySelector('.expand-text');
           if (textSpan) {
             textSpan.textContent = isExpanded ? 'Ocultar análisis y contras' : 'Ver análisis, pros y contras';
+          }
+        }
+      }
+
+      const thumbBtn = e.target.closest('.car-gallery__thumb-btn');
+      if (thumbBtn) {
+        const targetId = thumbBtn.dataset.targetImg;
+        const newSrc = thumbBtn.dataset.src;
+        const featured = document.getElementById(targetId);
+        if (featured && newSrc) {
+          featured.src = newSrc;
+          const parent = thumbBtn.closest('.car-gallery__thumbs');
+          if (parent) {
+            parent.querySelectorAll('.car-gallery__thumb-btn').forEach((btn) => btn.classList.remove('is-active'));
+            thumbBtn.classList.add('is-active');
           }
         }
       }
