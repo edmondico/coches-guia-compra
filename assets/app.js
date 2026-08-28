@@ -401,19 +401,37 @@
       budgetResultCard.innerHTML = `
         <div class="budget-card-header">
           <div class="budget-card-title-group">
-            <span class="budget-badge-winner">🏆 Recomendación para ${formatEuro(budgetNum)}</span>
-            ${guide.spotlight ? `<span class="budget-spotlight-badge">${escapeHtml(guide.spotlight)}</span>` : ''}
-            <h3>${escapeHtml(guide.winnerName)}</h3>
-            <p class="budget-variant-sub">${escapeHtml(guide.winnerVariant)} · <strong>${escapeHtml(guide.market)}</strong></p>
+            <div class="budget-card-top-pills">
+              <span class="budget-badge-winner">Recomendación para ${formatEuro(budgetNum)}</span>
+              ${guide.spotlight ? `<span class="budget-spotlight-badge">${escapeHtml(guide.spotlight)}</span>` : ''}
+            </div>
+
+            <div class="budget-dual-grid">
+              <div class="budget-dual-card budget-dual-card--global">
+                <span class="budget-dual-tag">🏆 Mejor global (Conservador / HEV)</span>
+                <h3>${escapeHtml(guide.winnerName)}</h3>
+                <p class="budget-variant-sub">${escapeHtml(guide.winnerVariant)} · <strong>${escapeHtml(guide.market)}</strong></p>
+                <div class="budget-why-section">
+                  <strong>💎 Análisis de compra:</strong>
+                  <p>${escapeHtml(guide.why)}</p>
+                </div>
+              </div>
+
+              ${guide.bevWinner ? `
+              <div class="budget-dual-card budget-dual-card--bev">
+                <span class="budget-dual-tag budget-dual-tag--bev">⚡ Mejor alternativa 100% eléctrica (BEV)</span>
+                <h4 class="budget-bev-title">${escapeHtml(guide.bevWinner)}</h4>
+                <div class="budget-why-section">
+                  <strong>⚡ Enfoque eléctrico:</strong>
+                  <p>${escapeHtml(guide.bevWhy || '')}</p>
+                </div>
+              </div>
+              ` : ''}
+            </div>
           </div>
         </div>
 
         <div class="budget-card-body">
-          <div class="budget-why-section">
-            <strong>💎 Por qué esta compra con ${formatEuro(budgetNum)}:</strong>
-            <p>${escapeHtml(guide.why)}</p>
-          </div>
-
           <div class="budget-upgrade-box budget-upgrade--${guide.upgradeDecision}">
             <div class="upgrade-decision-header">
               <span class="upgrade-tag">${decisionLabels[guide.upgradeDecision] || 'CONSEJO'}</span>
