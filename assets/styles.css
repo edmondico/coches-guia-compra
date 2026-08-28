@@ -3396,6 +3396,59 @@ select {
   background: var(--color-petrol-light);
 }
 
+.verdict-spotlight {
+  margin-top: 1.5rem;
+  padding: 1.15rem 1.4rem;
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(197, 139, 42, 0.4);
+  background: linear-gradient(135deg, #fffdf8, #f5f3ec);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  box-shadow: 0 4px 16px rgba(11, 47, 45, 0.05);
+}
+
+.verdict-spotlight__badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.32rem 0.75rem;
+  border-radius: 999px;
+  background: var(--color-petrol);
+  color: #f1d99d;
+  font-size: 0.74rem;
+  font-weight: 750;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.verdict-spotlight__content {
+  flex: 1 1 20rem;
+  display: grid;
+  gap: 0.25rem;
+}
+
+.verdict-spotlight__header {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  flex-wrap: wrap;
+}
+
+.verdict-spotlight__header h3 {
+  margin: 0;
+  font-size: 1.05rem;
+  color: var(--color-petrol);
+}
+
+.verdict-spotlight__desc {
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--color-ink-soft);
+  line-height: 1.45;
+}
+
 .budget-section {
   border-block: 1px solid #cad8d3;
   background: #e8efec;

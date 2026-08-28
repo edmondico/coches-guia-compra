@@ -119,3 +119,15 @@ test('la hoja visual y scripts soportan imágenes de coches y galería interacti
   assert.match(js, /loading="lazy"/);
   assert.match(js, /decoding="async"/);
 });
+
+test('el veredicto incluye la alternativa deportiva destacada y el radar vigila 4 modelos', () => {
+  const html = read('index.html');
+  const css = read('assets/styles.css');
+  const carsData = read('data/cars.js');
+  assert.match(html, /Ver los 4 modelos vigilados/);
+  assert.match(html, /class="verdict-spotlight"/);
+  assert.match(html, /Toyota C-HR 180H GR Sport/);
+  assert.match(css, /\.verdict-spotlight/);
+  assert.doesNotMatch(carsData, /indestructible/);
+  assert.match(carsData, /extremadamente contrastada y de elevada fiabilidad/);
+});

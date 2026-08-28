@@ -56,7 +56,7 @@ Abre en el navegador `http://127.0.0.1:8080/`.
 El proyecto utiliza el test runner nativo de Node.js (`node:test`) y Chrome headless para verificación E2E:
 
 ```bash
-# Pruebas unitarias, de integridad y estructura (41 tests)
+# Pruebas unitarias, de integridad y estructura (42 tests)
 node --test tests/*.test.js
 
 # Verificación en navegador real (CDP / Chrome Headless)

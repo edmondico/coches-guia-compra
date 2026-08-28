@@ -235,7 +235,7 @@
       "finalValue": "25.500 € – 26.490 €",
       "financeNote": "Financiación habitual Toyota Ocasión desde ~270 €/mes"
     },
-    "summary": "La opción que combina estética deportiva y potencia (184 CV) con total tranquilidad familiar: chasis dinámico GR Sport, e-CVT indestructible sin turbo ni embrague, garantía Toyota Relax 15 años y altura crossover que aún permite un acceso razonable a tus padres.",
+    "summary": "La opción que combina estética deportiva y potencia (184 CV) con total tranquilidad familiar: chasis dinámico GR Sport, e-CVT extremadamente contrastada y de elevada fiabilidad sin turbo ni embrague, garantía Toyota Relax 15 años y altura crossover que aún permite un acceso razonable a tus padres.",
     "bestFor": "Quien busca un crossover deportivo, potente (184 CV) y de imagen atractiva sin renunciar a fiabilidad a 15 años y acceso elevado",
     "caution": "Visibilidad trasera reducida por diseño coupé y ventanillas traseras pequeñas que pueden dar sensación de encajonamiento a los pasajeros posteriores.",
     "availability": "Disponibilidad contrastada en concesionarios Toyota Ocasión y compraventa en Barcelona",
