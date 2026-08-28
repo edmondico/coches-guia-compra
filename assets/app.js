@@ -35,6 +35,7 @@
   const resetBtn = document.getElementById('reset-filters');
   const emptyResetBtn = document.querySelector('[data-reset-filters]');
   const catalogueToggle = document.getElementById('catalogue-toggle');
+  const mobileMenu = document.querySelector('.mobile-menu');
   const cataloguePreviewLimit = 6;
   let catalogueExpanded = false;
 
@@ -46,9 +47,9 @@
       .sort((a, b) => (a.rank ?? 99) - (b.rank ?? 99));
 
     const tags = {
-      global: { num: '01', tag: '🏆 1.º · El mejor equilibrio global (Toyota Relax 15 años)' },
-      comfort: { num: '02', tag: '💻 2.º · Mejor tecnología, interior & confort (Doble 12,3")' },
-      mechanical: { num: '03', tag: '🛡️ 3.º · El SUV híbrido más refinado y sólido (97,5% fiabilidad)' },
+      global: { num: '01', tag: '1.º · El mejor equilibrio global (Toyota Relax 15 años)' },
+      comfort: { num: '02', tag: '2.º · Mejor tecnología, interior & confort (Doble 12,3")' },
+      mechanical: { num: '03', tag: '3.º · El SUV híbrido más refinado y sólido (97,5% fiabilidad)' },
     };
 
     verdictContainer.innerHTML = verdictCards.map((car) => {
@@ -58,7 +59,7 @@
           <span class="verdict-card__number">${tagInfo.num}</span>
           <div class="verdict-card__header">
             <span class="verdict-card__tag">${escapeHtml(tagInfo.tag)}</span>
-            <span class="score-badge">⭐ ${car.score ? car.score.toFixed(2).replace('.', ',') : '—'}/10</span>
+            <span class="score-badge">${car.score ? car.score.toFixed(2).replace('.', ',') : '—'}/10</span>
           </div>
           <h3>${escapeHtml(car.name)}</h3>
           <p class="verdict-card__variant">${escapeHtml(car.variant)}</p>
@@ -681,6 +682,14 @@
       catalogueToggle.addEventListener('click', () => {
         catalogueExpanded = !catalogueExpanded;
         applyFilters();
+      });
+    }
+
+    if (mobileMenu) {
+      mobileMenu.querySelectorAll('a').forEach((link) => {
+        link.addEventListener('click', () => {
+          mobileMenu.open = false;
+        });
       });
     }
 

@@ -143,6 +143,50 @@ try {
   assert.equal(directHashPosition.hash, '#presupuestos');
   assert.ok(Math.abs(directHashPosition.top) <= 160, `#presupuestos quedó a ${directHashPosition.top}px del viewport`);
 
+  await send('Emulation.setDeviceMetricsOverride', {
+    width: 390,
+    height: 844,
+    deviceScaleFactor: 1,
+    mobile: true,
+  });
+  await new Promise((r) => setTimeout(r, 100));
+  const mobileNavigation = await evaluate(`({
+    menu: getComputedStyle(document.querySelector('.mobile-menu')).display,
+    desktop: getComputedStyle(document.querySelector('.nav--desktop')).display,
+  })`);
+  assert.notEqual(mobileNavigation.menu, 'none');
+  assert.equal(mobileNavigation.desktop, 'none');
+
+  await evaluate(`
+    const menu = document.querySelector('.mobile-menu');
+    menu.open = true;
+    menu.querySelector('a').click();
+  `);
+  await new Promise((r) => setTimeout(r, 50));
+  const mobileMenuOpen = await evaluate('document.querySelector(".mobile-menu").open');
+  assert.equal(mobileMenuOpen, false);
+
+  await send('Emulation.setDeviceMetricsOverride', {
+    width: 1280,
+    height: 900,
+    deviceScaleFactor: 1,
+    mobile: false,
+  });
+  await new Promise((r) => setTimeout(r, 100));
+  const desktopNavigation = await evaluate(`({
+    menu: getComputedStyle(document.querySelector('.mobile-menu')).display,
+    desktop: getComputedStyle(document.querySelector('.nav--desktop')).display,
+  })`);
+  assert.equal(desktopNavigation.menu, 'none');
+  assert.notEqual(desktopNavigation.desktop, 'none');
+
+  const alertInitiallyOpen = await evaluate('document.querySelector(".alert-details").open');
+  assert.equal(alertInitiallyOpen, false);
+  await evaluate('document.querySelector(".alert-details > summary").click()');
+  const alertOpened = await evaluate('document.querySelector(".alert-details").open');
+  assert.equal(alertOpened, true);
+  await evaluate('document.querySelector(".alert-details > summary").click()');
+
   // Check title
   const title = await evaluate('document.title');
   console.log('Title:', title);

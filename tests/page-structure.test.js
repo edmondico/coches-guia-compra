@@ -20,6 +20,14 @@ test('la página tiene estructura semántica y salto al contenido', () => {
   assert.match(html, /<footer/);
 });
 
+test('la cabecera ofrece navegación premium adaptada a escritorio y móvil', () => {
+  const html = read('index.html');
+  assert.match(html, /class="nav nav--desktop"/);
+  assert.match(html, /<details class="mobile-menu">/);
+  assert.match(html, /<summary[^>]+aria-label="Abrir navegación"/);
+  assert.match(html, /class="nav nav--mobile"/);
+});
+
 test('la lectura editorial prioriza presupuesto y compacta el contenido secundario', () => {
   const html = read('index.html');
   assert.match(html, /class="brand__mark"[^>]*>26K</);
@@ -39,7 +47,7 @@ test('los filtros están etiquetados y el recuento se anuncia', () => {
   const html = read('index.html');
   for (const id of ['market-filter', 'tech-filter', 'sort-filter', 'car-search']) {
     assert.match(html, new RegExp(`<label[^>]+for="${id}"`));
-    assert.match(html, new RegExp(`id="${id}"`));
+    assert.match(html, new RegExp(`id="${id}"[^>]+name="${id}"`));
   }
   assert.match(html, /id="result-count"[^>]+aria-live="polite"/);
 });
@@ -81,5 +89,21 @@ test('la hoja visual incluye accesibilidad y responsive sin ocultar desbordamien
   assert.match(css, /:focus-visible/);
   assert.match(css, /@media\s*\(min-width:/);
   assert.match(css, /prefers-reduced-motion/);
+  assert.match(css, /touch-action:\s*manipulation/);
+  assert.match(css, /scroll-margin-top:/);
+  assert.match(css, /text-wrap:\s*balance/);
+  assert.match(css, /font-variant-numeric:\s*tabular-nums/);
+  assert.doesNotMatch(css, /transition:\s*all/);
   assert.doesNotMatch(css, /overflow-x:\s*hidden/);
+});
+
+test('el tema editorial premium define una paleta cálida y navegación táctil', () => {
+  const html = read('index.html');
+  const css = read('assets/styles.css');
+  assert.match(html, /<details class="alert-details">/);
+  assert.match(html, /Particulares: hasta 4\.500 €/);
+  assert.match(css, /--color-petrol:\s*#0b2f2d/);
+  assert.match(css, /\.mobile-menu\s*\{/);
+  assert.match(css, /min-height:\s*2\.75rem/);
+  assert.match(css, /@media\s*\(min-width:\s*64rem\)/);
 });
