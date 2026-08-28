@@ -167,6 +167,10 @@ try {
   assert.equal(tierGroupsCount, 5);
   assert.equal(openTierGroups, 1);
 
+  const tierDCount = await evaluate('document.querySelector(".tier-group--d .tier-group__toggle").textContent');
+  assert.match(tierDCount, /1 coche\b/);
+  assert.doesNotMatch(tierDCount, /1 coches\b/);
+
   await evaluate('document.getElementById("btn-view-table").click()');
   await new Promise((r) => setTimeout(r, 50));
   const tableRowsCount = await evaluate('document.querySelectorAll("#tier-table-view .tier-row").length');
@@ -186,6 +190,17 @@ try {
   const watchlistCount = await evaluate('document.querySelectorAll("#watchlist-grid .watchlist-card").length');
   console.log('Watchlist cards rendered:', watchlistCount);
   assert.equal(watchlistCount, 3);
+
+  const secondaryDisclosures = await evaluate(`({
+    count: document.querySelectorAll('details.section-disclosure').length,
+    open: document.querySelectorAll('details.section-disclosure[open]').length,
+  })`);
+  assert.deepEqual(secondaryDisclosures, { count: 7, open: 0 });
+
+  await evaluate('document.querySelector("details.section-disclosure > summary").click()');
+  const openedSecondaryDisclosure = await evaluate('document.querySelector("details.section-disclosure").open');
+  assert.equal(openedSecondaryDisclosure, true);
+  await evaluate('document.querySelector("details.section-disclosure > summary").click()');
 
   // Check Budget Tool
   const budgetOutput = await evaluate('document.getElementById("budget-output").textContent');
@@ -249,20 +264,39 @@ try {
   console.log('Budget tool from TL;DR (26k):', budgetResult26kTldr.slice(0, 80));
   assert.match(budgetResult26kTldr, /Toyota Yaris Cross/i);
 
-  // Test mobile tier-card expansion toggle
+  // Tier analysis stays compact on desktop and expands on demand.
+  const initialTierDetailState = await evaluate(`({
+    button: getComputedStyle(document.querySelector('.tier-card .tier-card__expand-btn')).display,
+    details: getComputedStyle(document.querySelector('.tier-card .tier-card__expandable')).display,
+  })`);
+  assert.notEqual(initialTierDetailState.button, 'none');
+  assert.equal(initialTierDetailState.details, 'none');
+
   await evaluate(`
     const firstTierBtn = document.querySelector('.tier-card .tier-card__expand-btn');
     if (firstTierBtn) firstTierBtn.click();
   `);
   await new Promise((r) => setTimeout(r, 50));
   const isFirstCardExpanded = await evaluate('document.querySelector(".tier-card").classList.contains("is-expanded")');
+  const expandedTierDetailDisplay = await evaluate('getComputedStyle(document.querySelector(".tier-card .tier-card__expandable")).display');
   console.log('First tier card expanded:', isFirstCardExpanded);
   assert.equal(isFirstCardExpanded, true);
+  assert.equal(expandedTierDetailDisplay, 'flex');
 
   // Check initial comparison count
   const initialCars = await evaluate('document.querySelectorAll("#comparison-list .car-card").length');
   console.log('Initial cars in comparison:', initialCars);
   assert.equal(initialCars, 6);
+
+  const initialCarDetails = await evaluate(`({
+    count: document.querySelectorAll('#comparison-list .car-card__details').length,
+    open: document.querySelectorAll('#comparison-list .car-card__details[open]').length,
+  })`);
+  assert.deepEqual(initialCarDetails, { count: 6, open: 0 });
+
+  await evaluate('document.querySelector("#comparison-list .car-card__details summary").click()');
+  const openCarDetails = await evaluate('document.querySelectorAll("#comparison-list .car-card__details[open]").length');
+  assert.equal(openCarDetails, 1);
 
   const initialCountText = await evaluate('document.getElementById("result-count").textContent');
   console.log('Result count text:', initialCountText);

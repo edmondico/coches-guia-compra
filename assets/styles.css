@@ -1109,28 +1109,16 @@ h4 {
 }
 
 .tier-card__expandable {
-  display: flex;
+  display: none;
   flex-direction: column;
   gap: var(--space-3);
 }
 
-@media (max-width: 47.99rem) {
-  .tier-card__expandable {
-    display: none;
-  }
-
-  .tier-card.is-expanded .tier-card__expandable {
-    display: flex;
-    margin-top: var(--space-2);
-    padding-top: var(--space-2);
-    border-top: 1px dashed var(--color-rule);
-  }
-}
-
-@media (min-width: 48rem) {
-  .tier-card__expand-btn {
-    display: none;
-  }
+.tier-card.is-expanded .tier-card__expandable {
+  display: flex;
+  margin-top: var(--space-2);
+  padding-top: var(--space-2);
+  border-top: 1px dashed var(--color-rule);
 }
 
 .tier-card__pro-con {
@@ -2417,6 +2405,41 @@ h4 {
   font-weight: 650;
 }
 
+.car-card__details {
+  border-top: 1px solid var(--color-rule);
+}
+
+.car-card__details > summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2);
+  padding: var(--space-2) 0 0;
+  color: var(--color-accent-dark);
+  font-size: 0.78rem;
+  font-weight: 750;
+  cursor: pointer;
+  list-style: none;
+}
+
+.car-card__details > summary::-webkit-details-marker {
+  display: none;
+}
+
+.car-card__details > summary span {
+  transition: transform 0.2s ease;
+}
+
+.car-card__details[open] > summary span {
+  transform: rotate(180deg);
+}
+
+.car-card__details-body {
+  display: grid;
+  gap: var(--space-3);
+  padding-top: var(--space-3);
+}
+
 .car-card__note {
   font-size: 0.78rem;
   color: var(--color-muted);
@@ -2452,6 +2475,68 @@ h4 {
 /* ==========================================================================
    Aid, Running Costs, Checklist, Rejected, Methodology, Footer
    ========================================================================== */
+
+.section-disclosure {
+  border: 1px solid var(--color-rule);
+  border-radius: var(--radius-md);
+  background: var(--color-surface);
+  box-shadow: var(--shadow-sm);
+}
+
+.section-disclosure > summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  padding: var(--space-3) var(--space-4);
+  color: var(--color-ink);
+  font-size: 0.88rem;
+  font-weight: 800;
+  cursor: pointer;
+  list-style: none;
+}
+
+.section-disclosure > summary::-webkit-details-marker {
+  display: none;
+}
+
+.section-disclosure > summary::after {
+  content: '＋';
+  color: var(--color-accent);
+  font-size: 1.1rem;
+  line-height: 1;
+}
+
+.section-disclosure[open] > summary::after {
+  content: '−';
+}
+
+.section-disclosure__body {
+  padding: 0 var(--space-4) var(--space-4);
+}
+
+.section-disclosure__body > :first-child {
+  margin-top: 0;
+}
+
+.section--ink .section-disclosure {
+  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(255, 255, 255, 0.14);
+  box-shadow: none;
+}
+
+.section--ink .section-disclosure > summary {
+  color: #ffffff;
+}
+
+.section--ink .section-disclosure > summary::after {
+  color: #93c5fd;
+}
+
+.checklist__grid > .section-disclosure,
+.methodology__grid > .section-disclosure {
+  align-self: start;
+}
 
 .aid {
   background: #ffffff;

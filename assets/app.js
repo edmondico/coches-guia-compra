@@ -159,6 +159,7 @@
       const groupCars = sortedCars.filter((c) => (c.tier || 'C') === t);
       if (groupCars.length === 0) return '';
       const meta = tierMeta[t];
+      const groupCountLabel = `${groupCars.length} ${groupCars.length === 1 ? 'coche' : 'coches'}`;
 
       return `
         <details class="tier-group ${meta.class}" ${t === 'S' ? 'open' : ''}>
@@ -168,7 +169,7 @@
               <h3>${escapeHtml(meta.title)}</h3>
               <p>${escapeHtml(meta.desc)}</p>
             </div>
-            <span class="tier-group__toggle" aria-hidden="true">${groupCars.length} coches <i>▾</i></span>
+            <span class="tier-group__toggle" aria-hidden="true">${groupCountLabel} <i>▾</i></span>
           </summary>
           <div class="tier-cards-grid">
             ${groupCars.map((car) => `
@@ -542,32 +543,37 @@
           </div>
           <h3>${escapeHtml(car.name)}</h3>
           <p class="car-card__variant">${escapeHtml(car.variant)}</p>
-          <p class="car-card__summary">${escapeHtml(car.summary)}</p>
-          <dl class="car-card__specs">
-            <div>
-              <dt>Autonomía</dt>
-              <dd>${car.wltpKm ? car.wltpKm + ' km WLTP' : 'No aplica'}</dd>
-            </div>
-            <div>
-              <dt>Batería</dt>
-              <dd>${car.batteryKwh ? car.batteryKwh + ' kWh' : '—'}</dd>
-            </div>
-            <div>
-              <dt>Potencia</dt>
-              <dd>${car.powerCv ? car.powerCv + ' CV' : '—'}</dd>
-            </div>
-          </dl>
           <div class="price-block">
             <span class="price-block__label">${conditionLabel(car)}</span>
             <strong class="price-block__value">${priceDisplay(car)}</strong>
-            ${car.aidEligible ? `<span class="price-block__aid">Línea 2 Autónomos: potencialmente hasta 6.000 € (RD 609/2026 · pendiente convocatoria)</span>` : ''}
           </div>
-          <p class="car-card__note">${escapeHtml(car.priceNote)}</p>
-          ${car.caution ? `<p class="car-card__caution"><strong>Atención:</strong> ${escapeHtml(car.caution)}</p>` : ''}
-          <div class="car-card__footer">
-            <a href="${car.sourceUrl}" target="_blank" rel="noopener noreferrer">${escapeHtml(car.sourceLabel)} <span aria-hidden="true">↗</span></a>
-            <time datetime="${car.verifiedAt}">Comprobado: ${formatDate(car.verifiedAt)}</time>
-          </div>
+          <details class="car-card__details">
+            <summary>Ver datos, análisis y fuente <span aria-hidden="true">▾</span></summary>
+            <div class="car-card__details-body">
+              <p class="car-card__summary">${escapeHtml(car.summary)}</p>
+              <dl class="car-card__specs">
+                <div>
+                  <dt>Autonomía</dt>
+                  <dd>${car.wltpKm ? car.wltpKm + ' km WLTP' : 'No aplica'}</dd>
+                </div>
+                <div>
+                  <dt>Batería</dt>
+                  <dd>${car.batteryKwh ? car.batteryKwh + ' kWh' : '—'}</dd>
+                </div>
+                <div>
+                  <dt>Potencia</dt>
+                  <dd>${car.powerCv ? car.powerCv + ' CV' : '—'}</dd>
+                </div>
+              </dl>
+              ${car.aidEligible ? `<span class="price-block__aid">Línea 2 Autónomos: potencialmente hasta 6.000 € (RD 609/2026 · pendiente convocatoria)</span>` : ''}
+              <p class="car-card__note">${escapeHtml(car.priceNote)}</p>
+              ${car.caution ? `<p class="car-card__caution"><strong>Atención:</strong> ${escapeHtml(car.caution)}</p>` : ''}
+              <div class="car-card__footer">
+                <a href="${car.sourceUrl}" target="_blank" rel="noopener noreferrer">${escapeHtml(car.sourceLabel)} <span aria-hidden="true">↗</span></a>
+                <time datetime="${car.verifiedAt}">Comprobado: ${formatDate(car.verifiedAt)}</time>
+              </div>
+            </div>
+          </details>
         </div>
       </article>
     `).join('');

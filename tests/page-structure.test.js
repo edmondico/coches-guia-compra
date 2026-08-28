@@ -28,6 +28,13 @@ test('la lectura editorial prioriza presupuesto y compacta el contenido secundar
   assert.match(html, /id="catalogue-toggle"[^>]+aria-controls="comparison-list"[^>]+aria-expanded="false"/);
 });
 
+test('las siete secciones de consulta secundaria empiezan plegadas', () => {
+  const html = read('index.html');
+  const disclosures = html.match(/<details class="section-disclosure">/g) || [];
+  assert.equal(disclosures.length, 7);
+  assert.doesNotMatch(html, /<details class="section-disclosure"\s+open>/);
+});
+
 test('los filtros están etiquetados y el recuento se anuncia', () => {
   const html = read('index.html');
   for (const id of ['market-filter', 'tech-filter', 'sort-filter', 'car-search']) {
