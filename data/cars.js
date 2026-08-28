@@ -204,6 +204,138 @@
     }
   },
   {
+    "id": "toyota-chr-180h-gr-used",
+    "name": "Toyota C-HR GR Sport",
+    "variant": "2.0 Dynamic Force 180H GR Sport · 2022 · e-CVT",
+    "market": "used",
+    "technology": "HEV",
+    "year": 2022,
+    "powerCv": 184,
+    "batteryKwh": 1.4,
+    "wltpKm": null,
+    "priceRange": [
+      25500,
+      26490
+    ],
+    "aidEstimate": 0,
+    "netPriceMin": 25500,
+    "evidence": "verified",
+    "verifiedAt": "2026-08-28",
+    "sourceUrl": "https://www.autocasion.com/coches-segunda-mano/toyota-c-hr-ocasion/2-0-hybrid-gr-sport-16a640c90f0500-ref20863869",
+    "sourceLabel": "AutoCasión · C-HR 2.0 180H GR Sport 2022 Barcelona (26.199 €)",
+    "priceNote": "Unidades 2.0 180H GR Sport 2022 con ~44.000 km observadas en Barcelona por 26.199 € al contado con Toyota Relax hasta 15 años/250.000 km.",
+    "breakdown": {
+      "initialLabel": "PVP al contado mercado VO BCN",
+      "initialValue": "25.500 € – 26.490 €",
+      "aidLabel": "Garantía oficial extendida",
+      "aidValue": "Hasta 15 años / 250.000 km (Toyota Relax)",
+      "extraLabel": "Motor y acabado",
+      "extraValue": "184 CV (0-100 en 8,0 s) + Llantas 19\" + Asientos deportivos",
+      "finalLabel": "Precio real compra al contado",
+      "finalValue": "25.500 € – 26.490 €",
+      "financeNote": "Financiación habitual Toyota Ocasión desde ~270 €/mes"
+    },
+    "summary": "La opción que combina estética deportiva y potencia (184 CV) con total tranquilidad familiar: chasis dinámico GR Sport, e-CVT indestructible sin turbo ni embrague, garantía Toyota Relax 15 años y altura crossover que aún permite un acceso razonable a tus padres.",
+    "bestFor": "Quien busca un crossover deportivo, potente (184 CV) y de imagen atractiva sin renunciar a fiabilidad a 15 años y acceso elevado",
+    "caution": "Visibilidad trasera reducida por diseño coupé y ventanillas traseras pequeñas que pueden dar sensación de encajonamiento a los pasajeros posteriores.",
+    "availability": "Disponibilidad contrastada en concesionarios Toyota Ocasión y compraventa en Barcelona",
+    "winner": "🔥 Crossover deportivo más fiable y potente (184 CV)",
+    "verdict": null,
+    "rank": 4,
+    "tier": "S",
+    "score": 8.93,
+    "lengthM": "4,40 m",
+    "trunkL": "358 l",
+    "seats": 5,
+    "warranty": "Hasta 15 años / 250.000 km (Toyota Relax)",
+    "pros": [
+      "Motor 2.0 180H con 184 CV y aceleración 0-100 en 8,0 s muy superior a la media",
+      "Mecánica híbrida Toyota ultra-probada con e-CVT sin embrague ni turbo",
+      "Garantía oficial Toyota Relax renovable hasta 15 años o 250.000 km",
+      "Puesto de conducción crossover con acceso más alto y cómodo que un compacto bajo",
+      "Acabado GR Sport con ajuste de suspensión específico, llantas 19\" y asientos envolventes"
+    ],
+    "cons": [
+      "Ventanillas traseras estrechas con menor luminosidad y visibilidad posterior crítica",
+      "Maletero de 358 l (inferior a los 397 l del Yaris Cross y 466 l del Kona)",
+      "Longitud de 4,40 m (23 cm más largo que el Yaris Cross para aparcar en garaje)"
+    ],
+    "images": {
+      "main": "assets/images/cars/toyota-chr-180h-gr-used-main.jpg",
+      "gallery": [
+        "assets/images/cars/toyota-chr-180h-gr-used-main.jpg",
+        "assets/images/cars/toyota-chr-180h-gr-used-gallery-1.jpg",
+        "assets/images/cars/toyota-chr-180h-gr-used-gallery-2.jpg"
+      ]
+    }
+  },
+  {
+    "id": "toyota-corolla-180h-gr-used",
+    "name": "Toyota Corolla GR Sport",
+    "variant": "2.0 Dynamic Force 180H GR Sport · 2021–2022 · e-CVT",
+    "market": "used",
+    "technology": "HEV",
+    "year": 2021,
+    "powerCv": 184,
+    "batteryKwh": 1.4,
+    "wltpKm": null,
+    "priceRange": [
+      24900,
+      25990
+    ],
+    "aidEstimate": 0,
+    "netPriceMin": 24900,
+    "evidence": "verified",
+    "verifiedAt": "2026-08-28",
+    "sourceUrl": "https://www.autocasion.com/coches-segunda-mano/toyota-corolla-ocasion/barcelona/hibrido",
+    "sourceLabel": "AutoCasión · Corolla 2.0 180H GR Sport Barcelona (25.890 €)",
+    "priceNote": "Unidades 2.0 180H GR Sport 2021-2022 observadas en Barcelona por 25.890 € al contado con ~53.000 km y Toyota Relax hasta 15 años.",
+    "breakdown": {
+      "initialLabel": "PVP al contado mercado VO BCN",
+      "initialValue": "24.900 € – 25.990 €",
+      "aidLabel": "Garantía oficial extendida",
+      "aidValue": "Hasta 15 años / 250.000 km (Toyota Relax)",
+      "extraLabel": "Chasis y mecánica",
+      "extraValue": "184 CV + Suspensión multibrazo trasera + Acabado GR Sport",
+      "finalLabel": "Precio real compra al contado",
+      "finalValue": "24.900 € – 25.990 €",
+      "financeNote": "Financiación habitual Toyota Ocasión desde ~260 €/mes"
+    },
+    "summary": "El compacto más gratificante de conducir de la comparativa con mecánica a prueba de bombas: centro de gravedad bajo, suspensión trasera multibrazo, 184 CV con empuje inmediato y garantía Relax de 15 años. Su único peaje familiar es una postura más baja para tus padres.",
+    "bestFor": "Prioridad en dinamismo de conducción, agilidad en carretera y fiabilidad absoluta manteniendo 5 puertas",
+    "caution": "Carrocería baja tradicional que exige flexionar más las piernas y tronco para entrar y salir que en un crossover.",
+    "availability": "Stock habitual certificado en la red Toyota Ocasión Barcelona",
+    "winner": "🏁 Compacto deportivo con mejor chasis y fiabilidad 15 años",
+    "verdict": null,
+    "rank": 5,
+    "tier": "S",
+    "score": 8.91,
+    "lengthM": "4,37 m",
+    "trunkL": "361 l",
+    "seats": 5,
+    "warranty": "Hasta 15 años / 250.000 km (Toyota Relax)",
+    "pros": [
+      "Excelente dinamismo en carretera gracias a su centro de gravedad bajo y suspensión multibrazo",
+      "Motor 2.0 184 CV con respuesta contundente y consumo real en torno a 4,8-5,2 l/100 km",
+      "Fiabilidad legendaria del sistema híbrido Toyota de 4.ª generación con e-CVT",
+      "Garantía Toyota Relax hasta 15 años o 250.000 km",
+      "Estética deportiva sobria y elegante con asientos mixtos cuero/tela GR Sport"
+    ],
+    "cons": [
+      "Acceso más bajo y menos cómodo para personas mayores que en los SUV/crossovers",
+      "Plazas traseras con espacio para piernas justo para adultos de más de 1,80 m",
+      "Maletero de 361 l en la versión 2.0 (batería de 12V reubicada en el fondo del maletero)"
+    ],
+    "images": {
+      "main": "assets/images/cars/toyota-corolla-180h-gr-used-main.jpg",
+      "gallery": [
+        "assets/images/cars/toyota-corolla-180h-gr-used-main.jpg",
+        "assets/images/cars/toyota-corolla-180h-gr-used-gallery-1.jpg",
+        "assets/images/cars/toyota-corolla-180h-gr-used-gallery-2.jpg"
+      ]
+    }
+  },
+  {
     "id": "hyundai-kona-hev-2021-used",
     "name": "Hyundai Kona Hybrid 2021",
     "variant": "1.6 GDI HEV Maxx · 141 CV · DCT 6v · 2021",
@@ -237,7 +369,7 @@
     "caution": "Garantía de 12 meses del vendedor (fuera de la garantía de fábrica original de 5 años por antigüedad) y maletero de 374 l.",
     "availability": "Unidad concreta disponible en concesionario multimarca Barcelona",
     "winner": "💎 El Gran Sweet Spot Calidad/Precio (17.900 € · 21k km)",
-    "rank": 4,
+    "rank": 6,
     "tier": "S",
     "score": 8.9,
     "lengthM": "4,17 m",
@@ -288,7 +420,7 @@
     "caution": "Estética de monovolumen crossover muy sobria y maletero de 304 l.",
     "availability": "Red oficial Honda",
     "winner": "La mejor ergonomía & visibilidad (Magic Seats)",
-    "rank": 5,
+    "rank": 7,
     "tier": "S",
     "score": 8.85,
     "lengthM": "4,10 m",
@@ -340,7 +472,7 @@
     "bestFor": "Formato crossover compacto eléctrico con altura perfecta para padres, 5 plazas y gran maletero",
     "caution": "Tarifa oficial al contado de salida por encima de 27k en acabado básico y 32,7k en Techno.",
     "winner": "🇫🇷 Mejor concepto crossover eléctrico compacto (4,14 m)",
-    "rank": 6,
+    "rank": 8,
     "tier": "A",
     "score": 8.78,
     "lengthM": "4,14 m",
@@ -392,7 +524,7 @@
     "bestFor": "Eléctrico urbano equilibrado con 5 plazas, Google y cobertura Nissan+ hasta 10 años",
     "caution": "Postura de turismo convencional (3,97 m): acceso más bajo para tus padres que en un SUV. ⚠️ Nissan+: hasta 10 años / 200.000 km para uso particular según condiciones. Confirmar compatibilidad si la compra se vincula a actividad económica o se tramita mediante Línea 2.",
     "winner": "🛡️ Mejor garantía eléctrica urbana (Nissan+ 10 años)",
-    "rank": 7,
+    "rank": 9,
     "tier": "A",
     "score": 8.72,
     "lengthM": "3,97 m",
@@ -445,7 +577,7 @@
     "caution": "27.954 € tarifa antes de tramitar Línea 2 de autónomos y modelo recién lanzado.",
     "availability": "Pedidos oficiales 2026",
     "winner": "El más bonito y tecnológico (Google nativo)",
-    "rank": 8,
+    "rank": 10,
     "tier": "A",
     "score": 8.7,
     "lengthM": "3,92 m",
@@ -496,7 +628,7 @@
     "bestFor": "Máximo equipamiento de serie, bomba de calor, maletero enorme y 7 años de garantía a precio cerrado",
     "caution": "Mide 4,40 m (ligeramente por encima de los 4,20 m ideales) y plataforma de nueva hornada.",
     "winner": "📦 Mejor relación equipamiento/maletero eléctrico (577 l · Bomba calor)",
-    "rank": 9,
+    "rank": 11,
     "tier": "A",
     "score": 8.65,
     "lengthM": "4,40 m",
@@ -548,7 +680,7 @@
     "caution": "Postura de conducción baja para personas mayores frente a los SUV.",
     "availability": "Stock frecuente en Barcelona",
     "winner": "Mejor utilitario contrastado (~17.000 €)",
-    "rank": 10,
+    "rank": 12,
     "tier": "A",
     "score": 8.55,
     "lengthM": "3,94 m",
@@ -570,6 +702,72 @@
       "gallery": [
         "assets/images/cars/toyota-yaris-120h-used-main.jpg",
         "assets/images/cars/toyota-yaris-120h-used-gallery-1.jpg"
+      ]
+    }
+  },
+  {
+    "id": "mazda-3-skyactivx-used",
+    "name": "Mazda 3 e-Skyactiv-X Homura",
+    "variant": "2.0 e-Skyactiv-X 186 CV Homura · Automático 6v · 2023",
+    "market": "used",
+    "technology": "HEV",
+    "year": 2023,
+    "powerCv": 186,
+    "batteryKwh": null,
+    "wltpKm": null,
+    "priceRange": [
+      22000,
+      23500
+    ],
+    "aidEstimate": 0,
+    "netPriceMin": 22000,
+    "evidence": "verified",
+    "verifiedAt": "2026-08-28",
+    "sourceUrl": "https://www.autocasion.com/compactos-segunda-mano/mazda-mazda3-ocasion/barcelona/gasolina/cambio-automatic",
+    "sourceLabel": "AutoCasión · Mazda 3 Homura Automático 2023 Barcelona (22.600 €)",
+    "priceNote": "Unidades Homura Automático 2023 (186 CV e-Skyactiv-X) observadas en Barcelona por 22.600 € al contado con garantía oficial Mazda hasta 6 años.",
+    "breakdown": {
+      "initialLabel": "PVP al contado mercado VO BCN",
+      "initialValue": "22.000 € – 23.500 €",
+      "aidLabel": "Garantía oficial Mazda",
+      "aidValue": "Hasta 6 años o 150.000 km de origen",
+      "extraLabel": "Equipamiento Homura",
+      "extraValue": "186 CV + Cambio automático de convertidor + Head-up display + Acabado negro brillante",
+      "finalLabel": "Precio real compra al contado",
+      "finalValue": "22.000 € – 23.500 €",
+      "financeNote": "Financiación VO habitual desde ~230 €/mes"
+    },
+    "summary": "El compacto con mejor diseño y calidad de acabados interiores por debajo de 23.000 €: motor 2.0 atmosférico de combustión por compresión (SPCCI) con 186 CV, cambio automático clásico suave y tacto premium. Penaliza en espacio trasero y baja altura para tus padres.",
+    "bestFor": "Amantes del diseño refinado, acabados interiores de nivel premium y motor atmosférico con cambio automático tradicional",
+    "caution": "Pilar C muy grueso que reduce la visibilidad posterior y plazas traseras algo oscuras y justas de acceso.",
+    "availability": "Unidades disponibles en concesionarios Mazda y multimarca en Cataluña",
+    "winner": "🎨 Mejor calidad de acabado interior y diseño por <23k",
+    "verdict": null,
+    "rank": 13,
+    "tier": "A",
+    "score": 8.55,
+    "lengthM": "4,46 m",
+    "trunkL": "358 l",
+    "seats": 5,
+    "warranty": "6 años o 150.000 km oficiales Mazda",
+    "pros": [
+      "Calidad de materiales y ajustes interiores a la altura de marcas premium alemanas",
+      "Motor 2.0 e-Skyactiv-X 186 CV atmosférico muy progresivo y silencioso",
+      "Cambio automático de 6 marchas por convertidor de par sin variador ni tirones",
+      "Etiqueta ECO mediante microhibridación MHEV de 24 V",
+      "Postura de conducción excepcionalmente ergonómica"
+    ],
+    "cons": [
+      "Carrocería baja y puertas traseras con vano reducido (difícil para personas mayores)",
+      "Longitud generosa de 4,46 m con maletero comedido de 358 l",
+      "Consumo en ciudad algo mayor que los híbridos puros de Toyota y Honda"
+    ],
+    "images": {
+      "main": "assets/images/cars/mazda-3-skyactivx-used-main.jpg",
+      "gallery": [
+        "assets/images/cars/mazda-3-skyactivx-used-main.jpg",
+        "assets/images/cars/mazda-3-skyactivx-used-gallery-1.jpg",
+        "assets/images/cars/mazda-3-skyactivx-used-gallery-2.jpg"
       ]
     }
   },
@@ -600,7 +798,7 @@
     "caution": "Homologado para 4 plazas (no 5) y modelo sin historial a largo plazo.",
     "availability": "Disponible en concesionarios Hyundai",
     "winner": "El más fácil de manejar (Modular · 4 plazas)",
-    "rank": 11,
+    "rank": 14,
     "tier": "A",
     "score": 8.5,
     "lengthM": "3,83 m",
@@ -622,6 +820,72 @@
         "assets/images/cars/hyundai-inster-new-main.jpg",
         "assets/images/cars/hyundai-inster-new-gallery-1.jpg",
         "assets/images/cars/hyundai-inster-new-gallery-2.jpg"
+      ]
+    }
+  },
+  {
+    "id": "cupra-leon-15-etsi-used",
+    "name": "CUPRA León eTSI DSG",
+    "variant": "1.5 eTSI 150 CV DSG 7v · MHEV ECO · 2023",
+    "market": "used",
+    "technology": "HEV",
+    "year": 2023,
+    "powerCv": 150,
+    "batteryKwh": null,
+    "wltpKm": null,
+    "priceRange": [
+      23500,
+      24900
+    ],
+    "aidEstimate": 0,
+    "netPriceMin": 23500,
+    "evidence": "verified",
+    "verifiedAt": "2026-08-28",
+    "sourceUrl": "https://www.coches.net/cupra-leon-15-etsi-110kw-150cv-dsg-5p-electrico-hibrido-2024-en-barcelona-70783707-covo.aspx",
+    "sourceLabel": "Coches.net · CUPRA León 1.5 eTSI DSG 2023 Barcelona (23.900 €)",
+    "priceNote": "Unidades 1.5 eTSI 150 CV DSG con ~34.000 km observadas en Barcelona por 23.900 € al contado con etiqueta ECO y garantía de hasta 5 años de origen.",
+    "breakdown": {
+      "initialLabel": "PVP al contado mercado VO BCN",
+      "initialValue": "23.500 € – 24.900 €",
+      "aidLabel": "Garantía oficial",
+      "aidValue": "Hasta 5 años oficial CUPRA (según unidad)",
+      "extraLabel": "Equipamiento",
+      "extraValue": "150 CV + Cambio DSG 7v + Faros Full LED + Pantalla 12\" + Cuadro digital",
+      "finalLabel": "Precio real compra al contado",
+      "finalValue": "23.500 € – 24.900 €",
+      "financeNote": "Financiación habitual desde ~245 €/mes"
+    },
+    "summary": "Imagen deportiva atractiva, chasis muy ágil y tecnología digital de última generación: motor 1.5 turbo con microhibridación de 48V, cambio DSG rápido y maletero de 380 l. Frente a Toyota, su mecánica con turbo y doble embrague requiere mayor atención de mantenimiento a 10-15 años.",
+    "bestFor": "Quien busca imagen agresiva, tacto deportivo moderno y amplio maletero en formato compacto",
+    "caution": "Caja DSG y sistema eléctrico de 48 V más complejos a largo plazo (10-15 años) que el sistema híbrido atmosférico e-CVT.",
+    "availability": "Amplio stock en la red oficial SEAT/CUPRA Ocasión Barcelona",
+    "winner": "⚡ Compacto con estética más agresiva y cambio DSG",
+    "verdict": null,
+    "rank": 15,
+    "tier": "A",
+    "score": 8.4,
+    "lengthM": "4,40 m",
+    "trunkL": "380 l",
+    "seats": 5,
+    "warranty": "Hasta 5 años oficial CUPRA de origen",
+    "pros": [
+      "Diseño exterior e interior llamativo y muy diferenciado con detalles en cobre",
+      "Chasis muy eficaz y divertido en tramos de curvas",
+      "Cambio automático DSG de 7 relaciones muy rápido en carretera",
+      "Maletero amplio de 380 l y buen espacio longitudinal en plazas traseras",
+      "Etiqueta ECO mediante sistema microhíbrido eTSI de 48 V"
+    ],
+    "cons": [
+      "Postura de conducción baja que resta comodidad de entrada/salida para tus padres",
+      "Mandos táctiles del climatizador sin retroiluminación en las primeras unidades",
+      "Mecánica 1.5 Turbo + embragues secos DSG con mayor riesgo de costes de mantenimiento a >10 años"
+    ],
+    "images": {
+      "main": "assets/images/cars/cupra-leon-15-etsi-used-main.jpg",
+      "gallery": [
+        "assets/images/cars/cupra-leon-15-etsi-used-main.jpg",
+        "assets/images/cars/cupra-leon-15-etsi-used-gallery-1.jpg",
+        "assets/images/cars/cupra-leon-15-etsi-used-gallery-2.jpg"
       ]
     }
   },
@@ -648,7 +912,7 @@
     "caution": "Acceso más bajo para tus padres que en el Yaris Cross.",
     "availability": "Concesionarios Toyota",
     "winner": "El utilitario híbrido más fiable",
-    "rank": 12,
+    "rank": 16,
     "tier": "B",
     "score": 8.45,
     "lengthM": "3,94 m",
@@ -699,7 +963,7 @@
     "caution": "Mide 4,42 m (ya algo grande para el uso diario en Vallirana/BCN).",
     "availability": "Oferta frecuente en Barcelona",
     "winner": "Gran habitabilidad y 7 años de garantía",
-    "rank": 13,
+    "rank": 17,
     "tier": "B",
     "score": 8.35,
     "lengthM": "4,42 m",
@@ -749,7 +1013,7 @@
     "caution": "Mide 4,38 m.",
     "availability": "Stock en concesionarios VO",
     "winner": "Mejor BEV en fiabilidad demostrada",
-    "rank": 14,
+    "rank": 18,
     "tier": "B",
     "score": 8.2,
     "lengthM": "4,38 m",
@@ -798,7 +1062,7 @@
     "caution": "Batería de 64 kWh sobredimensionada para trayectos cortos.",
     "availability": "Stock abundante en ocasión",
     "winner": "Autonomía para viajar (64 kWh)",
-    "rank": 15,
+    "rank": 19,
     "tier": "B",
     "score": 8.1,
     "lengthM": "4,18 m",
@@ -850,7 +1114,7 @@
     "caution": "Materiales interiores y construcción low-cost frente a Toyota/Honda.",
     "availability": "Ofertas oficiales activas",
     "winner": "Compra económica de confort",
-    "rank": 16,
+    "rank": 20,
     "tier": "B",
     "score": 8,
     "lengthM": "4,01 m",
@@ -901,7 +1165,7 @@
     "caution": "4 plazas homologadas y batería de 27,5 kWh.",
     "availability": "Gama oficial activa",
     "winner": "El más compacto para recados (4 plazas)",
-    "rank": 17,
+    "rank": 21,
     "tier": "C",
     "score": 7.8,
     "lengthM": "3,79 m",
@@ -951,7 +1215,7 @@
     "caution": "Acceso más bajo y suspensión más firme.",
     "availability": "Mercado de ocasión activo",
     "winner": "Prestaciones deportivas (conductor único)",
-    "rank": 18,
+    "rank": 22,
     "tier": "C",
     "score": 7.7,
     "lengthM": "4,32 m",
@@ -998,7 +1262,7 @@
     "caution": "Red y posventa menos contrastadas a largo plazo.",
     "availability": "Concesionarios oficiales BYD",
     "winner": "Garantía 8 años / 250.000 km",
-    "rank": 19,
+    "rank": 23,
     "tier": "C",
     "score": 7.5,
     "lengthM": "3,99 m",
@@ -1048,7 +1312,7 @@
     "caution": "Calidades interiores y posventa un escalón por debajo del nuevo MG4 Urban 2026.",
     "availability": "Stock abundante en Km0 y VO",
     "winner": "Eléctrico de ocasión más barato (16–18k)",
-    "rank": 20,
+    "rank": 24,
     "tier": "C",
     "score": 7.3,
     "lengthM": "4,29 m",
@@ -1099,7 +1363,7 @@
     "caution": "No recomendable para subir la B-24 o viajes familiares frecuentes.",
     "availability": "Red oficial Dacia",
     "winner": "Eléctrico nuevo más barato",
-    "rank": 21,
+    "rank": 25,
     "tier": "D",
     "score": 6.2,
     "lengthM": "3,73 m",
@@ -1211,6 +1475,29 @@
         "assets/images/cars/jaecoo-5-ev-watchlist-main.jpg",
         "assets/images/cars/jaecoo-5-ev-watchlist-gallery-1.jpg",
         "assets/images/cars/jaecoo-5-ev-watchlist-gallery-2.jpg"
+      ]
+    }
+  },
+  {
+    "id": "lexus-ux-250h-watchlist",
+    "name": "Lexus UX 250h F Sport",
+    "variant": "2.0 Híbrido 184 CV F Sport · 2022 · e-CVT",
+    "officialPrice": "Tarifa VO BCN: ~28.790 €",
+    "targetOfferPrice": "Comprar si oferta ≤ 27.000 €",
+    "summary": "El crossover premium definitivo con base mecánica Toyota (2.0 de 184 CV e-CVT): insonorización excelente, acabado F Sport con suspensión adaptativa, etiqueta ECO y cobertura Lexus Relax hasta 10 años. Vigilar en mercado VO si surge unidad ≤27k.",
+    "lengthM": "4,50 m",
+    "trunkL": "320 l",
+    "wltpKm": "HEV ECO",
+    "warranty": "Hasta 10 años / 185.000 km (Lexus Relax)",
+    "status": "Excelente si entra en precio; actualmente en ~28.790 € en acabado F Sport (Business por ~26.900 €). Poner alerta por debajo de 27.000 €.",
+    "sourceUrl": "https://www.autocasion.com/coches-segunda-mano/lexus-ux-ocasion/barcelona",
+    "sourceLabel": "AutoCasión · Buscar Lexus UX 250h F Sport Barcelona",
+    "images": {
+      "main": "assets/images/cars/lexus-ux-250h-watchlist-main.jpg",
+      "gallery": [
+        "assets/images/cars/lexus-ux-250h-watchlist-main.jpg",
+        "assets/images/cars/lexus-ux-250h-watchlist-gallery-1.jpg",
+        "assets/images/cars/lexus-ux-250h-watchlist-gallery-2.jpg"
       ]
     }
   }

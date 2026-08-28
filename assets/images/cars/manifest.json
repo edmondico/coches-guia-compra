@@ -188,5 +188,45 @@
       "assets/images/cars/jaecoo-5-ev-watchlist-gallery-1.jpg",
       "assets/images/cars/jaecoo-5-ev-watchlist-gallery-2.jpg"
     ]
+  },
+  "toyota-chr-180h-gr-used": {
+    "main": "assets/images/cars/toyota-chr-180h-gr-used-main.jpg",
+    "gallery": [
+      "assets/images/cars/toyota-chr-180h-gr-used-main.jpg",
+      "assets/images/cars/toyota-chr-180h-gr-used-gallery-1.jpg",
+      "assets/images/cars/toyota-chr-180h-gr-used-gallery-2.jpg"
+    ]
+  },
+  "toyota-corolla-180h-gr-used": {
+    "main": "assets/images/cars/toyota-corolla-180h-gr-used-main.jpg",
+    "gallery": [
+      "assets/images/cars/toyota-corolla-180h-gr-used-main.jpg",
+      "assets/images/cars/toyota-corolla-180h-gr-used-gallery-1.jpg",
+      "assets/images/cars/toyota-corolla-180h-gr-used-gallery-2.jpg"
+    ]
+  },
+  "mazda-3-skyactivx-used": {
+    "main": "assets/images/cars/mazda-3-skyactivx-used-main.jpg",
+    "gallery": [
+      "assets/images/cars/mazda-3-skyactivx-used-main.jpg",
+      "assets/images/cars/mazda-3-skyactivx-used-gallery-1.jpg",
+      "assets/images/cars/mazda-3-skyactivx-used-gallery-2.jpg"
+    ]
+  },
+  "cupra-leon-15-etsi-used": {
+    "main": "assets/images/cars/cupra-leon-15-etsi-used-main.jpg",
+    "gallery": [
+      "assets/images/cars/cupra-leon-15-etsi-used-main.jpg",
+      "assets/images/cars/cupra-leon-15-etsi-used-gallery-1.jpg",
+      "assets/images/cars/cupra-leon-15-etsi-used-gallery-2.jpg"
+    ]
+  },
+  "lexus-ux-250h-watchlist": {
+    "main": "assets/images/cars/lexus-ux-250h-watchlist-main.jpg",
+    "gallery": [
+      "assets/images/cars/lexus-ux-250h-watchlist-main.jpg",
+      "assets/images/cars/lexus-ux-250h-watchlist-gallery-1.jpg",
+      "assets/images/cars/lexus-ux-250h-watchlist-gallery-2.jpg"
+    ]
   }
 }

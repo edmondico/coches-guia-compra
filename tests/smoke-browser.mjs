@@ -207,7 +207,7 @@ try {
   const tierGroupsCount = await evaluate('document.querySelectorAll("#tier-cards-view details.tier-group").length');
   const openTierGroups = await evaluate('document.querySelectorAll("#tier-cards-view details.tier-group[open]").length');
   console.log('Tier cards rendered:', tierCardsCount);
-  assert.equal(tierCardsCount, 21);
+  assert.equal(tierCardsCount, 25);
   assert.equal(tierGroupsCount, 5);
   assert.equal(openTierGroups, 1);
 
@@ -221,7 +221,7 @@ try {
   const tableVisible = await evaluate('!document.getElementById("tier-table-view").hidden');
   const cardsHidden = await evaluate('document.getElementById("tier-cards-view").hidden');
   console.log('Tier table visible:', tableVisible, 'Rows count:', tableRowsCount, 'Cards hidden:', cardsHidden);
-  assert.equal(tableRowsCount, 21);
+  assert.equal(tableRowsCount, 25);
   assert.equal(tableVisible, true);
   assert.equal(cardsHidden, true);
 
@@ -233,7 +233,7 @@ try {
   // Check Watchlist / Radar
   const watchlistCount = await evaluate('document.querySelectorAll("#watchlist-grid .watchlist-card").length');
   console.log('Watchlist cards rendered:', watchlistCount);
-  assert.equal(watchlistCount, 3);
+  assert.equal(watchlistCount, 4);
 
   const secondaryDisclosures = await evaluate(`({
     count: document.querySelectorAll('details.section-disclosure').length,
@@ -359,20 +359,20 @@ try {
 
   const initialCountText = await evaluate('document.getElementById("result-count").textContent');
   console.log('Result count text:', initialCountText);
-  assert.match(initialCountText, /6 de 21 coches visibles/);
+  assert.match(initialCountText, /6 de 25 coches visibles/);
 
   const catalogueToggleState = await evaluate(`({
     text: document.getElementById('catalogue-toggle').textContent,
     expanded: document.getElementById('catalogue-toggle').getAttribute('aria-expanded'),
   })`);
-  assert.match(catalogueToggleState.text, /Mostrar 15 más/);
+  assert.match(catalogueToggleState.text, /Mostrar 19 más/);
   assert.equal(catalogueToggleState.expanded, 'false');
 
   await evaluate('document.getElementById("catalogue-toggle").click()');
   await new Promise((r) => setTimeout(r, 50));
   const expandedCars = await evaluate('document.querySelectorAll("#comparison-list .car-card").length');
   const expandedState = await evaluate('document.getElementById("catalogue-toggle").getAttribute("aria-expanded")');
-  assert.equal(expandedCars, 21);
+  assert.equal(expandedCars, 25);
   assert.equal(expandedState, 'true');
 
   // Test filter by market = used

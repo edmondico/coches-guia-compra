@@ -65,3 +65,16 @@ test('las ofertas condicionadas no se presentan como precio al contado', () => {
     assert.equal(car.conditional, true, `${car.id}: falta marcar condiciones`);
   }
 });
+
+test('el catálogo cuenta con 25 coches en la lista principal y 4 en el radar', () => {
+  const { watchlistCars } = require('../data/cars.js');
+  assert.equal(cars.length, 25);
+  assert.equal(watchlistCars.length, 4);
+});
+
+test('el Tier S contiene 7 modelos incluyendo C-HR GR Sport y Corolla GR Sport', () => {
+  const tierSCars = cars.filter((c) => c.tier === 'S');
+  assert.equal(tierSCars.length, 7);
+  assert.ok(tierSCars.some((c) => c.id === 'toyota-chr-180h-gr-used'));
+  assert.ok(tierSCars.some((c) => c.id === 'toyota-corolla-180h-gr-used'));
+});
