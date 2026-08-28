@@ -92,7 +92,7 @@
       "initialLabel": "PVP al contado mercado VO BCN",
       "initialValue": "23.900 € – 26.000 €",
       "aidLabel": "Garantía oficial Hyundai",
-      "aidValue": "5 años sin límite km (extensible a 10 años)",
+      "aidValue": "5 años sin límite km (8 años/160.000 km batería)",
       "extraLabel": "Pantallas panorámicas 2024",
       "extraValue": "Doble pantalla integrada de 12,3\" + Clima bizona",
       "finalLabel": "Precio real compra al contado",
