@@ -37,10 +37,18 @@ test('el precio neto al contado coincide con contado menos ayuda', () => {
   }
 });
 
-test('ningún recomendado rebasa el presupuesto neto', () => {
+test('ningún recomendado rebasa el techo ampliado de 27.000 €', () => {
   for (const car of cars.filter((item) => item.verdict)) {
     assert.ok(car.netPriceMin <= 27000, `${car.id}: recomendado fuera de presupuesto`);
   }
+});
+
+test('Honda Jazz Crosstar enlaza su ficha oficial vigente', () => {
+  const crosstar = cars.find((car) => car.id === 'honda-jazz-crosstar-new');
+  assert.equal(
+    crosstar.sourceUrl,
+    'https://www.honda.es/cars/new/jazz-crosstar-advance-hybrid/specifications.html',
+  );
 });
 
 test('las bandas de ocasión están ordenadas y definen el mínimo comparable', () => {
@@ -57,4 +65,3 @@ test('las ofertas condicionadas no se presentan como precio al contado', () => {
     assert.equal(car.conditional, true, `${car.id}: falta marcar condiciones`);
   }
 });
-

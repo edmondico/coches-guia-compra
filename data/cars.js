@@ -248,7 +248,7 @@
     "netPriceMin": 26750,
     "evidence": "verified",
     "verifiedAt": "2026-08-28",
-    "sourceUrl": "https://www.honda.es/cars/new/jazz-crosstar.html",
+    "sourceUrl": "https://www.honda.es/cars/new/jazz-crosstar-advance-hybrid/specifications.html",
     "sourceLabel": "Honda España · Web Oficial Jazz Crosstar",
     "priceNote": "26.750 € PVP oficial al contado. Hasta 8 años de cobertura oficial (3 años de fábrica + 5 años activados por servicio anual).",
     "summary": "El coche con mejor ergonomía, visibilidad panorámica y facilidad de conducción para tus padres. Asientos Magic Seats, tapicería repelente al agua, 4,10 m y suavidad de marcha total.",
