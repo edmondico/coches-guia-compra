@@ -7,6 +7,7 @@ Guía interactiva y contrastada para elegir un coche automático, híbrido o el�
 - **Veredicto personalizado**: 3 finalistas para equilibrio global, tecnología/confort y fiabilidad/ergonomía.
 - **Clasificación completa**: 21 candidatos ordenados en tiers S–D, disponibles como tarjetas desplegables y como tabla maestra.
 - **Mejor coche por presupuesto**: 15 escalones entre 13.000 y 27.000 €, con selector, entrada numérica, saltos recomendados y alternativas por tramo.
+- **Lectura progresiva**: Tier S abierto por defecto, tabla presupuestaria plegada, ocho distinciones clave y comparador compacto de 6 coches ampliable a 21.
 - **Radar 2026**: 3 candidatos adicionales que sólo entran si aparece una oferta dentro del objetivo.
 - **Comparador dinámico**: filtros por mercado (nuevo/ocasión), tecnología (BEV/HEV), ordenación y búsqueda textual en tiempo real.
 - **Rigor en los precios**: Separación estricta entre precio al contado, oferta financiada condicionada y banda de anuncios de ocasión.
@@ -55,7 +56,7 @@ Abre en el navegador `http://127.0.0.1:8080/`.
 El proyecto utiliza el test runner nativo de Node.js (`node:test`) y Chrome headless para verificación E2E:
 
 ```bash
-# Pruebas unitarias, de integridad y estructura (32 tests)
+# Pruebas unitarias, de integridad y estructura (33 tests)
 node --test tests/*.test.js
 
 # Verificación en navegador real (CDP / Chrome Headless)

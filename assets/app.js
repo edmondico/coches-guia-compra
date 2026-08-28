@@ -34,6 +34,9 @@
   const sortSelect = document.getElementById('sort-filter');
   const resetBtn = document.getElementById('reset-filters');
   const emptyResetBtn = document.querySelector('[data-reset-filters]');
+  const catalogueToggle = document.getElementById('catalogue-toggle');
+  const cataloguePreviewLimit = 6;
+  let catalogueExpanded = false;
 
   function renderVerdicts() {
     if (!verdictContainer) return;
@@ -85,7 +88,10 @@
   function renderWinners() {
     if (!winnerContainer) return;
 
-    const winners = cars.filter((car) => car.winner);
+    const winners = cars
+      .filter((car) => car.winner)
+      .sort((a, b) => (a.rank ?? 999) - (b.rank ?? 999))
+      .slice(0, 8);
 
     winnerContainer.innerHTML = winners.map((car) => `
       <article class="winner">
@@ -155,14 +161,15 @@
       const meta = tierMeta[t];
 
       return `
-        <div class="tier-group ${meta.class}">
-          <div class="tier-group__header">
+        <details class="tier-group ${meta.class}" ${t === 'S' ? 'open' : ''}>
+          <summary class="tier-group__header">
             <span class="tier-badge tier-badge--${t}">TIER ${t}</span>
             <div>
               <h3>${escapeHtml(meta.title)}</h3>
               <p>${escapeHtml(meta.desc)}</p>
             </div>
-          </div>
+            <span class="tier-group__toggle" aria-hidden="true">${groupCars.length} coches <i>▾</i></span>
+          </summary>
           <div class="tier-cards-grid">
             ${groupCars.map((car) => `
               <article class="tier-card" id="tier-card-${car.id}">
@@ -222,7 +229,7 @@
               </article>
             `).join('')}
           </div>
-        </div>
+        </details>
       `;
     }).join('');
 
@@ -495,9 +502,24 @@
     if (!listContainer || !resultCount || !emptyState) return;
 
     const count = items.length;
-    resultCount.textContent = count === 0
-      ? '0 coches disponibles con estos filtros'
-      : `${count} ${count === 1 ? 'coche disponible' : 'coches disponibles'}`;
+    const visibleItems = catalogueExpanded ? items : items.slice(0, cataloguePreviewLimit);
+    const visibleCount = visibleItems.length;
+    if (count === 0) {
+      resultCount.textContent = '0 coches disponibles con estos filtros';
+    } else if (visibleCount < count) {
+      resultCount.textContent = `${visibleCount} de ${count} coches visibles`;
+    } else {
+      resultCount.textContent = `${count} ${count === 1 ? 'coche disponible' : 'coches disponibles'}`;
+    }
+
+    if (catalogueToggle) {
+      const hiddenCount = Math.max(0, count - cataloguePreviewLimit);
+      catalogueToggle.hidden = count <= cataloguePreviewLimit;
+      catalogueToggle.setAttribute('aria-expanded', String(catalogueExpanded));
+      catalogueToggle.textContent = catalogueExpanded
+        ? 'Mostrar selección compacta'
+        : `Mostrar ${hiddenCount} más`;
+    }
 
     if (count === 0) {
       listContainer.innerHTML = '';
@@ -506,7 +528,7 @@
     }
 
     emptyState.hidden = true;
-    listContainer.innerHTML = items.map((car) => `
+    listContainer.innerHTML = visibleItems.map((car) => `
       <article class="car-card" id="${car.id}" data-market="${car.market}" data-technology="${car.technology}" data-evidence="${car.evidence}">
         <div class="car-card__visual" aria-hidden="true">
           <span class="car-card__initials">${initials(car.name)}</span>
@@ -647,6 +669,13 @@
 
     if (emptyResetBtn) {
       emptyResetBtn.addEventListener('click', resetAll);
+    }
+
+    if (catalogueToggle) {
+      catalogueToggle.addEventListener('click', () => {
+        catalogueExpanded = !catalogueExpanded;
+        applyFilters();
+      });
     }
 
     document.addEventListener('click', (e) => {

@@ -14,13 +14,13 @@
   <header class="site-header">
     <div class="shell masthead">
       <a class="brand" href="#inicio" aria-label="Volver al inicio">
-        <span class="brand__mark" aria-hidden="true">22K</span>
+        <span class="brand__mark" aria-hidden="true">26K</span>
         <span>La guía del garaje</span>
       </a>
       <nav class="nav" aria-label="Secciones principales">
         <a href="#veredicto">Veredicto</a>
-        <a href="#tier-list">Tier List & Tabla</a>
         <a href="#presupuestos">Por Presupuesto</a>
+        <a href="#tier-list">Tier List & Tabla</a>
         <a href="#barcelona">Barcelona & Solar</a>
         <a href="#comparador">Comparador</a>
         <a href="#radar">Radar 2026</a>
@@ -61,8 +61,8 @@
           <h1 id="page-title">Qué coche comprar · <span>Objetivo 23–26k (máx ~27k)</span></h1>
           <p class="hero__lede">Coche familiar compartido (tú + padres) con 3.000–5.000 km/año en Vallirana/Barcelona. Evaluado con un baremo de propiedad a 10–15 años: fiabilidad mecánica demostrada, calidad de construcción, facilidad de acceso para tus padres y tecnología moderna.</p>
           <div class="hero__actions">
-            <a class="button button--primary" href="#tier-list">Ver Tier List & Ranking</a>
-            <a class="button button--quiet" href="#presupuestos">💰 Mejor por Presupuesto</a>
+            <a class="button button--primary" href="#presupuestos">💰 Mejor por Presupuesto</a>
+            <a class="button button--quiet" href="#tier-list">Ver Tier List & Ranking</a>
           </div>
         </div>
 
@@ -96,56 +96,6 @@
         <div class="verdict-grid" id="verdict-list" aria-live="polite">
           <p class="loading-copy">Preparando recomendaciones…</p>
         </div>
-      </div>
-    </section>
-
-    <section class="section tier-section" id="tier-list" aria-labelledby="tier-title">
-      <div class="shell">
-        <header class="section-heading section-heading--split">
-          <div>
-            <p class="kicker">Clasificación global a 10–15 años</p>
-            <h2 id="tier-title">Tier List & Tabla Completa (1 al 21)</h2>
-          </div>
-          <p>Ordenados rigurosamente de mejor a peor con pros, contras, notas sobre 10 y ficha técnica.</p>
-        </header>
-
-        <div class="tier-highlights" aria-label="Ganadores destacados del baremo">
-          <div class="tier-highlight-badge tier-highlight--gold">
-            <span class="highlight-icon">🏆</span>
-            <div>
-              <strong>Mejor global (9,25/10)</strong>
-              <span>Toyota Yaris Cross 130 Style</span>
-            </div>
-          </div>
-          <div class="tier-highlight-badge tier-highlight--blue">
-            <span class="highlight-icon">💻</span>
-            <div>
-              <strong>Mejor tecnología & confort (9,10/10)</strong>
-              <span>Hyundai Kona Hybrid Tecno</span>
-            </div>
-          </div>
-          <div class="tier-highlight-badge tier-highlight--green">
-            <span class="highlight-icon">🛡️</span>
-            <div>
-              <strong>Mejor fiabilidad pura (8,95/10)</strong>
-              <span>Honda HR-V / Kona 2021 (98,7%)</span>
-            </div>
-          </div>
-        </div>
-
-        <p class="tier-formula"><strong>Baremo ponderado a 10–15 años:</strong> Fiabilidad/longevidad 25% · Comodidad 18% · Calidad de construcción 12% · Facilidad para padres 12% · Tamaño 10% · Pantalla/tecnología 9% · Diseño 6% · Conducción 5% · Relación precio/producto 3%.</p>
-
-        <div class="tier-controls" role="tablist" aria-label="Modo de visualización de la clasificación">
-          <button class="tier-tab-btn is-active" id="btn-view-cards" role="tab" aria-selected="true" aria-controls="tier-cards-view" type="button">
-            🎴 Vista Tier List (Tarjetas Pros/Contras)
-          </button>
-          <button class="tier-tab-btn" id="btn-view-table" role="tab" aria-selected="false" aria-controls="tier-table-view" type="button">
-            📊 Vista Tabla Resumen
-          </button>
-        </div>
-
-        <div id="tier-cards-view" role="tabpanel" aria-labelledby="btn-view-cards" class="tier-cards-container"></div>
-        <div id="tier-table-view" role="tabpanel" aria-labelledby="btn-view-table" class="tier-table-container" hidden></div>
       </div>
     </section>
 
@@ -243,9 +193,13 @@
 
           <div id="budget-result-card" class="budget-result-card" aria-live="polite"></div>
 
-          <div class="budget-master-table-block">
-            <h3 class="budget-table-title">📊 Tabla Maestra: Mejor compra por cada 1.000 € (13k → 27k)</h3>
-            <p class="budget-table-sub">Presupuesto máximo al contado disponible. «No» indica que la mejor compra cuesta menos y debes quedarte el dinero sobrante.</p>
+          <details class="budget-master-details">
+            <summary>
+              <span>📊 Tabla maestra por cada 1.000 €</span>
+              <small>Consultar los 15 tramos de 13k a 27k</small>
+            </summary>
+            <div class="budget-master-table-block">
+              <p class="budget-table-sub">Presupuesto máximo al contado disponible. «No» indica que la mejor compra cuesta menos y debes quedarte el dinero sobrante.</p>
             
             <div class="budget-table-wrapper">
               <table class="budget-table" aria-label="Tabla de mejor compra por cada presupuesto">
@@ -383,8 +337,59 @@
                 </tbody>
               </table>
             </div>
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="section tier-section" id="tier-list" aria-labelledby="tier-title">
+      <div class="shell">
+        <header class="section-heading section-heading--split">
+          <div>
+            <p class="kicker">Clasificación global a 10–15 años</p>
+            <h2 id="tier-title">Tier List & Tabla Completa (1 al 21)</h2>
+          </div>
+          <p>Tier S abierto para decidir rápido. Despliega el resto sólo cuando quieras comparar más alternativas.</p>
+        </header>
+
+        <div class="tier-highlights" aria-label="Ganadores destacados del baremo">
+          <div class="tier-highlight-badge tier-highlight--gold">
+            <span class="highlight-icon">🏆</span>
+            <div>
+              <strong>Mejor global (9,25/10)</strong>
+              <span>Toyota Yaris Cross 130 Style</span>
+            </div>
+          </div>
+          <div class="tier-highlight-badge tier-highlight--blue">
+            <span class="highlight-icon">💻</span>
+            <div>
+              <strong>Mejor tecnología & confort (9,10/10)</strong>
+              <span>Hyundai Kona Hybrid Tecno</span>
+            </div>
+          </div>
+          <div class="tier-highlight-badge tier-highlight--green">
+            <span class="highlight-icon">🛡️</span>
+            <div>
+              <strong>Mejor fiabilidad pura (8,95/10)</strong>
+              <span>Honda HR-V / Kona 2021 (98,7%)</span>
+            </div>
           </div>
         </div>
+
+        <p class="tier-formula"><strong>Baremo ponderado a 10–15 años:</strong> Fiabilidad/longevidad 25% · Comodidad 18% · Calidad de construcción 12% · Facilidad para padres 12% · Tamaño 10% · Pantalla/tecnología 9% · Diseño 6% · Conducción 5% · Relación precio/producto 3%.</p>
+
+        <div class="tier-controls" role="tablist" aria-label="Modo de visualización de la clasificación">
+          <button class="tier-tab-btn is-active" id="btn-view-cards" role="tab" aria-selected="true" aria-controls="tier-cards-view" type="button">
+            🎴 Vista Tier List (bloques plegables)
+          </button>
+          <button class="tier-tab-btn" id="btn-view-table" role="tab" aria-selected="false" aria-controls="tier-table-view" type="button">
+            📊 Vista Tabla Resumen
+          </button>
+        </div>
+
+        <div id="tier-cards-view" role="tabpanel" aria-labelledby="btn-view-cards" class="tier-cards-container"></div>
+        <div id="tier-table-view" role="tabpanel" aria-labelledby="btn-view-table" class="tier-table-container" hidden></div>
       </div>
     </section>
 
@@ -483,6 +488,10 @@
 
         <div class="car-list" id="comparison-list" aria-live="polite"></div>
 
+        <button class="catalogue-toggle" id="catalogue-toggle" type="button" aria-controls="comparison-list" aria-expanded="false" hidden>
+          Mostrar catálogo completo
+        </button>
+
         <div class="empty-state" id="empty-state" hidden>
           <p>No hay coches que coincidan con estos filtros.</p>
           <button class="button button--primary" data-reset-filters type="button">Restablecer filtros</button>
@@ -494,8 +503,8 @@
       <div class="shell">
         <header class="section-heading section-heading--light">
           <p class="kicker">Cuadro de honor</p>
-          <h2 id="winners-title">El mejor en cada categoría clave</h2>
-          <p>Para resolver dudas rápidas según el criterio que más valores.</p>
+          <h2 id="winners-title">Ocho distinciones que sí cambian la compra</h2>
+          <p>Una selección breve para resolver dudas sin repetir todo el catálogo.</p>
         </header>
         <div class="winner-grid" id="winner-grid" aria-live="polite"></div>
       </div>

@@ -883,6 +883,18 @@ h4 {
   margin-bottom: var(--space-4);
   padding-bottom: var(--space-3);
   border-bottom: 1px solid var(--color-rule);
+  cursor: pointer;
+  list-style: none;
+}
+
+.tier-group__header::-webkit-details-marker {
+  display: none;
+}
+
+.tier-group:not([open]) .tier-group__header {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: 0;
 }
 
 .tier-group__header > div {
@@ -900,6 +912,26 @@ h4 {
   margin: 0;
   font-size: 0.82rem;
   color: var(--color-muted);
+}
+
+.tier-group__toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  flex-shrink: 0;
+  margin-left: auto;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--color-muted);
+}
+
+.tier-group__toggle i {
+  font-style: normal;
+  transition: transform 0.15s ease;
+}
+
+.tier-group[open] .tier-group__toggle i {
+  transform: rotate(180deg);
 }
 
 .tier-badge {
@@ -1752,10 +1784,49 @@ h4 {
   color: var(--color-ink);
 }
 
-.budget-master-table-block {
+.budget-master-details {
   margin-top: var(--space-6);
   padding-top: var(--space-5);
   border-top: 2px dashed var(--color-rule);
+}
+
+.budget-master-details > summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  padding: var(--space-3) var(--space-4);
+  background: var(--color-paper);
+  border: 1px solid var(--color-rule);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  list-style: none;
+  font-weight: 750;
+  color: var(--color-ink);
+}
+
+.budget-master-details > summary::-webkit-details-marker {
+  display: none;
+}
+
+.budget-master-details > summary::after {
+  content: '▾';
+  color: var(--color-accent);
+  transition: transform 0.15s ease;
+}
+
+.budget-master-details[open] > summary::after {
+  transform: rotate(180deg);
+}
+
+.budget-master-details > summary small {
+  margin-left: auto;
+  color: var(--color-muted);
+  font-weight: 600;
+}
+
+.budget-master-table-block {
+  padding-top: var(--space-4);
   min-width: 0;
   max-width: 100%;
 }
@@ -2218,6 +2289,28 @@ h4 {
   display: grid;
   grid-template-columns: 1fr;
   gap: var(--space-4);
+}
+
+.catalogue-toggle {
+  display: block;
+  width: min(100%, 24rem);
+  margin: var(--space-5) auto 0;
+  padding: 0.7rem 1rem;
+  background: var(--color-surface);
+  color: var(--color-accent-dark);
+  border: 1px solid var(--color-accent);
+  border-radius: var(--radius-sm);
+  font: inherit;
+  font-weight: 750;
+  cursor: pointer;
+}
+
+.catalogue-toggle:hover {
+  background: var(--color-petrol-light);
+}
+
+.catalogue-toggle[hidden] {
+  display: none;
 }
 
 @media (min-width: 54rem) {

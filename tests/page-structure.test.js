@@ -20,6 +20,14 @@ test('la página tiene estructura semántica y salto al contenido', () => {
   assert.match(html, /<footer/);
 });
 
+test('la lectura editorial prioriza presupuesto y compacta el contenido secundario', () => {
+  const html = read('index.html');
+  assert.match(html, /class="brand__mark"[^>]*>26K</);
+  assert.ok(html.indexOf('id="presupuestos"') < html.indexOf('id="tier-list"'));
+  assert.match(html, /<details class="budget-master-details"/);
+  assert.match(html, /id="catalogue-toggle"[^>]+aria-controls="comparison-list"[^>]+aria-expanded="false"/);
+});
+
 test('los filtros están etiquetados y el recuento se anuncia', () => {
   const html = read('index.html');
   for (const id of ['market-filter', 'tech-filter', 'sort-filter', 'car-search']) {

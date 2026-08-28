@@ -156,12 +156,16 @@ try {
   // Check winners count
   const winners = await evaluate('document.querySelectorAll("#winner-grid .winner").length');
   console.log('Winners rendered:', winners);
-  assert.ok(winners >= 8);
+  assert.equal(winners, 8);
 
   // Check Tier List and Table
   const tierCardsCount = await evaluate('document.querySelectorAll("#tier-cards-view .tier-card").length');
+  const tierGroupsCount = await evaluate('document.querySelectorAll("#tier-cards-view details.tier-group").length');
+  const openTierGroups = await evaluate('document.querySelectorAll("#tier-cards-view details.tier-group[open]").length');
   console.log('Tier cards rendered:', tierCardsCount);
   assert.equal(tierCardsCount, 21);
+  assert.equal(tierGroupsCount, 5);
+  assert.equal(openTierGroups, 1);
 
   await evaluate('document.getElementById("btn-view-table").click()');
   await new Promise((r) => setTimeout(r, 50));
@@ -219,9 +223,11 @@ try {
   // Check 15 master table rows and 15 preset pills
   const masterTableRows = await evaluate('document.querySelectorAll(".budget-row").length');
   const presetPillsCount = await evaluate('document.querySelectorAll(".preset-pill").length');
+  const masterTableOpen = await evaluate('document.querySelector(".budget-master-details").open');
   console.log('Master table rows:', masterTableRows, 'Preset pills:', presetPillsCount);
   assert.equal(masterTableRows, 15);
   assert.equal(presetPillsCount, 15);
+  assert.equal(masterTableOpen, false);
 
   // Test clicking a preset pill (14k)
   await evaluate(`
@@ -256,11 +262,25 @@ try {
   // Check initial comparison count
   const initialCars = await evaluate('document.querySelectorAll("#comparison-list .car-card").length');
   console.log('Initial cars in comparison:', initialCars);
-  assert.equal(initialCars, 21);
+  assert.equal(initialCars, 6);
 
   const initialCountText = await evaluate('document.getElementById("result-count").textContent');
   console.log('Result count text:', initialCountText);
-  assert.match(initialCountText, /\d+ coches disponibles/);
+  assert.match(initialCountText, /6 de 21 coches visibles/);
+
+  const catalogueToggleState = await evaluate(`({
+    text: document.getElementById('catalogue-toggle').textContent,
+    expanded: document.getElementById('catalogue-toggle').getAttribute('aria-expanded'),
+  })`);
+  assert.match(catalogueToggleState.text, /Mostrar 15 más/);
+  assert.equal(catalogueToggleState.expanded, 'false');
+
+  await evaluate('document.getElementById("catalogue-toggle").click()');
+  await new Promise((r) => setTimeout(r, 50));
+  const expandedCars = await evaluate('document.querySelectorAll("#comparison-list .car-card").length');
+  const expandedState = await evaluate('document.getElementById("catalogue-toggle").getAttribute("aria-expanded")');
+  assert.equal(expandedCars, 21);
+  assert.equal(expandedState, 'true');
 
   // Test filter by market = used
   await evaluate(`
@@ -271,7 +291,7 @@ try {
 
   const usedCars = await evaluate('document.querySelectorAll("#comparison-list .car-card").length');
   console.log('Used cars count:', usedCars);
-  assert.ok(usedCars > 0 && usedCars < initialCars);
+  assert.ok(usedCars > 0 && usedCars < expandedCars);
 
   // Test search
   await evaluate(`
@@ -304,7 +324,7 @@ try {
 
   const resetCount = await evaluate('document.querySelectorAll("#comparison-list .car-card").length');
   console.log('After reset count:', resetCount);
-  assert.equal(resetCount, initialCars);
+  assert.equal(resetCount, expandedCars);
 
   // Test responsive layout at 320, 768, 1024, 1440 px
   for (const width of [320, 768, 1024, 1440]) {
