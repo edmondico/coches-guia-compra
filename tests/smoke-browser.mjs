@@ -48,7 +48,7 @@ const chromeProc = spawn('/usr/bin/google-chrome', [
   '--disable-gpu',
   '--no-sandbox',
   `--remote-debugging-port=${port}`,
-  'http://127.0.0.1:8080',
+  'http://127.0.0.1:8080/#presupuestos',
 ], { stdio: 'ignore' });
 
 let cleanedUp = false;
@@ -127,6 +127,21 @@ async function evaluate(expression) {
 try {
   // Wait a moment for page scripts to run
   await new Promise((r) => setTimeout(r, 500));
+
+  // A direct URL with a fragment must still land on the target after the
+  // dynamic sections above it have finished rendering.
+  let directHashPosition;
+  for (let i = 0; i < 20; i++) {
+    directHashPosition = await evaluate(`({
+      hash: window.location.hash,
+      top: Math.round(document.getElementById('presupuestos').getBoundingClientRect().top),
+    })`);
+    if (directHashPosition.hash === '#presupuestos' && Math.abs(directHashPosition.top) <= 160) break;
+    await new Promise((r) => setTimeout(r, 100));
+  }
+  console.log('Direct hash position:', directHashPosition);
+  assert.equal(directHashPosition.hash, '#presupuestos');
+  assert.ok(Math.abs(directHashPosition.top) <= 160, `#presupuestos quedó a ${directHashPosition.top}px del viewport`);
 
   // Check title
   const title = await evaluate('document.title');
