@@ -301,7 +301,7 @@
       "finalValue": "24.900 € – 25.990 €",
       "financeNote": "Financiación habitual Toyota Ocasión desde ~260 €/mes"
     },
-    "summary": "El compacto más gratificante de conducir de la comparativa con mecánica a prueba de bombas: centro de gravedad bajo, suspensión trasera multibrazo, 184 CV con empuje inmediato y garantía Relax de 15 años. Su único peaje familiar es una postura más baja para tus padres.",
+    "summary": "El compacto más gratificante de conducir de la comparativa con mecánica híbrida Toyota muy contrastada y de elevada fiabilidad: centro de gravedad bajo, suspensión trasera multibrazo, 184 CV con empuje inmediato y garantía Relax de 15 años. Su único peaje familiar es una postura más baja para tus padres.",
     "bestFor": "Prioridad en dinamismo de conducción, agilidad en carretera y fiabilidad absoluta manteniendo 5 puertas",
     "caution": "Carrocería baja tradicional que exige flexionar más las piernas y tronco para entrar y salir que en un crossover.",
     "availability": "Stock habitual certificado en la red Toyota Ocasión Barcelona",
@@ -824,6 +824,54 @@
     }
   },
   {
+    "id": "toyota-yaris-hybrid-new",
+    "name": "Toyota Yaris Hybrid Nuevo",
+    "variant": "Hybrid 120 · Automático e-CVT · 5 puertas · 2026",
+    "market": "new",
+    "technology": "HEV",
+    "year": 2026,
+    "powerCv": 116,
+    "batteryKwh": 0.8,
+    "wltpKm": null,
+    "cashPrice": 21500,
+    "aidEstimate": 0,
+    "netPriceMin": 21500,
+    "evidence": "verified",
+    "verifiedAt": "2026-08-28",
+    "sourceUrl": "https://www.toyota.es/coches/yaris",
+    "sourceLabel": "Toyota España · Oferta Oficial Yaris",
+    "priceNote": "21.500 € al contado oficial. Cobertura Toyota Relax hasta 15 años o 250.000 km.",
+    "summary": "Mecánica e-CVT muy contrastada y de elevada fiabilidad en carrocería utilitaria baja de 3,94 m.",
+    "bestFor": "Gastar lo mínimo en un híbrido fiable nuevo (postura baja)",
+    "caution": "Acceso más bajo para tus padres que en el Yaris Cross.",
+    "availability": "Concesionarios Toyota",
+    "winner": "El utilitario híbrido más fiable",
+    "rank": 15,
+    "tier": "A",
+    "score": 8.45,
+    "lengthM": "3,94 m",
+    "trunkL": "286 l",
+    "seats": 5,
+    "warranty": "Hasta 15 años / 250.000 km (Toyota Relax)",
+    "pros": [
+      "Estrenar coche nuevo por 21.500 € con Toyota Relax hasta 15 años",
+      "Consumo real bajísimo de ~3,8–4,2 l/100 km en ciudad",
+      "Mecánica e-CVT sin embrague ni turbo"
+    ],
+    "cons": [
+      "Carrocería baja (acceso menos cómodo para padres que el Yaris Cross)",
+      "Pantallas e infoentretenimiento más sencillos"
+    ],
+    "images": {
+      "main": "assets/images/cars/toyota-yaris-hybrid-new-main.jpg",
+      "gallery": [
+        "assets/images/cars/toyota-yaris-hybrid-new-main.jpg",
+        "assets/images/cars/toyota-yaris-hybrid-new-gallery-1.jpg",
+        "assets/images/cars/toyota-yaris-hybrid-new-gallery-2.jpg"
+      ]
+    }
+  },
+  {
     "id": "cupra-leon-15-etsi-used",
     "name": "CUPRA León eTSI DSG",
     "variant": "1.5 eTSI 150 CV DSG 7v · MHEV ECO · 2023",
@@ -861,7 +909,7 @@
     "availability": "Amplio stock en la red oficial SEAT/CUPRA Ocasión Barcelona",
     "winner": "⚡ Compacto con estética más agresiva y cambio DSG",
     "verdict": null,
-    "rank": 15,
+    "rank": 16,
     "tier": "A",
     "score": 8.4,
     "lengthM": "4,40 m",
@@ -886,54 +934,6 @@
         "assets/images/cars/cupra-leon-15-etsi-used-main.jpg",
         "assets/images/cars/cupra-leon-15-etsi-used-gallery-1.jpg",
         "assets/images/cars/cupra-leon-15-etsi-used-gallery-2.jpg"
-      ]
-    }
-  },
-  {
-    "id": "toyota-yaris-hybrid-new",
-    "name": "Toyota Yaris Hybrid Nuevo",
-    "variant": "Hybrid 120 · Automático e-CVT · 5 puertas · 2026",
-    "market": "new",
-    "technology": "HEV",
-    "year": 2026,
-    "powerCv": 116,
-    "batteryKwh": 0.8,
-    "wltpKm": null,
-    "cashPrice": 21500,
-    "aidEstimate": 0,
-    "netPriceMin": 21500,
-    "evidence": "verified",
-    "verifiedAt": "2026-08-28",
-    "sourceUrl": "https://www.toyota.es/coches/yaris",
-    "sourceLabel": "Toyota España · Oferta Oficial Yaris",
-    "priceNote": "21.500 € al contado oficial. Cobertura Toyota Relax hasta 15 años o 250.000 km.",
-    "summary": "Mecánica e-CVT muy contrastada y de elevada fiabilidad en carrocería utilitaria baja de 3,94 m.",
-    "bestFor": "Gastar lo mínimo en un híbrido fiable nuevo (postura baja)",
-    "caution": "Acceso más bajo para tus padres que en el Yaris Cross.",
-    "availability": "Concesionarios Toyota",
-    "winner": "El utilitario híbrido más fiable",
-    "rank": 16,
-    "tier": "B",
-    "score": 8.45,
-    "lengthM": "3,94 m",
-    "trunkL": "286 l",
-    "seats": 5,
-    "warranty": "Hasta 15 años / 250.000 km (Toyota Relax)",
-    "pros": [
-      "Estrenar coche nuevo por 21.500 € con Toyota Relax hasta 15 años",
-      "Consumo real bajísimo de ~3,8–4,2 l/100 km en ciudad",
-      "Mecánica e-CVT sin embrague ni turbo"
-    ],
-    "cons": [
-      "Carrocería baja (acceso menos cómodo para padres que el Yaris Cross)",
-      "Pantallas e infoentretenimiento más sencillos"
-    ],
-    "images": {
-      "main": "assets/images/cars/toyota-yaris-hybrid-new-main.jpg",
-      "gallery": [
-        "assets/images/cars/toyota-yaris-hybrid-new-main.jpg",
-        "assets/images/cars/toyota-yaris-hybrid-new-gallery-1.jpg",
-        "assets/images/cars/toyota-yaris-hybrid-new-gallery-2.jpg"
       ]
     }
   },

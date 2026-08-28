@@ -78,3 +78,30 @@ test('el Tier S contiene 7 modelos incluyendo C-HR GR Sport y Corolla GR Sport',
   assert.ok(tierSCars.some((c) => c.id === 'toyota-chr-180h-gr-used'));
   assert.ok(tierSCars.some((c) => c.id === 'toyota-corolla-180h-gr-used'));
 });
+
+test('los coches están estrictamente ordenados de mayor a menor puntuación según su rank', () => {
+  for (let i = 0; i < cars.length; i++) {
+    assert.equal(cars[i].rank, i + 1, `${cars[i].id}: rank no secuencial`);
+    if (i > 0) {
+      assert.ok(
+        cars[i - 1].score >= cars[i].score,
+        `Incoherencia de notas: ${cars[i - 1].id} (${cars[i - 1].score}) < ${cars[i].id} (${cars[i].score})`,
+      );
+    }
+  }
+});
+
+test('Yaris Hybrid nuevo es #15 y CUPRA León es #16, ambos en Tier A', () => {
+  const yarisNew = cars.find((c) => c.id === 'toyota-yaris-hybrid-new');
+  const cupraLeon = cars.find((c) => c.id === 'cupra-leon-15-etsi-used');
+  assert.equal(yarisNew.rank, 15);
+  assert.equal(yarisNew.tier, 'A');
+  assert.equal(cupraLeon.rank, 16);
+  assert.equal(cupraLeon.tier, 'A');
+});
+
+test('el resumen de Corolla GR Sport usa redacción rigurosa sin términos absolutos', () => {
+  const corolla = cars.find((c) => c.id === 'toyota-corolla-180h-gr-used');
+  assert.doesNotMatch(corolla.summary, /a prueba de bombas/);
+  assert.match(corolla.summary, /mecánica híbrida Toyota muy contrastada y de elevada fiabilidad/);
+});
