@@ -236,7 +236,13 @@ h4 {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
 }
 
-.sticky-tldr__inner {
+.sticky-tldr__container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.sticky-tldr__row {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -245,13 +251,23 @@ h4 {
   -webkit-overflow-scrolling: touch;
 }
 
+.sticky-tldr__row--bev {
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+  padding-top: 0.2rem;
+}
+
 .sticky-tldr__label {
-  font-size: 0.74rem;
+  font-size: 0.72rem;
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 0.04em;
   color: var(--color-accent);
   white-space: nowrap;
+}
+
+.sticky-tldr__label--bev {
+  color: #86efac;
+  font-size: 0.70rem;
 }
 
 .sticky-tldr__pills {
@@ -260,19 +276,19 @@ h4 {
   gap: 0.35rem;
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
-  padding-bottom: 2px;
+  padding-bottom: 1px;
 }
 
 .tldr-pill {
   display: inline-flex;
   align-items: center;
   gap: 0.3rem;
-  padding: 0.2rem 0.55rem;
+  padding: 0.18rem 0.5rem;
   background: rgba(255, 255, 255, 0.08);
   border: 1px solid rgba(255, 255, 255, 0.15);
   border-radius: var(--radius-sm);
   color: #ffffff;
-  font-size: 0.78rem;
+  font-size: 0.76rem;
   text-decoration: none;
   white-space: nowrap;
   transition: all 0.15s ease;
@@ -290,6 +306,25 @@ h4 {
 
 .tldr-pill:hover strong {
   color: var(--color-ink);
+}
+
+.tldr-pill--bev {
+  background: rgba(34, 197, 94, 0.08);
+  border-color: rgba(34, 197, 94, 0.2);
+}
+
+.tldr-pill--bev strong {
+  color: #86efac;
+}
+
+.tldr-pill--bev:hover {
+  background: #22c55e;
+  border-color: #22c55e;
+  color: #0f172a;
+}
+
+.tldr-pill--bev:hover strong {
+  color: #0f172a;
 }
 
 /* ==========================================================================
