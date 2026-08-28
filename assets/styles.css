@@ -357,6 +357,29 @@ h4 {
   color: #0f172a;
 }
 
+.sticky-tldr__label--sport {
+  color: #fdba74;
+}
+
+.tldr-pill--sport {
+  background: rgba(249, 115, 22, 0.1);
+  border-color: rgba(249, 115, 22, 0.3);
+}
+
+.tldr-pill--sport strong {
+  color: #fdba74;
+}
+
+.tldr-pill--sport:hover {
+  background: #f97316;
+  border-color: #f97316;
+  color: #ffffff;
+}
+
+.tldr-pill--sport:hover strong {
+  color: #ffffff;
+}
+
 /* ==========================================================================
    Hero Section
    ========================================================================== */

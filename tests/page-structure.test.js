@@ -131,3 +131,13 @@ test('el veredicto incluye la alternativa deportiva destacada y el radar vigila 
   assert.doesNotMatch(carsData, /indestructible/);
   assert.match(carsData, /extremadamente contrastada y de elevada fiabilidad/);
 });
+
+test('la barra sticky TLDR incluye las tres vías: racionales, eléctricos y deportivos', () => {
+  const html = read('index.html');
+  const css = read('assets/styles.css');
+  assert.match(html, /sticky-tldr__label--sport/);
+  assert.match(html, /data-set-budget="23000"[^>]*><strong>23k<\/strong>\s*Mazda 3/);
+  assert.match(html, /data-set-budget="25000"[^>]*><strong>25k<\/strong>\s*Corolla GR/);
+  assert.match(html, /data-set-budget="26000"[^>]*><strong>26k<\/strong>\s*C-HR GR/);
+  assert.match(css, /\.tldr-pill--sport/);
+});
