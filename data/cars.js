@@ -167,7 +167,7 @@
     "lengthM": "4,34 m",
     "trunkL": "319 l",
     "seats": 5,
-    "warranty": "Hasta 8 años / 160.000 km si la unidad cumple las condiciones de la garantía comercial activada por servicio Honda (comprobar por bastidor e historial)",
+    "warranty": "Hasta 8 años / 160.000 km si la unidad cumple las condiciones de la garantía comercial activada por servicio Honda (comprobar elegibilidad/cobertura por bastidor e historial oficial)",
     "pros": [
       "97,5% de fiabilidad en encuestas independientes europeas (What Car?)",
       "Sistema e:HEV: rueda como un eléctrico casi todo el tiempo con suavidad absoluta",
@@ -262,7 +262,7 @@
     "lengthM": "4,10 m",
     "trunkL": "304 l",
     "seats": 5,
-    "warranty": "Hasta 8 años / 160.000 km (3 años fábrica + 5 años garantía comercial por servicio Honda)",
+    "warranty": "Hasta 8 años / 160.000 km (3 años original + 5 años comercial activada mediante servicio oficial, según condiciones)",
     "pros": [
       "Visibilidad delantera insuperable gracias a los pilares A ultrafinos",
       "Asientos Magic Seats y tapicería hidrófuga fácil de limpiar",
@@ -303,7 +303,7 @@
     "winner": "🇫🇷 Mejor concepto crossover eléctrico compacto (4,14 m)",
     "rank": 6,
     "tier": "A",
-    "score": 8.75,
+    "score": 8.78,
     "lengthM": "4,14 m",
     "trunkL": "420 l",
     "seats": 5,
@@ -343,7 +343,7 @@
     "priceNote": "Stock oficial Nissan España al contado: Acenta (317 km) en 20.600 €, N-Connecta (314 km) en 23.000 € y N-Connecta (415 km) en 25.650–26.250 €. Cobertura Nissan+ hasta 10 años / 200.000 km en condiciones de uso particular (confirmar compatibilidad si se vincula a actividad económica/Auto+ Línea 2).",
     "summary": "La alternativa eléctrica más fuerte por 23.000 € al contado: 3,97 m, 5 puertas y 5 plazas, 326 l de maletero, pantalla de 10,1\" con Google integrado (Maps y Assistant), gran suavidad y garantía Nissan+ hasta 10 años.",
     "bestFor": "Eléctrico urbano equilibrado con 5 plazas, Google y cobertura Nissan+ hasta 10 años",
-    "caution": "Postura de turismo convencional (3,97 m): acceso más bajo para tus padres que en un SUV.",
+    "caution": "Postura de turismo convencional (3,97 m): acceso más bajo para tus padres que en un SUV. ⚠️ Nissan+: hasta 10 años / 200.000 km para uso particular según condiciones. Confirmar compatibilidad si la compra se vincula a actividad económica o se tramita mediante Línea 2.",
     "winner": "🛡️ Mejor garantía eléctrica urbana (Nissan+ 10 años)",
     "rank": 7,
     "tier": "A",
@@ -351,7 +351,7 @@
     "lengthM": "3,97 m",
     "trunkL": "326 l",
     "seats": 5,
-    "warranty": "Nissan+ hasta 10 años / 200.000 km en uso particular (8 años batería)",
+    "warranty": "Nissan+ hasta 10 años / 200.000 km para uso particular según condiciones (8 años batería)",
     "pros": [
       "Precios de stock oficial al contado muy competitivos (N-Connecta a 23.000 €)",
       "Garantía Nissan+ extensible hasta 10 años o 200.000 km con revisiones oficiales (uso particular)",
@@ -978,7 +978,7 @@
     "seats": 5,
     "warranty": "7 años / 150.000 km oficial Kia",
     "summary": "Arquitectura eléctrica E-GMP de Kia con hasta 605 km WLTP (batería grande), 4,30 m, 460 l de maletero y 7 años de garantía total.",
-    "status": "Si aparece en stock/campaña real al contado por ≤27k €, sería candidato directo a Tier A alto y posible Top 6–8.",
+    "status": "Si aparece en stock/campaña real al contado por ≤27.000 €: entraría directamente en Tier A alto y sería candidato Top 6–8.",
     "sourceUrl": "https://www.kia.com/es/modelos/ev3/descubrelo/",
     "sourceLabel": "Kia Iberia · Gama Oficial Kia EV3"
   },
