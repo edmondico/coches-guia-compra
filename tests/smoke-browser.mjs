@@ -146,7 +146,7 @@ try {
   // Check Tier List and Table
   const tierCardsCount = await evaluate('document.querySelectorAll("#tier-cards-view .tier-card").length');
   console.log('Tier cards rendered:', tierCardsCount);
-  assert.equal(tierCardsCount, 18);
+  assert.equal(tierCardsCount, 22);
 
   await evaluate('document.getElementById("btn-view-table").click()');
   await new Promise((r) => setTimeout(r, 50));
@@ -154,7 +154,7 @@ try {
   const tableVisible = await evaluate('!document.getElementById("tier-table-view").hidden');
   const cardsHidden = await evaluate('document.getElementById("tier-cards-view").hidden');
   console.log('Tier table visible:', tableVisible, 'Rows count:', tableRowsCount, 'Cards hidden:', cardsHidden);
-  assert.equal(tableRowsCount, 18);
+  assert.equal(tableRowsCount, 22);
   assert.equal(tableVisible, true);
   assert.equal(cardsHidden, true);
 
@@ -162,6 +162,11 @@ try {
   await new Promise((r) => setTimeout(r, 50));
   const cardsVisible = await evaluate('!document.getElementById("tier-cards-view").hidden');
   assert.equal(cardsVisible, true);
+
+  // Check Watchlist / Radar
+  const watchlistCount = await evaluate('document.querySelectorAll("#watchlist-grid .watchlist-card").length');
+  console.log('Watchlist cards rendered:', watchlistCount);
+  assert.equal(watchlistCount, 2);
 
   // Check Budget Tool
   const budgetOutput = await evaluate('document.getElementById("budget-output").textContent');
@@ -236,7 +241,7 @@ try {
   // Check initial comparison count
   const initialCars = await evaluate('document.querySelectorAll("#comparison-list .car-card").length');
   console.log('Initial cars in comparison:', initialCars);
-  assert.equal(initialCars, 18);
+  assert.equal(initialCars, 22);
 
   const initialCountText = await evaluate('document.getElementById("result-count").textContent');
   console.log('Result count text:', initialCountText);

@@ -23,6 +23,7 @@
 
   const verdictContainer = document.getElementById('verdict-list');
   const winnerContainer = document.getElementById('winner-grid');
+  const watchlistContainer = document.getElementById('watchlist-grid');
   const listContainer = document.getElementById('comparison-list');
   const emptyState = document.getElementById('empty-state');
   const resultCount = document.getElementById('result-count');
@@ -43,55 +44,34 @@
 
     const tags = {
       global: { num: '01', tag: '🏆 1.º · El mejor equilibrio global (Toyota Relax 15 años)' },
-      quality: { num: '02', tag: '💻 2.º · Mejor tecnología, interior & confort (Doble 12,3")' },
-      used: { num: '03', tag: '🛡️ 3.º · El SUV híbrido más refinado y sólido (97,5% fiabilidad)' },
+      comfort: { num: '02', tag: '💻 2.º · Mejor tecnología, interior & confort (Doble 12,3")' },
+      mechanical: { num: '03', tag: '🛡️ 3.º · El SUV híbrido más refinado y sólido (97,5% fiabilidad)' },
     };
 
     verdictContainer.innerHTML = verdictCards.map((car) => {
-      const meta = tags[car.verdict] || { num: '★', tag: 'Recomendado' };
-      const b = car.breakdown;
+      const tagInfo = tags[car.verdict] || { num: '★', tag: car.winner || 'Destacado' };
       return `
         <article class="verdict-card" id="verdict-${car.id}">
+          <span class="verdict-card__number">${tagInfo.num}</span>
           <div class="verdict-card__header">
-            <span class="verdict-card__tag">${meta.tag}</span>
-            <span class="score-badge" aria-label="Nota baremo">${car.score ? car.score.toFixed(2).replace('.', ',') : '—'} / 10</span>
+            <span class="verdict-card__tag">${escapeHtml(tagInfo.tag)}</span>
+            <span class="score-badge">⭐ ${car.score ? car.score.toFixed(2).replace('.', ',') : '—'}/10</span>
           </div>
           <h3>${escapeHtml(car.name)}</h3>
           <p class="verdict-card__variant">${escapeHtml(car.variant)}</p>
           <ul class="spec-strip" aria-label="Especificaciones clave">
-            ${car.lengthM ? `<li>📏 ${escapeHtml(car.lengthM)}</li>` : ''}
-            ${car.powerCv ? `<li>⚡ ${car.powerCv} CV</li>` : ''}
-            ${car.trunkL ? `<li>🧳 ${escapeHtml(car.trunkL)}</li>` : ''}
-            ${car.seats ? `<li>👥 ${car.seats} pl</li>` : ''}
+            <li><strong>Longitud:</strong> ${escapeHtml(car.lengthM || '—')}</li>
+            <li><strong>Maletero:</strong> ${escapeHtml(car.trunkL || '—')}</li>
+            <li><strong>Garantía:</strong> ${escapeHtml(car.warranty || '—')}</li>
           </ul>
-          ${b ? `
-          <div class="verdict-breakdown" aria-label="Desglose de precios y ayudas">
-            <div class="breakdown-row">
-              <span>${escapeHtml(b.initialLabel)}</span>
-              <strong>${escapeHtml(b.initialValue)}</strong>
-            </div>
-            <div class="breakdown-row breakdown-row--discount">
-              <span>${escapeHtml(b.aidLabel)}</span>
-              <b>${escapeHtml(b.aidValue)}</b>
-            </div>
-            ${b.extraLabel ? `
-            <div class="breakdown-row breakdown-row--extra">
-              <span>${escapeHtml(b.extraLabel)}</span>
-              <em>${escapeHtml(b.extraValue)}</em>
-            </div>` : ''}
-            <div class="breakdown-row breakdown-row--final">
-              <span>${escapeHtml(b.finalLabel)}</span>
-              <strong class="price-highlight">${escapeHtml(b.finalValue)}</strong>
-            </div>
-            ${b.financeNote ? `
-            <div class="breakdown-row breakdown-row--finance">
-              <span>Alternativa:</span>
-              <small>${escapeHtml(b.financeNote)}</small>
-            </div>` : ''}
+          ${car.breakdown ? `
+          <div class="verdict-card__price-box">
+            <span>Precio mercado VO verificado:</span>
+            <strong>${escapeHtml(car.breakdown.initialValue)}</strong>
           </div>
           ` : `
-          <div class="verdict-card__price">
-            <span>Precio neto estimado</span>
+          <div class="verdict-card__price-box">
+            <span>Precio al contado oficial:</span>
             <strong>${formatEuro(car.netPriceMin)}</strong>
           </div>
           `}
@@ -112,6 +92,40 @@
         <p class="winner__category">${escapeHtml(car.winner)}</p>
         <h3>${escapeHtml(car.name)}</h3>
         <p>${escapeHtml(car.bestFor || car.summary)} <strong>${formatEuro(car.netPriceMin)}</strong></p>
+      </article>
+    `).join('');
+  }
+
+  function renderWatchlist() {
+    if (!watchlistContainer) return;
+    const watchlist = window.CarData.watchlistCars || [];
+    if (!watchlist.length) return;
+
+    watchlistContainer.innerHTML = watchlist.map((item) => `
+      <article class="watchlist-card" id="${item.id}">
+        <div class="watchlist-card__head">
+          <div>
+            <span class="watchlist-tag">📡 Radar 2026</span>
+            <h3>${escapeHtml(item.name)}</h3>
+            <p class="watchlist-variant">${escapeHtml(item.variant)}</p>
+          </div>
+          <div class="watchlist-price-block">
+            <span class="watchlist-price-label">Tarifa oficial</span>
+            <strong class="watchlist-price-val">${escapeHtml(item.officialPrice)}</strong>
+            <span class="watchlist-target-pill">Objetivo: ${escapeHtml(item.targetOfferPrice)}</span>
+          </div>
+        </div>
+        <p class="watchlist-summary">${escapeHtml(item.summary)}</p>
+        <div class="watchlist-specs">
+          <span>📏 ${escapeHtml(item.lengthM)}</span>
+          <span>🧳 ${escapeHtml(item.trunkL)}</span>
+          <span>⚡ ${item.wltpKm} km WLTP</span>
+          <span>🛡️ ${escapeHtml(item.warranty)}</span>
+        </div>
+        <p class="watchlist-status"><strong>🎯 Diagnóstico:</strong> ${escapeHtml(item.status)}</p>
+        <div class="watchlist-footer">
+          <a href="${item.sourceUrl}" target="_blank" rel="noopener noreferrer" class="watchlist-link">${escapeHtml(item.sourceLabel)} ↗</a>
+        </div>
       </article>
     `).join('');
   }
@@ -577,6 +591,7 @@
     renderTierList();
     renderBudgetTool();
     renderWinners();
+    renderWatchlist();
 
     const initialFilters = parseFilters(new URLSearchParams(window.location.search));
     setFormFilters(initialFilters);
